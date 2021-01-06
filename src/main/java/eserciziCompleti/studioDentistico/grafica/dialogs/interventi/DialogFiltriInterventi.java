@@ -2,7 +2,7 @@ package eserciziCompleti.studioDentistico.grafica.dialogs.interventi;
 
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.grafica.Colori;
-import eserciziCompleti.studioDentistico.oggetti.FiltriIntervento;
+import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriIntervento;
 
 import javax.swing.*;
 import java.awt.*;

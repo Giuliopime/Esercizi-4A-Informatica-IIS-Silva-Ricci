@@ -1,6 +1,6 @@
 package eserciziCompleti.studioDentistico.gestori;
 
-import eserciziCompleti.studioDentistico.enums.TipoPanel;
+import eserciziCompleti.studioDentistico.enums.Schermata;
 import eserciziCompleti.studioDentistico.grafica.mainPanels.Fatture;
 import eserciziCompleti.studioDentistico.grafica.mainPanels.HomePage;
 import eserciziCompleti.studioDentistico.grafica.mainPanels.Interventi;
@@ -24,7 +24,7 @@ public class GestoreGrafica extends JFrame {
 
     private GestoreGrafica() {
         initGrafica();
-        changePanel(TipoPanel.HOME, null);
+        changePanel(Schermata.HOME, null);
 
         setName("Studio Dentistico");
         setSize(new Dimension(1000, 600));
@@ -47,11 +47,11 @@ public class GestoreGrafica extends JFrame {
         });
     }
 
-    public void changePanel(TipoPanel tipoPanel, String[] args) {
-        if (tipoPanel == null) {
+    public void changePanel(Schermata schermata, String[] args) {
+        if (schermata == null) {
             setContentPane(new HomePage().getMainPanel());
         } else {
-            switch (tipoPanel) {
+            switch (schermata) {
                 case PAZIENTI -> setContentPane(new Pazienti(args).getPannelloPazienti());
                 case INTERVENTI -> setContentPane(new Interventi(args).getPannelloInterventi());
                 case FATTURE -> setContentPane(new Fatture(args).getPannelloFatture());

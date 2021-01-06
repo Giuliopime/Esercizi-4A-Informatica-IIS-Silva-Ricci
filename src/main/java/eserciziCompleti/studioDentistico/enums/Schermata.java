@@ -1,6 +1,6 @@
 package eserciziCompleti.studioDentistico.enums;
 
-public enum TipoPanel {
+public enum Schermata {
     HOME, PAZIENTI, INTERVENTI, FATTURE
 }
 

@@ -1,7 +1,7 @@
 package eserciziCompleti.studioDentistico.grafica.panelsComponenti;
 
 import eserciziCompleti.studioDentistico.enums.AzioneDialog;
-import eserciziCompleti.studioDentistico.enums.TipoPanel;
+import eserciziCompleti.studioDentistico.enums.Schermata;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.gestori.GestorePazienti;
 import eserciziCompleti.studioDentistico.grafica.Colori;
@@ -52,7 +52,7 @@ public class PanelPaziente {
                     else
                         GestorePazienti.getInstance().eliminaPaziente(dialogPaziente.getPaziente().getIDPaziente());
 
-                    GestoreGrafica.getInstance().changePanel(TipoPanel.PAZIENTI, null);
+                    GestoreGrafica.getInstance().changePanel(Schermata.PAZIENTI, null);
                 }
             }
 
@@ -85,7 +85,7 @@ public class PanelPaziente {
                 DialogPaziente dialogPaziente = new DialogPaziente("Nuovo paziente");
                 if (dialogPaziente.getAzione().equals(AzioneDialog.SALVA)) {
                     GestorePazienti.getInstance().aggiungiPaziente(dialogPaziente.getPaziente());
-                    GestoreGrafica.getInstance().changePanel(TipoPanel.PAZIENTI, null);
+                    GestoreGrafica.getInstance().changePanel(Schermata.PAZIENTI, null);
                 }
             }
 

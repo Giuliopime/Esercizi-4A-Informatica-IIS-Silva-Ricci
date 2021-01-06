@@ -2,7 +2,7 @@ package eserciziCompleti.studioDentistico.grafica.panelsComponenti;
 
 import eserciziCompleti.studioDentistico.enums.AzioneDialog;
 import eserciziCompleti.studioDentistico.enums.TipoIntervento;
-import eserciziCompleti.studioDentistico.enums.TipoPanel;
+import eserciziCompleti.studioDentistico.enums.Schermata;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.gestori.GestoreInterventi;
 import eserciziCompleti.studioDentistico.gestori.GestorePazienti;
@@ -85,7 +85,7 @@ public class PanelIntervento {
                     else
                         GestoreInterventi.getInstance().eliminaIntervento(dialogIntervento.getIntervento().getIDIntervento());
 
-                    GestoreGrafica.getInstance().changePanel(TipoPanel.INTERVENTI, null);
+                    GestoreGrafica.getInstance().changePanel(Schermata.INTERVENTI, null);
                 }
             }
 
@@ -124,7 +124,7 @@ public class PanelIntervento {
                 DialogIntervento dialogIntervento = new DialogIntervento("Nuovo Intervento");
                 if (dialogIntervento.getAzione().equals(AzioneDialog.SALVA)) {
                     GestoreInterventi.getInstance().aggiungiIntervento(dialogIntervento.getIntervento());
-                    GestoreGrafica.getInstance().changePanel(TipoPanel.INTERVENTI, null);
+                    GestoreGrafica.getInstance().changePanel(Schermata.INTERVENTI, null);
                 }
             }
 

@@ -1,6 +1,6 @@
 package eserciziCompleti.studioDentistico.grafica;
 
-import eserciziCompleti.studioDentistico.enums.TipoPanel;
+import eserciziCompleti.studioDentistico.enums.Schermata;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.gestori.GestoreImpostazioni;
 
@@ -17,7 +17,7 @@ public class NavBarUtil {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                GestoreGrafica.getInstance().changePanel(TipoPanel.HOME, null);
+                GestoreGrafica.getInstance().changePanel(Schermata.HOME, null);
             }
 
             @Override
@@ -47,8 +47,8 @@ public class NavBarUtil {
             });
         }
 
-        bottoniNav[0].addActionListener(e -> GestoreGrafica.getInstance().changePanel(TipoPanel.PAZIENTI, null));
-        bottoniNav[1].addActionListener(e -> GestoreGrafica.getInstance().changePanel(TipoPanel.INTERVENTI, null));
-        bottoniNav[2].addActionListener(e -> GestoreGrafica.getInstance().changePanel(TipoPanel.FATTURE, null));
+        bottoniNav[0].addActionListener(e -> GestoreGrafica.getInstance().changePanel(Schermata.PAZIENTI, null));
+        bottoniNav[1].addActionListener(e -> GestoreGrafica.getInstance().changePanel(Schermata.INTERVENTI, null));
+        bottoniNav[2].addActionListener(e -> GestoreGrafica.getInstance().changePanel(Schermata.FATTURE, null));
     }
 }

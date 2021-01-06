@@ -1,4 +1,4 @@
-package eserciziCompleti.studioDentistico.oggetti;
+package eserciziCompleti.studioDentistico.oggetti.filtri;
 
 import java.io.Serializable;
 

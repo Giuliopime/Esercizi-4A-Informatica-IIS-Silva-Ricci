@@ -1,9 +1,9 @@
 package eserciziCompleti.studioDentistico.gestori;
 
-import eserciziCompleti.studioDentistico.enums.OrdinamentoInterventi;
-import eserciziCompleti.studioDentistico.enums.TipoQueryIntervento;
-import eserciziCompleti.studioDentistico.oggetti.FiltriIntervento;
-import eserciziCompleti.studioDentistico.oggetti.FiltriPaziente;
+import eserciziCompleti.studioDentistico.enums.ordinamento.OrdinamentoInterventi;
+import eserciziCompleti.studioDentistico.enums.TipiQuery.TipoQueryIntervento;
+import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriIntervento;
+import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriPaziente;
 import eserciziCompleti.studioDentistico.oggetti.Intervento;
 import eserciziCompleti.studioDentistico.oggetti.Paziente;
 

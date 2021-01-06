@@ -1,4 +1,4 @@
-package eserciziCompleti.studioDentistico.enums;
+package eserciziCompleti.studioDentistico.enums.ordinamento;
 
 public enum OrdinamentoPazienti {
     DATACREAZIONE("Data creazione"), DATAULTIMAMODIFICA("Data ultima modifica"),

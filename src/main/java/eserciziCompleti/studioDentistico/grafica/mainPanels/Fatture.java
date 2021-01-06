@@ -1,7 +1,7 @@
 package eserciziCompleti.studioDentistico.grafica.mainPanels;
 
 import eserciziCompleti.studioDentistico.enums.AzioneDialog;
-import eserciziCompleti.studioDentistico.enums.TipoPanel;
+import eserciziCompleti.studioDentistico.enums.Schermata;
 import eserciziCompleti.studioDentistico.gestori.*;
 import eserciziCompleti.studioDentistico.grafica.Colori;
 import eserciziCompleti.studioDentistico.grafica.NavBarUtil;
@@ -108,7 +108,7 @@ public class Fatture implements FocusListener {
             DialogFattura dialogFattura = new DialogFattura("Nuova Fattura");
             if (!dialogFattura.getAzione().equals(AzioneDialog.Niente)) {
                 GestoreFatture.getInstance().aggiungiFattura(dialogFattura.getFattura());
-                GestoreGrafica.getInstance().changePanel(TipoPanel.FATTURE, new String[]{ricerca});
+                GestoreGrafica.getInstance().changePanel(Schermata.FATTURE, new String[]{ricerca});
             }
         });
 
@@ -123,7 +123,7 @@ public class Fatture implements FocusListener {
                 GestoreFatture.getInstance().filtriFattura = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriFattura();
                 GestoreFatture.getInstance().query = ricerca;
             }
-            GestoreGrafica.getInstance().changePanel(TipoPanel.FATTURE, new String[]{ricerca});
+            GestoreGrafica.getInstance().changePanel(Schermata.FATTURE, new String[]{ricerca});
         });
 
         inputRicerca.getDocument().addDocumentListener(new DocumentListener() {
@@ -159,7 +159,7 @@ public class Fatture implements FocusListener {
             ricerca = query;
         }
 
-        GestoreGrafica.getInstance().changePanel(TipoPanel.FATTURE, new String[]{ricerca});
+        GestoreGrafica.getInstance().changePanel(Schermata.FATTURE, new String[]{ricerca});
     }
 
     @Override

@@ -1,8 +1,8 @@
 package eserciziCompleti.studioDentistico.gestori;
 
-import eserciziCompleti.studioDentistico.enums.OrdinamentoPazienti;
-import eserciziCompleti.studioDentistico.enums.TipoQueryPaziente;
-import eserciziCompleti.studioDentistico.oggetti.FiltriPaziente;
+import eserciziCompleti.studioDentistico.enums.ordinamento.OrdinamentoPazienti;
+import eserciziCompleti.studioDentistico.enums.TipiQuery.TipoQueryPaziente;
+import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriPaziente;
 import eserciziCompleti.studioDentistico.oggetti.Paziente;
 
 import java.io.*;

@@ -1,6 +1,6 @@
 package eserciziCompleti.studioDentistico.grafica.dialogs.fatture;
 
-import eserciziCompleti.studioDentistico.enums.OrdinamentoFatture;
+import eserciziCompleti.studioDentistico.enums.ordinamento.OrdinamentoFatture;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.grafica.Colori;
 

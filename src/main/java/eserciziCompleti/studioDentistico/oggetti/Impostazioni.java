@@ -1,8 +1,11 @@
 package eserciziCompleti.studioDentistico.oggetti;
 
-import eserciziCompleti.studioDentistico.enums.OrdinamentoFatture;
-import eserciziCompleti.studioDentistico.enums.OrdinamentoInterventi;
-import eserciziCompleti.studioDentistico.enums.OrdinamentoPazienti;
+import eserciziCompleti.studioDentistico.enums.ordinamento.OrdinamentoFatture;
+import eserciziCompleti.studioDentistico.enums.ordinamento.OrdinamentoInterventi;
+import eserciziCompleti.studioDentistico.enums.ordinamento.OrdinamentoPazienti;
+import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriFattura;
+import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriIntervento;
+import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriPaziente;
 
 import java.io.Serializable;
 

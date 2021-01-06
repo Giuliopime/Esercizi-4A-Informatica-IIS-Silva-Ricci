@@ -1,9 +1,9 @@
 package eserciziCompleti.studioDentistico.gestori;
 
-import eserciziCompleti.studioDentistico.enums.OrdinamentoFatture;
-import eserciziCompleti.studioDentistico.enums.TipoQueryFattura;
+import eserciziCompleti.studioDentistico.enums.ordinamento.OrdinamentoFatture;
+import eserciziCompleti.studioDentistico.enums.TipiQuery.TipoQueryFattura;
 import eserciziCompleti.studioDentistico.oggetti.Fattura;
-import eserciziCompleti.studioDentistico.oggetti.FiltriFattura;
+import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriFattura;
 import eserciziCompleti.studioDentistico.oggetti.Intervento;
 import eserciziCompleti.studioDentistico.oggetti.Paziente;
 

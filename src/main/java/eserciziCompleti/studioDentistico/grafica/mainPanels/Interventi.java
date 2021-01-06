@@ -1,6 +1,6 @@
 package eserciziCompleti.studioDentistico.grafica.mainPanels;
 
-import eserciziCompleti.studioDentistico.enums.TipoPanel;
+import eserciziCompleti.studioDentistico.enums.Schermata;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.gestori.GestoreImpostazioni;
 import eserciziCompleti.studioDentistico.gestori.GestoreInterventi;
@@ -96,7 +96,7 @@ public class Interventi implements FocusListener {
                 GestoreInterventi.getInstance().filtriIntervento = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriIntervento();
                 GestoreInterventi.getInstance().query = ricerca;
             }
-            GestoreGrafica.getInstance().changePanel(TipoPanel.INTERVENTI, new String[]{ricerca});
+            GestoreGrafica.getInstance().changePanel(Schermata.INTERVENTI, new String[]{ricerca});
         });
 
         inputRicerca.getDocument().addDocumentListener(new DocumentListener() {
@@ -142,7 +142,7 @@ public class Interventi implements FocusListener {
             ricerca = query;
         }
 
-        GestoreGrafica.getInstance().changePanel(TipoPanel.INTERVENTI, new String[]{ricerca});
+        GestoreGrafica.getInstance().changePanel(Schermata.INTERVENTI, new String[]{ricerca});
     }
 
     @Override
