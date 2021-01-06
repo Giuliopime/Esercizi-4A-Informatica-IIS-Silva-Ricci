@@ -1,16 +1,16 @@
 # Esercizi Java 4^A Informatica Scuola Superiore IIS Silva Ricci
 
 ### Gradle
-Il progetto utilizza gradle per gestire alcune librerie esterne.
+Il progetto utilizza gradle per gestire alcune librerie esterne.  
 
-Gradle presenta dei problemi nei progetti contenenti GUI form di IntelliJ.
-**Per fare in modo che gli esercizi funzionino correttamente (su IntelliJ) segui i seguenti passaggi:**
+Gradle presenta dei problemi nei progetti contenenti GUI form di IntelliJ.  
+**Per fare in modo che gli esercizi funzionino correttamente (su IntelliJ) segui i seguenti passaggi:**  
 - Impostazioni di IntelliJ
 - Editor
 - GUI Designer
-- Selezionare "Generate GUI into: Binary class files"
+- Selezionare "Generate GUI into: Binary class files"  
 
-inoltre
+inoltre seguire anche i seguenti passaggi  
 
 - Impostazioni di IntelliJ
 - Build, Execution, Deployment
