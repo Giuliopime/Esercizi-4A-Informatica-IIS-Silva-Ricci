@@ -11,6 +11,7 @@ Gradle presenta dei problemi nei progetti contenenti GUI form di IntelliJ.
 - Selezionare "Generate GUI into: Binary class files"
 
 inoltre
+
 - Impostazioni di IntelliJ
 - Build, Execution, Deployment
 - Build Tools
