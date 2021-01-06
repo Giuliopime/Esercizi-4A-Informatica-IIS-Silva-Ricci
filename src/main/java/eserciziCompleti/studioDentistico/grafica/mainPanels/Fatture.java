@@ -6,10 +6,10 @@ import eserciziCompleti.studioDentistico.gestori.*;
 import eserciziCompleti.studioDentistico.grafica.Colori;
 import eserciziCompleti.studioDentistico.grafica.NavBarUtil;
 import eserciziCompleti.studioDentistico.grafica.RequestFocusListener;
-import eserciziCompleti.studioDentistico.grafica.dialogs.DialogFattura;
-import eserciziCompleti.studioDentistico.grafica.dialogs.DialogFiltriFatture;
-import eserciziCompleti.studioDentistico.grafica.dialogs.DialogNessunPaziente;
-import eserciziCompleti.studioDentistico.grafica.dialogs.DialogOrdinaFatture;
+import eserciziCompleti.studioDentistico.grafica.dialogs.fatture.DialogFattura;
+import eserciziCompleti.studioDentistico.grafica.dialogs.fatture.DialogFiltriFatture;
+import eserciziCompleti.studioDentistico.grafica.dialogs.pazienti.DialogNessunPaziente;
+import eserciziCompleti.studioDentistico.grafica.dialogs.fatture.DialogOrdinaFatture;
 import eserciziCompleti.studioDentistico.oggetti.Fattura;
 import eserciziCompleti.studioDentistico.oggetti.Impostazioni;
 import eserciziCompleti.studioDentistico.oggetti.Intervento;
@@ -43,6 +43,7 @@ public class Fatture implements FocusListener {
     private JTable tabellaFatture;
     private JButton btnNuovaFattura;
     private JScrollPane scrollPaneTabella;
+    private JButton btnStampaFattura;
     private JPanel listaFatture;
 
     private String ricerca;

@@ -1,4 +1,4 @@
-package eserciziCompleti.studioDentistico.grafica.dialogs;
+package eserciziCompleti.studioDentistico.grafica.dialogs.pazienti;
 
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.grafica.Colori;

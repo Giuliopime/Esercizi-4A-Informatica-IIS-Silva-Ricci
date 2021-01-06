@@ -1,65 +1,70 @@
-package eserciziCompleti.studioDentistico.grafica.dialogs;
+package eserciziCompleti.studioDentistico.grafica.dialogs.fatture;
 
+import eserciziCompleti.studioDentistico.enums.OrdinamentoFatture;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.grafica.Colori;
-import eserciziCompleti.studioDentistico.oggetti.FiltriFattura;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class DialogFiltriFatture extends JDialog {
+public class DialogOrdinaFatture extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
     private JLabel labelErrore;
-    private JCheckBox cbData;
-    private JCheckBox cbIntervento;
-    private JCheckBox cbPaziente;
+    private JRadioButton rbData;
+    private JRadioButton rbPaziente;
+    private JRadioButton rbIntervento;
+    private JRadioButton rbNessuno;
 
-    private FiltriFattura filtriFattura;
+    private OrdinamentoFatture ordinamentoFatture;
 
-    public DialogFiltriFatture(FiltriFattura filtriFattura) {
-        setTitle("Filtri Fatture");
+    public DialogOrdinaFatture(OrdinamentoFatture ordinamentoFatture) {
+        this.ordinamentoFatture = ordinamentoFatture;
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
+        caricaOrdinamento();
         initListeners();
         initGrafica();
 
-        this.filtriFattura = filtriFattura;
-        caricaFiltri();
 
-        setMinimumSize(new Dimension(450, 120));
         pack();
         setResizable(false);
         setLocationRelativeTo(GestoreGrafica.getInstance().getFrame());
         setVisible(true);
     }
 
-    private void onOK() {
-        filtriFattura = new FiltriFattura(cbData.isSelected(), cbPaziente.isSelected(), cbIntervento.isSelected());
-        if (filtriFattura.tuttiFalsi()) {
-            labelErrore.setIcon(new ImageIcon(getClass().getResource("/studioDentistico/errorIcon.png")));
-            labelErrore.setText("Selezionare almeno un campo");
-        } else
-            dispose();
+    private void caricaOrdinamento() {
+        if (ordinamentoFatture == null)
+            rbNessuno.setSelected(true);
+
+        else {
+            switch (ordinamentoFatture) {
+                case PAZIENTE -> rbPaziente.setSelected(true);
+                case INTERVENTO -> rbIntervento.setSelected(true);
+                case DATA -> rbData.setSelected(true);
+                default -> rbNessuno.setSelected(true);
+            }
+        }
     }
 
-    private void onCancel() {
-        filtriFattura = null;
+    private void onOK() {
+        ordinamentoFatture = rbData.isSelected() ? OrdinamentoFatture.DATA :
+                rbPaziente.isSelected() ? OrdinamentoFatture.PAZIENTE :
+                        rbIntervento.isSelected() ? OrdinamentoFatture.INTERVENTO :
+                                null;
         dispose();
     }
 
-    public FiltriFattura getFiltri() {
-        return filtriFattura;
+    private void onCancel() {
+        dispose();
     }
 
-    private void caricaFiltri() {
-        cbData.setSelected(filtriFattura.isData());
-        cbPaziente.setSelected(filtriFattura.isPaziente());
-        cbIntervento.setSelected(filtriFattura.isIntervento());
+    public OrdinamentoFatture getOrdinamentoFatture() {
+        return ordinamentoFatture;
     }
 
     private void initListeners() {

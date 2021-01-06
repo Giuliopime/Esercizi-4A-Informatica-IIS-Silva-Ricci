@@ -5,7 +5,7 @@ import eserciziCompleti.studioDentistico.enums.TipoPanel;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.gestori.GestorePazienti;
 import eserciziCompleti.studioDentistico.grafica.Colori;
-import eserciziCompleti.studioDentistico.grafica.dialogs.DialogPaziente;
+import eserciziCompleti.studioDentistico.grafica.dialogs.pazienti.DialogPaziente;
 import eserciziCompleti.studioDentistico.oggetti.Paziente;
 
 import javax.swing.*;

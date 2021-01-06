@@ -1,4 +1,4 @@
-package eserciziCompleti.studioDentistico.grafica.dialogs;
+package eserciziCompleti.studioDentistico.grafica.dialogs.interventi;
 
 import eserciziCompleti.studioDentistico.enums.OrdinamentoInterventi;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;

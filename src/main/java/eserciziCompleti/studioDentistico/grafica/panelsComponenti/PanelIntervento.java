@@ -7,8 +7,8 @@ import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.gestori.GestoreInterventi;
 import eserciziCompleti.studioDentistico.gestori.GestorePazienti;
 import eserciziCompleti.studioDentistico.grafica.Colori;
-import eserciziCompleti.studioDentistico.grafica.dialogs.DialogIntervento;
-import eserciziCompleti.studioDentistico.grafica.dialogs.DialogNessunPaziente;
+import eserciziCompleti.studioDentistico.grafica.dialogs.interventi.DialogIntervento;
+import eserciziCompleti.studioDentistico.grafica.dialogs.pazienti.DialogNessunPaziente;
 import eserciziCompleti.studioDentistico.oggetti.Intervento;
 import eserciziCompleti.studioDentistico.oggetti.Paziente;
 

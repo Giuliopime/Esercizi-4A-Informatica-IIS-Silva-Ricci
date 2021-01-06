@@ -1,33 +1,26 @@
-package eserciziCompleti.studioDentistico.grafica.dialogs;
+package eserciziCompleti.studioDentistico.grafica.dialogs.fatture;
 
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.grafica.Colori;
-import eserciziCompleti.studioDentistico.oggetti.FiltriPaziente;
+import eserciziCompleti.studioDentistico.oggetti.FiltriFattura;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class DialogFiltriPazienti extends JDialog {
+public class DialogFiltriFatture extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JCheckBox cbNome;
-    private JCheckBox cbLuogoNascita;
-    private JCheckBox cbResidenza;
-    private JCheckBox cbSesso;
-    private JCheckBox cbNumTel;
-    private JCheckBox cbDataNascita;
-    private JCheckBox cbOccup;
-    private JCheckBox cbProv;
-    private JCheckBox cbCodFis;
-    private JCheckBox cbCognome;
     private JLabel labelErrore;
+    private JCheckBox cbData;
+    private JCheckBox cbIntervento;
+    private JCheckBox cbPaziente;
 
-    private FiltriPaziente filtriPaziente;
+    private FiltriFattura filtriFattura;
 
-    public DialogFiltriPazienti(FiltriPaziente filtriPaziente) {
-        setTitle("Filtri Pazienti");
+    public DialogFiltriFatture(FiltriFattura filtriFattura) {
+        setTitle("Filtri Fatture");
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -35,10 +28,10 @@ public class DialogFiltriPazienti extends JDialog {
         initListeners();
         initGrafica();
 
-        this.filtriPaziente = filtriPaziente;
+        this.filtriFattura = filtriFattura;
         caricaFiltri();
 
-        setMinimumSize(new Dimension(500, 200));
+        setMinimumSize(new Dimension(450, 120));
         pack();
         setResizable(false);
         setLocationRelativeTo(GestoreGrafica.getInstance().getFrame());
@@ -46,8 +39,8 @@ public class DialogFiltriPazienti extends JDialog {
     }
 
     private void onOK() {
-        filtriPaziente = new FiltriPaziente(cbNome.isSelected(), cbCognome.isSelected(), cbLuogoNascita.isSelected(), cbCodFis.isSelected(), cbResidenza.isSelected(), cbProv.isSelected(), cbSesso.isSelected(), cbOccup.isSelected(), cbNumTel.isSelected(), cbDataNascita.isSelected());
-        if (filtriPaziente.tuttiFalsi()) {
+        filtriFattura = new FiltriFattura(cbData.isSelected(), cbPaziente.isSelected(), cbIntervento.isSelected());
+        if (filtriFattura.tuttiFalsi()) {
             labelErrore.setIcon(new ImageIcon(getClass().getResource("/studioDentistico/errorIcon.png")));
             labelErrore.setText("Selezionare almeno un campo");
         } else
@@ -55,25 +48,18 @@ public class DialogFiltriPazienti extends JDialog {
     }
 
     private void onCancel() {
-        filtriPaziente = null;
+        filtriFattura = null;
         dispose();
     }
 
-    public FiltriPaziente getFiltri() {
-        return filtriPaziente;
+    public FiltriFattura getFiltri() {
+        return filtriFattura;
     }
 
     private void caricaFiltri() {
-        cbNome.setSelected(filtriPaziente.isNome());
-        cbCognome.setSelected(filtriPaziente.isCognome());
-        cbLuogoNascita.setSelected(filtriPaziente.isLuogoDiNascita());
-        cbCodFis.setSelected(filtriPaziente.isCodiceFiscale());
-        cbResidenza.setSelected(filtriPaziente.isResidenza());
-        cbProv.setSelected(filtriPaziente.isProvincia());
-        cbSesso.setSelected(filtriPaziente.isSesso());
-        cbOccup.setSelected(filtriPaziente.isOccupazione());
-        cbNumTel.setSelected(filtriPaziente.isNumTelefonico());
-        cbDataNascita.setSelected(filtriPaziente.isDataDiNascita());
+        cbData.setSelected(filtriFattura.isData());
+        cbPaziente.setSelected(filtriFattura.isPaziente());
+        cbIntervento.setSelected(filtriFattura.isIntervento());
     }
 
     private void initListeners() {

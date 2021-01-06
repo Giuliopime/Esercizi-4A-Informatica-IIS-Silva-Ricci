@@ -1,69 +1,76 @@
-package eserciziCompleti.studioDentistico.grafica.dialogs;
+package eserciziCompleti.studioDentistico.grafica.dialogs.pazienti;
 
+import eserciziCompleti.studioDentistico.enums.OrdinamentoPazienti;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.grafica.Colori;
-import eserciziCompleti.studioDentistico.oggetti.FiltriIntervento;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class DialogFiltriInterventi extends JDialog {
+public class DialogOrdinaPazienti extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
     private JLabel labelErrore;
-    private JCheckBox cbTipoIntervento;
-    private JCheckBox cbCosto;
-    private JCheckBox cbPaziente;
-    private JCheckBox cbTempo;
-    private JCheckBox cbDataIntervento;
+    private JRadioButton rbDataNascita;
+    private JRadioButton rbCognome;
+    private JRadioButton rbNome;
+    private JRadioButton rbDataModifica;
+    private JRadioButton rbNessuno;
+    private JRadioButton rbDataCreazione;
 
-    private FiltriIntervento filtriIntervento;
+    private OrdinamentoPazienti ordinamentoPazienti;
 
-    public DialogFiltriInterventi(FiltriIntervento filtriIntervento) {
-        setTitle("Filtri Interventi");
+    public DialogOrdinaPazienti(OrdinamentoPazienti ordinamentoPazienti) {
+        this.ordinamentoPazienti = ordinamentoPazienti;
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
+        caricaOrdinamento();
         initListeners();
         initGrafica();
 
-        this.filtriIntervento = filtriIntervento;
-        caricaFiltri();
 
-        setMinimumSize(new Dimension(450, 120));
         pack();
         setResizable(false);
         setLocationRelativeTo(GestoreGrafica.getInstance().getFrame());
         setVisible(true);
     }
 
-    private void onOK() {
-        filtriIntervento = new FiltriIntervento(cbTipoIntervento.isSelected(), cbCosto.isSelected(), cbTempo.isSelected(), cbPaziente.isSelected(), cbDataIntervento.isSelected());
-        if (filtriIntervento.tuttiFalsi()) {
-            labelErrore.setIcon(new ImageIcon(getClass().getResource("/studioDentistico/errorIcon.png")));
-            labelErrore.setText("Selezionare almeno un campo");
-        } else
-            dispose();
+    private void caricaOrdinamento() {
+        if (ordinamentoPazienti == null)
+            rbNessuno.setSelected(true);
+
+        else {
+            switch (ordinamentoPazienti) {
+                case NOME -> rbNome.setSelected(true);
+                case COGNOME -> rbCognome.setSelected(true);
+                case DATACREAZIONE -> rbDataCreazione.setSelected(true);
+                case DATAULTIMAMODIFICA -> rbDataModifica.setSelected(true);
+                case DATANASCITA -> rbDataNascita.setSelected(true);
+                default -> rbNessuno.setSelected(true);
+            }
+        }
     }
 
-    private void onCancel() {
-        filtriIntervento = null;
+    private void onOK() {
+        ordinamentoPazienti = rbDataCreazione.isSelected() ? OrdinamentoPazienti.DATACREAZIONE :
+                rbDataModifica.isSelected() ? OrdinamentoPazienti.DATAULTIMAMODIFICA :
+                        rbNome.isSelected() ? OrdinamentoPazienti.NOME :
+                                rbCognome.isSelected() ? OrdinamentoPazienti.COGNOME :
+                                        rbDataNascita.isSelected() ? OrdinamentoPazienti.DATANASCITA :
+                                                null;
         dispose();
     }
 
-    public FiltriIntervento getFiltri() {
-        return filtriIntervento;
+    private void onCancel() {
+        dispose();
     }
 
-    private void caricaFiltri() {
-        cbTipoIntervento.setSelected(filtriIntervento.isTipo());
-        cbPaziente.setSelected(filtriIntervento.isPaziente());
-        cbCosto.setSelected(filtriIntervento.isCosto());
-        cbTempo.setSelected(filtriIntervento.isTempo());
-        cbDataIntervento.setSelected(filtriIntervento.isData());
+    public OrdinamentoPazienti getOrdinamentoPazienti() {
+        return ordinamentoPazienti;
     }
 
     private void initListeners() {

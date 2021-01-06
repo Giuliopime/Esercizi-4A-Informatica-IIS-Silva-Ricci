@@ -1,70 +1,79 @@
-package eserciziCompleti.studioDentistico.grafica.dialogs;
+package eserciziCompleti.studioDentistico.grafica.dialogs.pazienti;
 
-import eserciziCompleti.studioDentistico.enums.OrdinamentoFatture;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.grafica.Colori;
+import eserciziCompleti.studioDentistico.oggetti.FiltriPaziente;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class DialogOrdinaFatture extends JDialog {
+public class DialogFiltriPazienti extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
+    private JCheckBox cbNome;
+    private JCheckBox cbLuogoNascita;
+    private JCheckBox cbResidenza;
+    private JCheckBox cbSesso;
+    private JCheckBox cbNumTel;
+    private JCheckBox cbDataNascita;
+    private JCheckBox cbOccup;
+    private JCheckBox cbProv;
+    private JCheckBox cbCodFis;
+    private JCheckBox cbCognome;
     private JLabel labelErrore;
-    private JRadioButton rbData;
-    private JRadioButton rbPaziente;
-    private JRadioButton rbIntervento;
-    private JRadioButton rbNessuno;
 
-    private OrdinamentoFatture ordinamentoFatture;
+    private FiltriPaziente filtriPaziente;
 
-    public DialogOrdinaFatture(OrdinamentoFatture ordinamentoFatture) {
-        this.ordinamentoFatture = ordinamentoFatture;
+    public DialogFiltriPazienti(FiltriPaziente filtriPaziente) {
+        setTitle("Filtri Pazienti");
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
-        caricaOrdinamento();
         initListeners();
         initGrafica();
 
+        this.filtriPaziente = filtriPaziente;
+        caricaFiltri();
 
+        setMinimumSize(new Dimension(500, 200));
         pack();
         setResizable(false);
         setLocationRelativeTo(GestoreGrafica.getInstance().getFrame());
         setVisible(true);
     }
 
-    private void caricaOrdinamento() {
-        if (ordinamentoFatture == null)
-            rbNessuno.setSelected(true);
-
-        else {
-            switch (ordinamentoFatture) {
-                case PAZIENTE -> rbPaziente.setSelected(true);
-                case INTERVENTO -> rbIntervento.setSelected(true);
-                case DATA -> rbData.setSelected(true);
-                default -> rbNessuno.setSelected(true);
-            }
-        }
-    }
-
     private void onOK() {
-        ordinamentoFatture = rbData.isSelected() ? OrdinamentoFatture.DATA :
-                rbPaziente.isSelected() ? OrdinamentoFatture.PAZIENTE :
-                        rbIntervento.isSelected() ? OrdinamentoFatture.INTERVENTO :
-                                null;
-        dispose();
+        filtriPaziente = new FiltriPaziente(cbNome.isSelected(), cbCognome.isSelected(), cbLuogoNascita.isSelected(), cbCodFis.isSelected(), cbResidenza.isSelected(), cbProv.isSelected(), cbSesso.isSelected(), cbOccup.isSelected(), cbNumTel.isSelected(), cbDataNascita.isSelected());
+        if (filtriPaziente.tuttiFalsi()) {
+            labelErrore.setIcon(new ImageIcon(getClass().getResource("/studioDentistico/errorIcon.png")));
+            labelErrore.setText("Selezionare almeno un campo");
+        } else
+            dispose();
     }
 
     private void onCancel() {
+        filtriPaziente = null;
         dispose();
     }
 
-    public OrdinamentoFatture getOrdinamentoFatture() {
-        return ordinamentoFatture;
+    public FiltriPaziente getFiltri() {
+        return filtriPaziente;
+    }
+
+    private void caricaFiltri() {
+        cbNome.setSelected(filtriPaziente.isNome());
+        cbCognome.setSelected(filtriPaziente.isCognome());
+        cbLuogoNascita.setSelected(filtriPaziente.isLuogoDiNascita());
+        cbCodFis.setSelected(filtriPaziente.isCodiceFiscale());
+        cbResidenza.setSelected(filtriPaziente.isResidenza());
+        cbProv.setSelected(filtriPaziente.isProvincia());
+        cbSesso.setSelected(filtriPaziente.isSesso());
+        cbOccup.setSelected(filtriPaziente.isOccupazione());
+        cbNumTel.setSelected(filtriPaziente.isNumTelefonico());
+        cbDataNascita.setSelected(filtriPaziente.isDataDiNascita());
     }
 
     private void initListeners() {

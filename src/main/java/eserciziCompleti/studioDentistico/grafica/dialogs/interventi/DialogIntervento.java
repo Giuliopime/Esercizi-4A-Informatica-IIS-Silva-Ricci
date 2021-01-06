@@ -1,10 +1,11 @@
-package eserciziCompleti.studioDentistico.grafica.dialogs;
+package eserciziCompleti.studioDentistico.grafica.dialogs.interventi;
 
 import eserciziCompleti.studioDentistico.enums.AzioneDialog;
 import eserciziCompleti.studioDentistico.enums.TipoIntervento;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.gestori.GestorePazienti;
 import eserciziCompleti.studioDentistico.grafica.Colori;
+import eserciziCompleti.studioDentistico.grafica.dialogs.ConfermaUscita;
 import eserciziCompleti.studioDentistico.oggetti.Intervento;
 import eserciziCompleti.studioDentistico.oggetti.Paziente;
 
