@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="eserciziCompleti.studioDentistico.grafica.panelsComponenti.PanelPaziente">
+  <grid id="27dc6" binding="panelPaziente" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties>
+      <background color="-1052173"/>
+      <foreground color="-15919071"/>
+      <maximumSize width="170" height="170"/>
+      <minimumSize width="170" height="170"/>
+      <preferredSize width="170" height="170"/>
+    </properties>
+    <border type="none" title-justification="2">
+      <font name="Heiti SC" size="16" style="1"/>
+      <title-color color="-15919071"/>
+      <color color="-36193"/>
+    </border>
+    <children>
+      <grid id="9487c" binding="pannelloTesto" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="-1" height="40"/>
+            <preferred-size width="-1" height="40"/>
+            <maximum-size width="-1" height="40"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-36193"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="48d08" class="javax.swing.JLabel" binding="labelNome">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Heiti SC" size="20" style="1"/>
+              <foreground color="-985873"/>
+              <text value="Nome Cognome"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="f808" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1052173"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="2feec" class="javax.swing.JLabel" binding="immagine">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <icon value="studioDentistico/womanIcon.png"/>
+              <text value=""/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

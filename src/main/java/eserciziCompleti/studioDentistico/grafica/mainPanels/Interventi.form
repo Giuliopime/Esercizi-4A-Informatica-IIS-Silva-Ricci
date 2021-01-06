@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="eserciziCompleti.studioDentistico.grafica.mainPanels.Interventi">
+  <grid id="27dc6" binding="pannelloInterventi" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="800" height="418"/>
+    </constraints>
+    <properties>
+      <background color="-13350554"/>
+      <enabled value="false"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="256b0" binding="pannelloNavBar" layout-manager="GridLayoutManager" row-count="1" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="10" left="20" bottom="10" right="20"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-15919071"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="73c26" class="javax.swing.JLabel" binding="logo">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <font name="Kokonor" size="24" style="1"/>
+              <foreground color="-985873"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="11"/>
+              <icon value="studioDentistico/logoDentista.png"/>
+              <text value="Studio Dentistico "/>
+            </properties>
+          </component>
+          <component id="e5204" class="javax.swing.JButton" binding="btnPazienti">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="130" height="-1"/>
+                <preferred-size width="130" height="-1"/>
+                <maximum-size width="130" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14503271"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <enabled value="true"/>
+              <focusPainted value="false"/>
+              <focusable value="false"/>
+              <font size="16" style="1"/>
+              <foreground color="-15919071"/>
+              <hideActionText value="false"/>
+              <horizontalAlignment value="0"/>
+              <inheritsPopupMenu value="false"/>
+              <label value="Pazienti"/>
+              <opaque value="true"/>
+              <requestFocusEnabled value="true"/>
+              <rolloverEnabled value="false"/>
+              <selected value="false"/>
+              <text value="Pazienti"/>
+              <visible value="true"/>
+            </properties>
+          </component>
+          <hspacer id="e2ae0">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <component id="b8ee7" class="javax.swing.JButton" binding="btnInterventi">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false">
+                <minimum-size width="140" height="-1"/>
+                <preferred-size width="140" height="-1"/>
+                <maximum-size width="140" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14503271"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <enabled value="true"/>
+              <focusPainted value="false"/>
+              <focusable value="false"/>
+              <font size="16" style="1"/>
+              <foreground color="-15919071"/>
+              <hideActionText value="false"/>
+              <horizontalAlignment value="0"/>
+              <inheritsPopupMenu value="false"/>
+              <label value="Interventi"/>
+              <opaque value="true"/>
+              <requestFocusEnabled value="true"/>
+              <rolloverEnabled value="false"/>
+              <selected value="false"/>
+              <text value="Interventi"/>
+              <visible value="true"/>
+            </properties>
+          </component>
+          <component id="c4cb8" class="javax.swing.JButton" binding="btnFatture">
+            <constraints>
+              <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false">
+                <minimum-size width="130" height="-1"/>
+                <preferred-size width="130" height="-1"/>
+                <maximum-size width="130" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-14503271"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <enabled value="true"/>
+              <focusPainted value="false"/>
+              <focusable value="false"/>
+              <font size="16" style="1"/>
+              <foreground color="-15919071"/>
+              <hideActionText value="false"/>
+              <horizontalAlignment value="0"/>
+              <inheritsPopupMenu value="false"/>
+              <label value="Fatture"/>
+              <opaque value="true"/>
+              <requestFocusEnabled value="true"/>
+              <rolloverEnabled value="false"/>
+              <selected value="false"/>
+              <text value="Fatture"/>
+              <visible value="true"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="73ea4" layout-manager="GridLayoutManager" row-count="1" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="5" left="10" bottom="5" right="10"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-13350554"/>
+          <doubleBuffered value="true"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="5e1ee" class="javax.swing.JTextField" binding="inputRicerca">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="1" use-parent-layout="false">
+                <minimum-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-919570"/>
+            </properties>
+          </component>
+          <hspacer id="610af">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <hspacer id="a2fff">
+            <constraints>
+              <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <component id="42b09" class="javax.swing.JButton" binding="filtriButton" default-binding="true">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-919570"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <focusPainted value="true"/>
+              <focusable value="true"/>
+              <font style="1"/>
+              <opaque value="true"/>
+              <text value="Filtri"/>
+            </properties>
+          </component>
+          <component id="a5034" class="javax.swing.JButton" binding="btnOrdina">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-919570"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <focusPainted value="true"/>
+              <focusable value="true"/>
+              <font style="1"/>
+              <opaque value="true"/>
+              <text value="Ordina per"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <scrollpane id="ae76" binding="scrollPaneInterventi">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-13350554"/>
+          <horizontalScrollBarPolicy value="31"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="540ee" binding="listaInterventi" custom-create="true" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints/>
+            <properties>
+              <background color="-13350554"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+        </children>
+      </scrollpane>
+    </children>
+  </grid>
+</form>
