@@ -4,13 +4,13 @@
 Il progetto utilizza gradle per gestire alcune librerie esterne.  
 
 Gradle presenta dei problemi nei progetti contenenti GUI form di IntelliJ.  
-**Per fare in modo che gli esercizi funzionino correttamente (su IntelliJ) segui i seguenti passaggi:**  
+**Per fare in modo che gli esercizi funzionino correttamente (su IntelliJ) seguire i seguenti passaggi:**  
 - Impostazioni di IntelliJ
 - Editor
 - GUI Designer
 - Selezionare "Generate GUI into: Binary class files"  
 
-inoltre seguire anche i seguenti passaggi  
+seguire anche i seguenti passaggi  
 
 - Impostazioni di IntelliJ
 - Build, Execution, Deployment
