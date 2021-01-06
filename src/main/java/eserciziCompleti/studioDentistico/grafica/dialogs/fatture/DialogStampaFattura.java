@@ -185,7 +185,7 @@ public class DialogStampaFattura extends JDialog {
             }
 
             chunk4.addCell("Totale Fattura");
-            chunk4.addCell("" + (costoInterventi + (costoInterventi / 100 * 22)));
+            chunk4.addCell("" + (costoInterventi + (cbIVA.isSelected() ? (costoInterventi / 100 * 22) : 0)));
 
             document.add(chunk4);
             document.close();
