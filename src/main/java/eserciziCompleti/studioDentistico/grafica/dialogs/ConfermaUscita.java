@@ -1,17 +1,11 @@
 package eserciziCompleti.studioDentistico.grafica.dialogs;
 
-import com.intellij.uiDesigner.core.GridConstraints;
-import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.intellij.uiDesigner.core.Spacer;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.grafica.Colori;
 
 import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
-import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Locale;
 
 public class ConfermaUscita extends JDialog {
     private JPanel contentPane;

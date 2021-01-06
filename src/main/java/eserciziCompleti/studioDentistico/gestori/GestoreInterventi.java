@@ -43,7 +43,7 @@ public class GestoreInterventi {
     }
 
     public static GestoreInterventi getInstance() {
-        if(instance == null)
+        if (instance == null)
             instance = new GestoreInterventi();
 
         return instance;
@@ -55,7 +55,7 @@ public class GestoreInterventi {
 
         interventi = new ArrayList<>();
 
-        while(fis.available() > 0)
+        while (fis.available() > 0)
             interventi.add((Intervento) ois.readObject());
 
         ois.close();
@@ -67,7 +67,7 @@ public class GestoreInterventi {
             FileOutputStream fos = new FileOutputStream(GestoreGrafica.pathFileDat + nomeFile);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-            for (Intervento i: interventi)
+            for (Intervento i : interventi)
                 oos.writeObject(i);
 
             oos.close();
@@ -100,7 +100,7 @@ public class GestoreInterventi {
 
     public Intervento getIntervento(UUID idIntervento) {
         for (Intervento intervento : interventi) {
-            if(intervento.getIDIntervento().equals(idIntervento))
+            if (intervento.getIDIntervento().equals(idIntervento))
                 return intervento;
         }
 
@@ -110,10 +110,10 @@ public class GestoreInterventi {
     public ArrayList<Intervento> getInterventi() {
         ArrayList<Intervento> listaInterventi = interventi;
 
-        if(filtriIntervento != null && query != null)
+        if (filtriIntervento != null && query != null)
             listaInterventi = getInterventiFiltrati();
 
-        if(ordinamentoInterventi != null)
+        if (ordinamentoInterventi != null)
             ordinaInterventi(listaInterventi);
 
         return listaInterventi;
@@ -140,15 +140,15 @@ public class GestoreInterventi {
 
     private ArrayList<TipoQueryIntervento> creaArrayQueries() {
         ArrayList<TipoQueryIntervento> tipiQuery = new ArrayList<>();
-        if(filtriIntervento.isPaziente())
+        if (filtriIntervento.isPaziente())
             tipiQuery.add(TipoQueryIntervento.Paziente);
-        if(filtriIntervento.isTipo())
+        if (filtriIntervento.isTipo())
             tipiQuery.add(TipoQueryIntervento.Tipo);
-        if(filtriIntervento.isCosto())
+        if (filtriIntervento.isCosto())
             tipiQuery.add(TipoQueryIntervento.Costo);
-        if(filtriIntervento.isTempo())
+        if (filtriIntervento.isTempo())
             tipiQuery.add(TipoQueryIntervento.Tempo);
-        if(filtriIntervento.isData())
+        if (filtriIntervento.isData())
             tipiQuery.add(TipoQueryIntervento.Data);
 
         return tipiQuery;
@@ -180,8 +180,8 @@ public class GestoreInterventi {
                 GestorePazienti gestorePazienti = GestorePazienti.getInstance();
                 gestorePazienti.filtriPaziente = new FiltriPaziente();
                 gestorePazienti.query = query;
-                for(Paziente paziente: gestorePazienti.getPazienti()) {
-                    if(paziente.getIDPaziente().equals(intervento.getIDPaziente()))
+                for (Paziente paziente : gestorePazienti.getPazienti()) {
+                    if (paziente.getIDPaziente().equals(intervento.getIDPaziente()))
                         return true;
                 }
 
@@ -201,8 +201,8 @@ public class GestoreInterventi {
                 GestorePazienti gestorePazienti = GestorePazienti.getInstance();
                 gestorePazienti.filtriPaziente = new FiltriPaziente();
                 gestorePazienti.query = query;
-                for(Paziente paziente: gestorePazienti.getPazienti()) {
-                    if(paziente.getIDPaziente().equals(intervento.getIDPaziente()))
+                for (Paziente paziente : gestorePazienti.getPazienti()) {
+                    if (paziente.getIDPaziente().equals(intervento.getIDPaziente()))
                         accetta = true;
                 }
 
@@ -220,10 +220,10 @@ public class GestoreInterventi {
             case TEMPO -> listaInterventi.sort(Comparator.comparing(Intervento::getTempoMedio));
             case DATACREAZIONE -> listaInterventi.sort(Comparator.comparing(Intervento::getDataCreazione));
             case DATAULTIMAMODIFICA -> listaInterventi.sort(Comparator.comparing(Intervento::getUltimaModifica));
-            case PAZIENTE ->  listaInterventi.sort(Comparator.comparing(intervento -> GestorePazienti.getInstance().getPazienti().indexOf(GestorePazienti.getInstance().getPaziente(intervento.getIDPaziente()))));
+            case PAZIENTE -> listaInterventi.sort(Comparator.comparing(intervento -> GestorePazienti.getInstance().getPazienti().indexOf(GestorePazienti.getInstance().getPaziente(intervento.getIDPaziente()))));
         }
 
-        if(ordinamentoInterventi.equals(OrdinamentoInterventi.COSTO) || ordinamentoInterventi.equals(OrdinamentoInterventi.TEMPO) || ordinamentoInterventi.equals(OrdinamentoInterventi.DATACREAZIONE) || ordinamentoInterventi.equals(OrdinamentoInterventi.DATAULTIMAMODIFICA))
+        if (ordinamentoInterventi.equals(OrdinamentoInterventi.COSTO) || ordinamentoInterventi.equals(OrdinamentoInterventi.TEMPO) || ordinamentoInterventi.equals(OrdinamentoInterventi.DATACREAZIONE) || ordinamentoInterventi.equals(OrdinamentoInterventi.DATAULTIMAMODIFICA))
             Collections.reverse(listaInterventi);
     }
 }

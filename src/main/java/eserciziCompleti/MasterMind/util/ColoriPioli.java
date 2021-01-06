@@ -17,7 +17,7 @@ public class ColoriPioli {
             verde = Color.decode("#6AD5A6"),
             giallo = Color.decode("#FEFE08"),
             blu = Color.decode("#3333FF"),
-            viola =  Color.decode("#9900FF");
+            viola = Color.decode("#9900FF");
 
     private static final Color[] colori = new Color[]{
             rosso,

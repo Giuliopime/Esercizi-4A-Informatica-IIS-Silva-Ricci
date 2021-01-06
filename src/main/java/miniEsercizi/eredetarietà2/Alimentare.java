@@ -2,7 +2,7 @@ package miniEsercizi.eredetarietà2;
 
 import java.util.Date;
 
-public class Alimentare extends Prodotto{
+public class Alimentare extends Prodotto {
     private Date scadenza;
 
     public Alimentare(int codice, String descrizione, double prezzo, Date scadenza) {
@@ -19,6 +19,6 @@ public class Alimentare extends Prodotto{
     }
 
     public String toString() {
-        return super.toString() + ", scadenza: "+scadenza;
+        return super.toString() + ", scadenza: " + scadenza;
     }
 }

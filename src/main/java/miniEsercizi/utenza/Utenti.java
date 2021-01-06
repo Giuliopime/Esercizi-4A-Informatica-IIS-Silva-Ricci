@@ -23,7 +23,7 @@ public class Utenti {
 
         Iterator<Utenza> iter = utenti.iterator();
 
-        while(iter.hasNext()) {
+        while (iter.hasNext()) {
             consumoTot += iter.next().getConsumo(metroCubo);
         }
 
@@ -35,7 +35,7 @@ public class Utenti {
 
         HashMap<String, Double> listaConsumi = new HashMap<>();
 
-        while(iter.hasNext()) {
+        while (iter.hasNext()) {
             Utenza utente = iter.next();
 
             listaConsumi.put(utente.getCodiceUtente(), utente.getConsumo(metroCubo));

@@ -15,20 +15,20 @@ public class Intervento implements Serializable {
     private long dataCreazione, ultimaModifica;
 
     public Intervento(TipoIntervento tipoIntervento, Double costo, Long tempoMedio, UUID IDPaziente) {
-        if(tipoIntervento == null)
+        if (tipoIntervento == null)
             throw new IllegalArgumentException("È necessario fornire il tipo di intervento");
-        if(costo == null)
+        if (costo == null)
             throw new IllegalArgumentException("È necessario fornire il costo dell'intervento");
-        if(tempoMedio == null)
+        if (tempoMedio == null)
             throw new IllegalArgumentException("È necessario fornire la durata dell'intervento");
 
         this.tipoIntervento = tipoIntervento;
 
-        if(costo<0)
+        if (costo < 0)
             throw new IllegalArgumentException("Il costo dell'intervento non può essere negativo");
         this.costo = costo;
 
-        if(tempoMedio <= 0)
+        if (tempoMedio <= 0)
             throw new IllegalArgumentException("Il tempo medio dell'intervento deve essere maggiore di 0");
         this.tempoMedio = tempoMedio;
 

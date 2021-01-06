@@ -1,4 +1,5 @@
 package miniEsercizi.Vettori;
+
 /*
 Scrivere la classe libro di variabili:
 - Titolo

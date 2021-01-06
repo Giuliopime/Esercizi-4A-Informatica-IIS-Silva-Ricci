@@ -6,7 +6,7 @@ public class Prodotto {
 
     public Prodotto(String nome, int quant) {
         this.nome = nome;
-        if(quant < 0) throw new IllegalArgumentException("La quantità non può essere minore di 0");
+        if (quant < 0) throw new IllegalArgumentException("La quantità non può essere minore di 0");
         this.quant = quant;
     }
 

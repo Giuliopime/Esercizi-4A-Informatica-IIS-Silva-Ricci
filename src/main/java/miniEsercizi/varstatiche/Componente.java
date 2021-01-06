@@ -15,7 +15,7 @@ public class Componente {
     }
 
     public void prendiSoldi(double soldi) {
-        if(Componente.portafoglio - soldi > 0)
+        if (Componente.portafoglio - soldi > 0)
             Componente.portafoglio -= soldi;
         else
             Componente.portafoglio = 0;

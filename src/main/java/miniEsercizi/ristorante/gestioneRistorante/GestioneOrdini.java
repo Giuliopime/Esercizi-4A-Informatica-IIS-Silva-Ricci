@@ -10,10 +10,11 @@ public class GestioneOrdini {
     private List<Ordine> ordinazioni;
     private List<Ordine> ordiniCompletati;
 
-    private GestioneOrdini() {}
+    private GestioneOrdini() {
+    }
 
     public static GestioneOrdini getInstance() {
-        if(instance == null) instance = new GestioneOrdini();
+        if (instance == null) instance = new GestioneOrdini();
         return instance;
     }
 
@@ -24,8 +25,8 @@ public class GestioneOrdini {
     }
 
     public void completaOrdine(int numTav) {
-        for(Ordine ord: ordinazioni) {
-            if(ord.getNumTavolo() == numTav) {
+        for (Ordine ord : ordinazioni) {
+            if (ord.getNumTavolo() == numTav) {
                 ordiniCompletati.add(ord);
                 ordinazioni.remove(ord);
                 break;

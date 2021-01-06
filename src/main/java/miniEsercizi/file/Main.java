@@ -23,7 +23,7 @@ public class Main {
             fw.write(testo);
             fw.close();
         } catch (Exception e) {
-            System.out.println("Errore:" +e);
+            System.out.println("Errore:" + e);
         }
 
         // Lettura di un java.file
@@ -31,14 +31,14 @@ public class Main {
             FileReader fr = new FileReader("Test_file.txt");
             StringBuilder risultato = new StringBuilder();
             int cIndex = fr.read();
-            while(cIndex > -1) {
+            while (cIndex > -1) {
                 risultato.append((char) cIndex);
                 cIndex = fr.read();
             }
 
             System.out.println(risultato);
         } catch (Exception e) {
-            System.out.println("Errore:" +e);
+            System.out.println("Errore:" + e);
         }
     }
 }

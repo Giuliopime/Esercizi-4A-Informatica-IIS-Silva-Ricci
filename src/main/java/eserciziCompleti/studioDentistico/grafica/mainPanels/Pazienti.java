@@ -1,8 +1,5 @@
 package eserciziCompleti.studioDentistico.grafica.mainPanels;
 
-import com.intellij.uiDesigner.core.GridConstraints;
-import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.intellij.uiDesigner.core.Spacer;
 import eserciziCompleti.studioDentistico.enums.TipoPanel;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.gestori.GestoreImpostazioni;
@@ -20,15 +17,12 @@ import eserciziCompleti.studioDentistico.oggetti.Paziente;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import javax.swing.plaf.FontUIResource;
-import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class Pazienti implements FocusListener {
     private JTextField inputRicerca;

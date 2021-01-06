@@ -67,7 +67,7 @@ public class Impostazioni extends JFrame {
         sliderTentativi.setPreferredSize(new java.awt.Dimension(200, 15));
         sliderTentativi.setSize(new java.awt.Dimension(200, 15));
 
-        comboBoxDiffic.setModel(new DefaultComboBoxModel<>(new String[] { "Facile", "Normale", "Difficile", "Hardcore" }));
+        comboBoxDiffic.setModel(new DefaultComboBoxModel<>(new String[]{"Facile", "Normale", "Difficile", "Hardcore"}));
         comboBoxDiffic.setSelectedIndex(1);
 
         guidaDifficBtn.setText("?");
@@ -75,62 +75,62 @@ public class Impostazioni extends JFrame {
         GroupLayout pannelloLayout = new GroupLayout(pannello);
         pannello.setLayout(pannelloLayout);
         pannelloLayout.setHorizontalGroup(
-            pannelloLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(titoloImpostazioni, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(pannelloLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addGroup(pannelloLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                    .addComponent(salvaBtn, GroupLayout.PREFERRED_SIZE, 251, GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pannelloLayout.createSequentialGroup()
-                        .addComponent(siglaUsername)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textFieldUsername, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(76, Short.MAX_VALUE))
-            .addGroup(GroupLayout.Alignment.TRAILING, pannelloLayout.createSequentialGroup()
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pannelloLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                    .addComponent(siglaDiffic)
-                    .addComponent(siglaTentativi))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pannelloLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(sliderTentativi, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pannelloLayout.createSequentialGroup()
-                        .addComponent(comboBoxDiffic, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(guidaDifficBtn)))
-                .addGap(26, 26, 26))
+                pannelloLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(titoloImpostazioni, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pannelloLayout.createSequentialGroup()
+                                .addGap(84, 84, 84)
+                                .addGroup(pannelloLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                        .addComponent(salvaBtn, GroupLayout.PREFERRED_SIZE, 251, GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(pannelloLayout.createSequentialGroup()
+                                                .addComponent(siglaUsername)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(textFieldUsername, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(76, Short.MAX_VALUE))
+                        .addGroup(GroupLayout.Alignment.TRAILING, pannelloLayout.createSequentialGroup()
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(pannelloLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                        .addComponent(siglaDiffic)
+                                        .addComponent(siglaTentativi))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pannelloLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addComponent(sliderTentativi, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(pannelloLayout.createSequentialGroup()
+                                                .addComponent(comboBoxDiffic, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(guidaDifficBtn)))
+                                .addGap(26, 26, 26))
         );
         pannelloLayout.setVerticalGroup(
-            pannelloLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannelloLayout.createSequentialGroup()
-                .addComponent(titoloImpostazioni, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addGroup(pannelloLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(siglaUsername)
-                    .addComponent(textFieldUsername, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addGroup(pannelloLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(siglaTentativi)
-                    .addComponent(sliderTentativi, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addGroup(pannelloLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(siglaDiffic)
-                    .addComponent(comboBoxDiffic, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(guidaDifficBtn))
-                .addGap(28, 28, 28)
-                .addComponent(salvaBtn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
+                pannelloLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannelloLayout.createSequentialGroup()
+                                .addComponent(titoloImpostazioni, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                .addGap(47, 47, 47)
+                                .addGroup(pannelloLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(siglaUsername)
+                                        .addComponent(textFieldUsername, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                                .addGroup(pannelloLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(siglaTentativi)
+                                        .addComponent(sliderTentativi, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                                .addGroup(pannelloLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(siglaDiffic)
+                                        .addComponent(comboBoxDiffic, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(guidaDifficBtn))
+                                .addGap(28, 28, 28)
+                                .addComponent(salvaBtn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35))
         );
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(pannello, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(pannello, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(pannello, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(pannello, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

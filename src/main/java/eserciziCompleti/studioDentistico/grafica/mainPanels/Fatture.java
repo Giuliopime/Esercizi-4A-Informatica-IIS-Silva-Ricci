@@ -1,8 +1,5 @@
 package eserciziCompleti.studioDentistico.grafica.mainPanels;
 
-import com.intellij.uiDesigner.core.GridConstraints;
-import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.intellij.uiDesigner.core.Spacer;
 import eserciziCompleti.studioDentistico.enums.AzioneDialog;
 import eserciziCompleti.studioDentistico.enums.TipoPanel;
 import eserciziCompleti.studioDentistico.gestori.*;
@@ -21,7 +18,6 @@ import eserciziCompleti.studioDentistico.oggetti.Paziente;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import javax.swing.plaf.FontUIResource;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -104,7 +100,7 @@ public class Fatture implements FocusListener {
         });
 
         btnNuovaFattura.addActionListener(e -> {
-            if(GestorePazienti.getInstance().getPazienti().size() == 0) {
+            if (GestorePazienti.getInstance().getPazienti().size() == 0) {
                 new DialogNessunPaziente();
                 return;
             }

@@ -13,38 +13,40 @@ import javax.swing.*;
 
 public class Gioco {
     public static void main(String[] args) {
-        int turni = 0, p1=0, p2=0;
-        String giocatore1="", giocatore2="";
+        int turni = 0, p1 = 0, p2 = 0;
+        String giocatore1 = "", giocatore2 = "";
         Mazzo mazzo = new Mazzo();
 
         do {
             try {
                 turni = Integer.parseInt(JOptionPane.showInputDialog(null, "Inserisci il numero di turni da giocare"));
-                if(turni<1) JOptionPane.showMessageDialog(null, "Inserisci un numero intero maggiore di 0");
-            } catch(Exception e) {
+                if (turni < 1) JOptionPane.showMessageDialog(null, "Inserisci un numero intero maggiore di 0");
+            } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Inserisci un numero intero maggiore di 0");
             }
-        } while(turni<1);
+        } while (turni < 1);
 
         do {
             try {
                 giocatore1 = JOptionPane.showInputDialog("Inserisci il nome del primo giocatore");
                 giocatore2 = JOptionPane.showInputDialog("Inserisci il nome del secondo giocatore");
-            } catch(Exception e) {
+            } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Inserisci il nome dei due giocatori");
             }
-        } while(giocatore1.isEmpty() || giocatore2.isEmpty());
+        } while (giocatore1.isEmpty() || giocatore2.isEmpty());
 
-        for(int i=0; i<turni; i++) {
+        for (int i = 0; i < turni; i++) {
             Carta cartaG1 = mazzo.pesca();
             Carta cartaG2 = mazzo.pesca();
 
             int vincitore = cartaG1.confronta(cartaG2);
 
             switch (vincitore) {
-                case 1: p1++;
+                case 1:
+                    p1++;
                     break;
-                case -1: p2++;
+                case -1:
+                    p2++;
                     break;
                 case 0: {
                     p1++;
@@ -55,11 +57,14 @@ public class Gioco {
 
         int vincitore = Integer.compare(p1, p2);
         switch (vincitore) {
-            case 1: System.out.println("Il vincitore è "+giocatore1+" con un punteggio di "+p1+" round vinti! Mentre "+giocatore2+" ha vinto "+p2+" round.");
+            case 1:
+                System.out.println("Il vincitore è " + giocatore1 + " con un punteggio di " + p1 + " round vinti! Mentre " + giocatore2 + " ha vinto " + p2 + " round.");
                 break;
-            case -1: System.out.println("Il vincitore è "+giocatore2+" con un punteggio di "+p2+" round vinti! Mentre "+giocatore1+" ha vinto "+p1+" round.");
+            case -1:
+                System.out.println("Il vincitore è " + giocatore2 + " con un punteggio di " + p2 + " round vinti! Mentre " + giocatore1 + " ha vinto " + p1 + " round.");
                 break;
-            case 0: System.out.println("Parità: entrambi i giocatori hanno vinto esattamente "+p1+" round!");
+            case 0:
+                System.out.println("Parità: entrambi i giocatori hanno vinto esattamente " + p1 + " round!");
         }
         System.out.println("Partita terminata");
         System.exit(0);

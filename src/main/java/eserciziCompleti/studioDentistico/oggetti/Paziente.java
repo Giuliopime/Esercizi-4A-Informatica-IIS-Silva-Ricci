@@ -11,27 +11,27 @@ public class Paziente implements Serializable {
     private UUID IDPaziente;
 
     public Paziente(String codiceFiscale, String nome, String cognome, String luogoNascita, String residenza, String provincia, String occupazione, String sesso, String numTelefono, Long dataNascita) {
-        if(codiceFiscale == null || codiceFiscale.isBlank())
+        if (codiceFiscale == null || codiceFiscale.isBlank())
             throw new IllegalArgumentException("È necessario fornire il codice fiscale del paziente");
-        if(nome == null || nome.isBlank())
+        if (nome == null || nome.isBlank())
             throw new IllegalArgumentException("È necessario fornire il nome del paziente");
-        if(cognome == null || cognome.isBlank())
+        if (cognome == null || cognome.isBlank())
             throw new IllegalArgumentException("È necessario fornire il cognome del paziente");
-        if(luogoNascita == null || luogoNascita.isBlank())
+        if (luogoNascita == null || luogoNascita.isBlank())
             throw new IllegalArgumentException("È necessario fornire il luogoNascita del paziente");
-        if(residenza == null || residenza.isBlank())
+        if (residenza == null || residenza.isBlank())
             throw new IllegalArgumentException("È necessario fornire la residenza del paziente");
-        if(provincia == null || provincia.isBlank())
+        if (provincia == null || provincia.isBlank())
             throw new IllegalArgumentException("È necessario fornire la provincia del paziente");
-        if(occupazione == null || occupazione.isBlank())
+        if (occupazione == null || occupazione.isBlank())
             throw new IllegalArgumentException("È necessario fornire l' occupazione del paziente");
-        if(sesso == null || sesso.isBlank())
+        if (sesso == null || sesso.isBlank())
             throw new IllegalArgumentException("È necessario fornire il sesso del paziente");
-        if(numTelefono == null || numTelefono.isBlank())
+        if (numTelefono == null || numTelefono.isBlank())
             throw new IllegalArgumentException("È necessario fornire il numero di telefono del paziente");
-        if(!numTelefono.matches("\\+?\\d+"))
+        if (!numTelefono.matches("\\+?\\d+"))
             throw new IllegalArgumentException("Il numero di telefono deve contenere solo numeri");
-        if(dataNascita == null)
+        if (dataNascita == null)
             throw new IllegalArgumentException("È necessario fornire la data di nascita del paziente");
 
         this.codiceFiscale = codiceFiscale;
@@ -42,7 +42,7 @@ public class Paziente implements Serializable {
         this.provincia = provincia;
         this.occupazione = occupazione;
         this.sesso = sesso;
-        if(System.currentTimeMillis() < dataNascita)
+        if (System.currentTimeMillis() < dataNascita)
             throw new IllegalArgumentException("La data di nascita non può essere nel futuro");
         this.dataNascita = dataNascita;
         this.numTelefono = numTelefono;

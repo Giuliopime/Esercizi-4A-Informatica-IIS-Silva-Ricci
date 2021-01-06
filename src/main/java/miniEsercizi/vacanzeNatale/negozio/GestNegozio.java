@@ -25,11 +25,11 @@ public class GestNegozio {
 
     public static void elencaPerCosto(double min, double max) {
         for (DVD dvd : dvds)
-            if(dvd.getCosto() > min && dvd.getCosto() < max)
+            if (dvd.getCosto() > min && dvd.getCosto() < max)
                 System.out.println(dvd);
 
         for (CD cd : cds)
-            if(cd.getCosto() > min && cd.getCosto() < max)
+            if (cd.getCosto() > min && cd.getCosto() < max)
                 System.out.println(cd);
     }
 

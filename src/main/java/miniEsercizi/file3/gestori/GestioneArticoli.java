@@ -36,22 +36,22 @@ public class GestioneArticoli {
     }
 
 
-    public static void caricaArticoliDaFile() throws IOException, ClassNotFoundException{
+    public static void caricaArticoliDaFile() throws IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream("articoli.dat");
         ObjectInputStream ois = new ObjectInputStream(fis);
         articoli = new ArrayList<>();
 
-        while(fis.available() > 0){
+        while (fis.available() > 0) {
             articoli.add((Articolo) ois.readObject());
         }
     }
 
 
-    private static void registraSuFile() throws IOException{
+    private static void registraSuFile() throws IOException {
         FileOutputStream fos = new FileOutputStream("articoli.dat");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-        for(Articolo a: articoli)
+        for (Articolo a : articoli)
             oos.writeObject(a);
 
         oos.close();
@@ -68,7 +68,7 @@ public class GestioneArticoli {
             try {
                 String scelte = "Dare in input il numero corrispondente al tipo di articolo, tra quelli elencati:";
                 int count = 1;
-                for(TipoArticolo ta: TipoArticolo.values()) {
+                for (TipoArticolo ta : TipoArticolo.values()) {
                     scelte += "\n" + count + " - " + ta.toString();
                     count++;
                 }
@@ -77,9 +77,9 @@ public class GestioneArticoli {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Inserire un numero intero per scegliere il tipo di articolo");
             }
-        } while(sceltaTipo == 0);
+        } while (sceltaTipo == 0);
 
-        TipoArticolo tipoArticolo = TipoArticolo.values()[sceltaTipo-1];
+        TipoArticolo tipoArticolo = TipoArticolo.values()[sceltaTipo - 1];
 
         double prezzo = -1;
         do {

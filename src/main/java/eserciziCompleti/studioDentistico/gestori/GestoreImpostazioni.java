@@ -10,7 +10,7 @@ public class GestoreImpostazioni {
     private Impostazioni impostazioni;
 
     public static GestoreImpostazioni getInstance() {
-        if(instance == null)
+        if (instance == null)
             instance = new GestoreImpostazioni();
 
         return instance;

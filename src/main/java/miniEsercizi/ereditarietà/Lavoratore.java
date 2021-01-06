@@ -1,6 +1,6 @@
 package miniEsercizi.ereditarietà;
 
-public class Lavoratore extends Persona{
+public class Lavoratore extends Persona {
     private String lavoro;
     private double stipendio;
 

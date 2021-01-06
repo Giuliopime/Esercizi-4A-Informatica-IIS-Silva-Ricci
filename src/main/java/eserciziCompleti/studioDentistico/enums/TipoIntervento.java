@@ -11,7 +11,7 @@ public enum TipoIntervento {
     }
 
     public static TipoIntervento[] getTipiIntervento() {
-        return new TipoIntervento[] {
+        return new TipoIntervento[]{
                 ESTRAZIONE, CARIE, PULIZIA, CONTROLLO, APPARECCHIO
         };
     }

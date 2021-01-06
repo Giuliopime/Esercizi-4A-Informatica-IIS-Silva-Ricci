@@ -1,8 +1,5 @@
 package eserciziCompleti.studioDentistico.grafica.dialogs;
 
-import com.intellij.uiDesigner.core.GridConstraints;
-import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.intellij.uiDesigner.core.Spacer;
 import eserciziCompleti.studioDentistico.enums.AzioneDialog;
 import eserciziCompleti.studioDentistico.enums.TipoIntervento;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
@@ -12,12 +9,13 @@ import eserciziCompleti.studioDentistico.oggetti.Intervento;
 import eserciziCompleti.studioDentistico.oggetti.Paziente;
 
 import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
-import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.awt.event.*;
 import java.text.DecimalFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 public class DialogIntervento extends JDialog {

@@ -62,21 +62,21 @@ public class Menu extends JFrame {
         GroupLayout panelBtnMenuLayout = new GroupLayout(panelBtnMenu);
         panelBtnMenu.setLayout(panelBtnMenuLayout);
         panelBtnMenuLayout.setHorizontalGroup(
-            panelBtnMenuLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(nuovaPartitaBtn, GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-            .addComponent(impostazioniBtn, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(esciBtn, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                panelBtnMenuLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(nuovaPartitaBtn, GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                        .addComponent(impostazioniBtn, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(esciBtn, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelBtnMenuLayout.setVerticalGroup(
-            panelBtnMenuLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panelBtnMenuLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(nuovaPartitaBtn, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(impostazioniBtn, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(esciBtn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(71, Short.MAX_VALUE))
+                panelBtnMenuLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panelBtnMenuLayout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addComponent(nuovaPartitaBtn, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)
+                                .addComponent(impostazioniBtn, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38)
+                                .addComponent(esciBtn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         footer.setHorizontalAlignment(SwingConstants.CENTER);
@@ -86,37 +86,37 @@ public class Menu extends JFrame {
         GroupLayout pannelloMenuLayout = new GroupLayout(pannelloMenu);
         pannelloMenu.setLayout(pannelloMenuLayout);
         pannelloMenuLayout.setHorizontalGroup(
-            pannelloMenuLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(GroupLayout.Alignment.TRAILING, pannelloMenuLayout.createSequentialGroup()
-                .addContainerGap(61, Short.MAX_VALUE)
-                .addComponent(panelBtnMenu, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(immagineMM)
-                .addGap(24, 24, 24))
-            .addComponent(titoloMM, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(footer, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                pannelloMenuLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(GroupLayout.Alignment.TRAILING, pannelloMenuLayout.createSequentialGroup()
+                                .addContainerGap(61, Short.MAX_VALUE)
+                                .addComponent(panelBtnMenu, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(immagineMM)
+                                .addGap(24, 24, 24))
+                        .addComponent(titoloMM, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(footer, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pannelloMenuLayout.setVerticalGroup(
-            pannelloMenuLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannelloMenuLayout.createSequentialGroup()
-                .addComponent(titoloMM, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pannelloMenuLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(immagineMM, GroupLayout.PREFERRED_SIZE, 296, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelBtnMenu, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(footer, GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                pannelloMenuLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannelloMenuLayout.createSequentialGroup()
+                                .addComponent(titoloMM, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pannelloMenuLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addComponent(immagineMM, GroupLayout.PREFERRED_SIZE, 296, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(panelBtnMenu, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(footer, GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
         );
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(pannelloMenu, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(pannelloMenu, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(pannelloMenu, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(pannelloMenu, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -134,22 +134,22 @@ public class Menu extends JFrame {
     private JLabel titoloMM;
     // End of variables declaration//GEN-END:variables
 
-        public Menu() {
-            initComponents();
-            initActionListeners();
-        }
+    public Menu() {
+        initComponents();
+        initActionListeners();
+    }
 
-        // Metodo per aggiungere gli ActionListener ai bottoni "Nuova Partita", "Impostazioni" ed "esci"
-        private void initActionListeners() {
-            nuovaPartitaBtn.addActionListener(e -> {
-                // Chiudo il frame del menù e creo un nuovo frame (del MasterMind) settandolo come visibile
-                dispose();
-                new MasterMind().setVisible(true);
-            });
-            impostazioniBtn.addActionListener(e -> {
-                dispose();
-                new Impostazioni().setVisible(true);
-            });
-            esciBtn.addActionListener(e -> System.exit(0));
-        }
+    // Metodo per aggiungere gli ActionListener ai bottoni "Nuova Partita", "Impostazioni" ed "esci"
+    private void initActionListeners() {
+        nuovaPartitaBtn.addActionListener(e -> {
+            // Chiudo il frame del menù e creo un nuovo frame (del MasterMind) settandolo come visibile
+            dispose();
+            new MasterMind().setVisible(true);
+        });
+        impostazioniBtn.addActionListener(e -> {
+            dispose();
+            new Impostazioni().setVisible(true);
+        });
+        esciBtn.addActionListener(e -> System.exit(0));
+    }
 }

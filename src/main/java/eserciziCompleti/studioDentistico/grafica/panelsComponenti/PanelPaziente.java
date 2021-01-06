@@ -1,7 +1,5 @@
 package eserciziCompleti.studioDentistico.grafica.panelsComponenti;
 
-import com.intellij.uiDesigner.core.GridConstraints;
-import com.intellij.uiDesigner.core.GridLayoutManager;
 import eserciziCompleti.studioDentistico.enums.AzioneDialog;
 import eserciziCompleti.studioDentistico.enums.TipoPanel;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
@@ -11,12 +9,9 @@ import eserciziCompleti.studioDentistico.grafica.dialogs.DialogPaziente;
 import eserciziCompleti.studioDentistico.oggetti.Paziente;
 
 import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
-import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.Locale;
 
 public class PanelPaziente {
     private JLabel labelNome;

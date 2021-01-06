@@ -1,8 +1,5 @@
 package eserciziCompleti.studioDentistico.grafica.dialogs;
 
-import com.intellij.uiDesigner.core.GridConstraints;
-import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.intellij.uiDesigner.core.Spacer;
 import eserciziCompleti.studioDentistico.enums.AzioneDialog;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.gestori.GestoreInterventi;
@@ -13,12 +10,9 @@ import eserciziCompleti.studioDentistico.oggetti.Intervento;
 import eserciziCompleti.studioDentistico.oggetti.Paziente;
 
 import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
-import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.UUID;
 
 public class DialogFattura extends JDialog {

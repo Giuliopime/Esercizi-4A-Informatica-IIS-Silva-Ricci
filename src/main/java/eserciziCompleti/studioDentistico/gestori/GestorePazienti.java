@@ -42,7 +42,7 @@ public class GestorePazienti {
     }
 
     public static GestorePazienti getInstance() {
-        if(instance == null)
+        if (instance == null)
             instance = new GestorePazienti();
 
         return instance;
@@ -55,7 +55,7 @@ public class GestorePazienti {
 
         pazienti = new ArrayList<>();
 
-        while(fis.available() > 0)
+        while (fis.available() > 0)
             pazienti.add((Paziente) ois.readObject());
 
         ois.close();
@@ -100,7 +100,7 @@ public class GestorePazienti {
 
     public Paziente getPaziente(UUID idPaziente) {
         for (Paziente paziente : pazienti) {
-            if(paziente.getIDPaziente().equals(idPaziente))
+            if (paziente.getIDPaziente().equals(idPaziente))
                 return paziente;
         }
 
@@ -109,10 +109,10 @@ public class GestorePazienti {
 
     public ArrayList<Paziente> getPazienti() {
         ArrayList<Paziente> listaPazienti = pazienti;
-        if(filtriPaziente != null && query != null)
+        if (filtriPaziente != null && query != null)
             listaPazienti = getPazientiFiltrati();
 
-        if(ordinamentoPazienti != null)
+        if (ordinamentoPazienti != null)
             ordinaPazienti(listaPazienti);
 
         return listaPazienti;
@@ -139,25 +139,25 @@ public class GestorePazienti {
 
     private ArrayList<TipoQueryPaziente> creaArrayQueries() {
         ArrayList<TipoQueryPaziente> tipiQuery = new ArrayList<>();
-        if(filtriPaziente.isNome())
+        if (filtriPaziente.isNome())
             tipiQuery.add(TipoQueryPaziente.Nome);
-        if(filtriPaziente.isCognome())
+        if (filtriPaziente.isCognome())
             tipiQuery.add(TipoQueryPaziente.Cognome);
-        if(filtriPaziente.isCodiceFiscale())
+        if (filtriPaziente.isCodiceFiscale())
             tipiQuery.add(TipoQueryPaziente.codiceFiscale);
-        if(filtriPaziente.isDataDiNascita())
+        if (filtriPaziente.isDataDiNascita())
             tipiQuery.add(TipoQueryPaziente.DataDiNascita);
-        if(filtriPaziente.isOccupazione())
+        if (filtriPaziente.isOccupazione())
             tipiQuery.add(TipoQueryPaziente.Occupazione);
-        if(filtriPaziente.isLuogoDiNascita())
+        if (filtriPaziente.isLuogoDiNascita())
             tipiQuery.add(TipoQueryPaziente.LuogoDiNascita);
-        if(filtriPaziente.isNumTelefonico())
+        if (filtriPaziente.isNumTelefonico())
             tipiQuery.add(TipoQueryPaziente.numTelefono);
-        if(filtriPaziente.isProvincia())
+        if (filtriPaziente.isProvincia())
             tipiQuery.add(TipoQueryPaziente.Provincia);
-        if(filtriPaziente.isResidenza())
+        if (filtriPaziente.isResidenza())
             tipiQuery.add(TipoQueryPaziente.Residenza);
-        if(filtriPaziente.isSesso())
+        if (filtriPaziente.isSesso())
             tipiQuery.add(TipoQueryPaziente.Sesso);
 
         return tipiQuery;
@@ -209,7 +209,7 @@ public class GestorePazienti {
             case DATAULTIMAMODIFICA -> listaPazienti.sort(Comparator.comparing(Paziente::getUltimaModifica));
         }
 
-        if(ordinamentoPazienti.equals(OrdinamentoPazienti.DATANASCITA) || ordinamentoPazienti.equals(OrdinamentoPazienti.DATACREAZIONE) || ordinamentoPazienti.equals(OrdinamentoPazienti.DATAULTIMAMODIFICA))
+        if (ordinamentoPazienti.equals(OrdinamentoPazienti.DATANASCITA) || ordinamentoPazienti.equals(OrdinamentoPazienti.DATACREAZIONE) || ordinamentoPazienti.equals(OrdinamentoPazienti.DATAULTIMAMODIFICA))
             Collections.reverse(listaPazienti);
     }
 }

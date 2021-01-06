@@ -17,6 +17,6 @@ public class NonAlimentare extends Prodotto {
     }
 
     public String toString() {
-        return super.toString() + ", materiale: "+materiale;
+        return super.toString() + ", materiale: " + materiale;
     }
 }

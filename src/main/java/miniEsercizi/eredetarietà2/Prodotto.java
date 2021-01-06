@@ -20,7 +20,7 @@ public class Prodotto {
     }
 
     public void setPrezzo(double prezzo) {
-       this.prezzo = prezzo > -1 ? prezzo : 0;
+        this.prezzo = prezzo > -1 ? prezzo : 0;
     }
 
     public int getCodice() {
@@ -37,7 +37,7 @@ public class Prodotto {
 
 
     public String toString() {
-        return "Codice prodotto: "+codice+", descrizione: "+descrizione+", prezzo: "+prezzo;
+        return "Codice prodotto: " + codice + ", descrizione: " + descrizione + ", prezzo: " + prezzo;
     }
 
 

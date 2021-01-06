@@ -6,10 +6,11 @@ public class Menu {
     private List<Prodotto> prodotti;
     private Menu instance;
 
-    public Menu() { }
+    public Menu() {
+    }
 
     public Menu getInstance() {
-        if(instance == null) instance = new Menu();
+        if (instance == null) instance = new Menu();
         return instance;
     }
 

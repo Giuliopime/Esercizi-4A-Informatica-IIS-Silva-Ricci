@@ -18,8 +18,8 @@ public class Libreria {
     }
 
     public boolean rimuoviLibro(String titolo) {
-        for(Libro libro: libri) {
-            if(libro.getTitolo().equalsIgnoreCase(titolo)) {
+        for (Libro libro : libri) {
+            if (libro.getTitolo().equalsIgnoreCase(titolo)) {
                 libri.remove(libro);
                 return true;
             }
@@ -30,7 +30,7 @@ public class Libreria {
 
     public void incrementaPrezzi(int incremento) {
         libri.forEach(libro -> {
-            libro.setPrezzo(libro.getPrezzo() * ((100+incremento)/100.0));
+            libro.setPrezzo(libro.getPrezzo() * ((100 + incremento) / 100.0));
         });
     }
 

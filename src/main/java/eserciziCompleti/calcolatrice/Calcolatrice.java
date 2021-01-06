@@ -27,12 +27,9 @@ Finite queste casistiche imposta il testo nella JTextField di riga1 e riga2
 */
 
 
-import com.intellij.uiDesigner.core.GridConstraints;
-import com.intellij.uiDesigner.core.GridLayoutManager;
 import org.mariuszgromada.math.mxparser.Expression;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Calcolatrice {
     private JPanel pannelloCalcolatrice;

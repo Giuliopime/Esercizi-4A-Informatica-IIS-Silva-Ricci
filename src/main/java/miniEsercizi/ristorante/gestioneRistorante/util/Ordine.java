@@ -17,7 +17,7 @@ public class Ordine {
 
     public double getPrezzoTot() {
         double prezzo = 0;
-        for(Prodotto prodotto: prodotti)
+        for (Prodotto prodotto : prodotti)
             prezzo += prodotto.getPrezzo();
 
         return prezzo;

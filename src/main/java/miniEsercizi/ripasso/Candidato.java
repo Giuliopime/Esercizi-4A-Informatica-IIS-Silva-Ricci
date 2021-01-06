@@ -27,6 +27,6 @@ public class Candidato {
 
     @Override
     public String toString() {
-        return "Cognome: "+cognome+", voti: "+voti;
+        return "Cognome: " + cognome + ", voti: " + voti;
     }
 }

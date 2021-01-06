@@ -11,7 +11,7 @@ public class Fattura {
 
     public double prezzoTotale() {
         double prezzo = 0;
-        for(Articolo a: articoli)
+        for (Articolo a : articoli)
             prezzo += a.getPrezzo();
 
         return prezzo;
@@ -35,7 +35,7 @@ public class Fattura {
 
     public String toString() {
         String stringa = "CLIENTE: " + cliente.toString() + "\nARTICOLI: ";
-        for(Articolo a: articoli)
+        for (Articolo a : articoli)
             stringa += "\n" + a.toString();
 
         return stringa;

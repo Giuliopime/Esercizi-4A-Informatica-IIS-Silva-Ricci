@@ -36,22 +36,22 @@ public class GestioneClienti {
     }
 
 
-    public static void caricaClientiDaFile() throws IOException, ClassNotFoundException{
+    public static void caricaClientiDaFile() throws IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream("clienti.dat");
         ObjectInputStream ois = new ObjectInputStream(fis);
         clienti = new ArrayList<>();
 
-        while(fis.available() > 0){
+        while (fis.available() > 0) {
             clienti.add((Cliente) ois.readObject());
         }
     }
 
 
-    private static void registraSuFile() throws IOException{
+    private static void registraSuFile() throws IOException {
         FileOutputStream fos = new FileOutputStream("clienti.dat");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-        for(Cliente c: clienti)
+        for (Cliente c : clienti)
             oos.writeObject(c);
 
         oos.close();
@@ -85,31 +85,31 @@ public class GestioneClienti {
         switch (tipoRicercaCliente) {
             case NOME: {
                 // clientiFiltrati = clienti.stream().filter(c -> c.getNome().equalsIgnoreCase(stringaRicerca)).collect(Collectors.toCollection(ArrayList::new));
-                for(Cliente c: clienti)
-                    if(c.getNome().equalsIgnoreCase(stringaRicerca)) clientiFiltrati.add(c);
+                for (Cliente c : clienti)
+                    if (c.getNome().equalsIgnoreCase(stringaRicerca)) clientiFiltrati.add(c);
                 break;
             }
             case COGNOME: {
                 // clientiFiltrati = clienti.stream().filter(c -> c.getCognome().equalsIgnoreCase(stringaRicerca)).collect(Collectors.toCollection(ArrayList::new));
-                for(Cliente c: clienti)
-                    if(c.getCognome().equalsIgnoreCase(stringaRicerca)) clientiFiltrati.add(c);
+                for (Cliente c : clienti)
+                    if (c.getCognome().equalsIgnoreCase(stringaRicerca)) clientiFiltrati.add(c);
                 break;
             }
             case USERNAME: {
                 // clientiFiltrati = clienti.stream().filter(c -> c.getUsername().equalsIgnoreCase(stringaRicerca)).collect(Collectors.toCollection(ArrayList::new));
-                for(Cliente c: clienti)
-                    if(c.getUsername().equalsIgnoreCase(stringaRicerca)) clientiFiltrati.add(c);
+                for (Cliente c : clienti)
+                    if (c.getUsername().equalsIgnoreCase(stringaRicerca)) clientiFiltrati.add(c);
                 break;
             }
             case TUTTO: {
                 // clientiFiltrati = clienti.stream().filter(c -> c.getUsername().equalsIgnoreCase(stringaRicerca) || c.getNome().equalsIgnoreCase(stringaRicerca) || c.getCognome().equalsIgnoreCase(stringaRicerca)).collect(Collectors.toCollection(ArrayList::new));
-                for(Cliente c: clienti)
-                    if(c.getNome().equalsIgnoreCase(stringaRicerca) || c.getCognome().equalsIgnoreCase(stringaRicerca) || c.getUsername().equalsIgnoreCase(stringaRicerca))
+                for (Cliente c : clienti)
+                    if (c.getNome().equalsIgnoreCase(stringaRicerca) || c.getCognome().equalsIgnoreCase(stringaRicerca) || c.getUsername().equalsIgnoreCase(stringaRicerca))
                         clientiFiltrati.add(c);
             }
         }
 
-        if(visualizza) clientiFiltrati.forEach(System.out::println);
+        if (visualizza) clientiFiltrati.forEach(System.out::println);
         return clientiFiltrati.toArray(new Cliente[clientiFiltrati.size()]);
     }
 

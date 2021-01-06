@@ -8,7 +8,8 @@ public class FiltriPaziente implements Serializable {
     public FiltriPaziente() {
         nome = true;
         cognome = true;
-        luogoDiNascita = true; codiceFiscale = true;
+        luogoDiNascita = true;
+        codiceFiscale = true;
         residenza = true;
         provincia = true;
         sesso = true;

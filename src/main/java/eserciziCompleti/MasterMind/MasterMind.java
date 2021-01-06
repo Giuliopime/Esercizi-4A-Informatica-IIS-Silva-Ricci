@@ -301,28 +301,28 @@ public class MasterMind extends JFrame {
         GroupLayout pannelloCodiceLayout = new GroupLayout(pannelloCodice);
         pannelloCodice.setLayout(pannelloCodiceLayout);
         pannelloCodiceLayout.setHorizontalGroup(
-            pannelloCodiceLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannelloCodiceLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(pioloCodice1, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(pioloCodice2, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(pioloCodice3, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addComponent(pioloCodice4, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                pannelloCodiceLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannelloCodiceLayout.createSequentialGroup()
+                                .addGap(53, 53, 53)
+                                .addComponent(pioloCodice1, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
+                                .addGap(41, 41, 41)
+                                .addComponent(pioloCodice2, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
+                                .addGap(43, 43, 43)
+                                .addComponent(pioloCodice3, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+                                .addGap(52, 52, 52)
+                                .addComponent(pioloCodice4, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pannelloCodiceLayout.setVerticalGroup(
-            pannelloCodiceLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(GroupLayout.Alignment.TRAILING, pannelloCodiceLayout.createSequentialGroup()
-                .addContainerGap(10, Short.MAX_VALUE)
-                .addGroup(pannelloCodiceLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(pioloCodice2, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pioloCodice1, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pioloCodice3, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pioloCodice4, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12))
+                pannelloCodiceLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(GroupLayout.Alignment.TRAILING, pannelloCodiceLayout.createSequentialGroup()
+                                .addContainerGap(10, Short.MAX_VALUE)
+                                .addGroup(pannelloCodiceLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(pioloCodice2, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pioloCodice1, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pioloCodice3, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pioloCodice4, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE))
+                                .addGap(12, 12, 12))
         );
 
         pannelloScrittaMM.setBackground(new Color(106, 213, 166));
@@ -330,12 +330,12 @@ public class MasterMind extends JFrame {
         GroupLayout pannelloScrittaMMLayout = new GroupLayout(pannelloScrittaMM);
         pannelloScrittaMM.setLayout(pannelloScrittaMMLayout);
         pannelloScrittaMMLayout.setHorizontalGroup(
-            pannelloScrittaMMLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGap(0, 97, Short.MAX_VALUE)
+                pannelloScrittaMMLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGap(0, 97, Short.MAX_VALUE)
         );
         pannelloScrittaMMLayout.setVerticalGroup(
-            pannelloScrittaMMLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+                pannelloScrittaMMLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGap(0, 0, Short.MAX_VALUE)
         );
 
         pannelloControllo.setBackground(new Color(206, 139, 102));
@@ -422,70 +422,70 @@ public class MasterMind extends JFrame {
         GroupLayout pannelloBtnsLayout = new GroupLayout(pannelloBtns);
         pannelloBtns.setLayout(pannelloBtnsLayout);
         pannelloBtnsLayout.setHorizontalGroup(
-            pannelloBtnsLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannelloBtnsLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(pannelloBtnsLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                    .addComponent(pioloRosso, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pioloVerde, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pannelloBtnsLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(pannelloBtnsLayout.createSequentialGroup()
-                        .addComponent(pioloRosa, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(pioloArancio, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(pioloCiano, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pannelloBtnsLayout.createSequentialGroup()
-                        .addComponent(pioloGiallo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(pioloBlu, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(pioloViola, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                pannelloBtnsLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannelloBtnsLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(pannelloBtnsLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                        .addComponent(pioloRosso, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pioloVerde, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(pannelloBtnsLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(pannelloBtnsLayout.createSequentialGroup()
+                                                .addComponent(pioloRosa, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(pioloArancio, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(pioloCiano, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(pannelloBtnsLayout.createSequentialGroup()
+                                                .addComponent(pioloGiallo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(pioloBlu, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(pioloViola, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pannelloBtnsLayout.setVerticalGroup(
-            pannelloBtnsLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannelloBtnsLayout.createSequentialGroup()
-                .addGroup(pannelloBtnsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(pioloRosso, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pioloRosa, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pioloArancio, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pioloCiano, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pannelloBtnsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(pioloVerde, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pioloGiallo, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pioloBlu, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pioloViola, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                pannelloBtnsLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannelloBtnsLayout.createSequentialGroup()
+                                .addGroup(pannelloBtnsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(pioloRosso, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pioloRosa, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pioloArancio, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pioloCiano, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pannelloBtnsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(pioloVerde, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pioloGiallo, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pioloBlu, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pioloViola, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         GroupLayout pannelloControlloLayout = new GroupLayout(pannelloControllo);
         pannelloControllo.setLayout(pannelloControlloLayout);
         pannelloControlloLayout.setHorizontalGroup(
-            pannelloControlloLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannelloControlloLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(btnPrecedente)
-                .addGap(18, 18, 18)
-                .addComponent(pannelloBtns, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(btnSuccessivo)
-                .addGap(22, 22, 22))
+                pannelloControlloLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannelloControlloLayout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(btnPrecedente)
+                                .addGap(18, 18, 18)
+                                .addComponent(pannelloBtns, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnSuccessivo)
+                                .addGap(22, 22, 22))
         );
         pannelloControlloLayout.setVerticalGroup(
-            pannelloControlloLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannelloControlloLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(pannelloControlloLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSuccessivo)
-                    .addComponent(btnPrecedente))
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(pannelloControlloLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pannelloBtns, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                pannelloControlloLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannelloControlloLayout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addGroup(pannelloControlloLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(btnSuccessivo)
+                                        .addComponent(btnPrecedente))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(pannelloControlloLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(pannelloBtns, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())
         );
 
         pannelloDiGioco.setBackground(new Color(206, 139, 102));
@@ -578,46 +578,46 @@ public class MasterMind extends JFrame {
         GroupLayout pannelloTentativiLayout = new GroupLayout(pannelloTentativi);
         pannelloTentativi.setLayout(pannelloTentativiLayout);
         pannelloTentativiLayout.setHorizontalGroup(
-            pannelloTentativiLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannelloTentativiLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(pannelloTentativiLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(bucoTentativo10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bucoTentativo9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bucoTentativo8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bucoTentativo7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bucoTentativo6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bucoTentativo5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bucoTentativo3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bucoTentativo4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bucoTentativo2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bucoTentativo1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                pannelloTentativiLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannelloTentativiLayout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addGroup(pannelloTentativiLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addComponent(bucoTentativo10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(bucoTentativo9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(bucoTentativo8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(bucoTentativo7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(bucoTentativo6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(bucoTentativo5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(bucoTentativo3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(bucoTentativo4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(bucoTentativo2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(bucoTentativo1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(24, Short.MAX_VALUE))
         );
         pannelloTentativiLayout.setVerticalGroup(
-            pannelloTentativiLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(GroupLayout.Alignment.TRAILING, pannelloTentativiLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(bucoTentativo10, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bucoTentativo9, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(bucoTentativo8, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(bucoTentativo7, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(bucoTentativo6, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(bucoTentativo5, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(bucoTentativo4, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(bucoTentativo3, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(bucoTentativo2, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(bucoTentativo1, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                pannelloTentativiLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(GroupLayout.Alignment.TRAILING, pannelloTentativiLayout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(bucoTentativo10, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bucoTentativo9, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35)
+                                .addComponent(bucoTentativo8, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(bucoTentativo7, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                .addGap(36, 36, 36)
+                                .addComponent(bucoTentativo6, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(bucoTentativo5, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38)
+                                .addComponent(bucoTentativo4, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                .addGap(36, 36, 36)
+                                .addComponent(bucoTentativo3, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(bucoTentativo2, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                .addGap(34, 34, 34)
+                                .addComponent(bucoTentativo1, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                .addGap(14, 14, 14))
         );
 
         panRisp1.setBackground(new Color(206, 139, 102));
@@ -639,31 +639,31 @@ public class MasterMind extends JFrame {
         GroupLayout pannRisult1Layout = new GroupLayout(pannRisult1);
         pannRisult1.setLayout(pannRisult1Layout);
         pannRisult1Layout.setHorizontalGroup(
-            pannRisult1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult1Layout.createSequentialGroup()
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pannRisult1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult1Layout.createSequentialGroup()
-                        .addComponent(indicatore1)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore2, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult1Layout.createSequentialGroup()
-                        .addComponent(indicatore3)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore4)))
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                pannRisult1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult1Layout.createSequentialGroup()
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(pannRisult1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult1Layout.createSequentialGroup()
+                                                .addComponent(indicatore1)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore2, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult1Layout.createSequentialGroup()
+                                                .addComponent(indicatore3)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore4)))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pannRisult1Layout.setVerticalGroup(
-            pannRisult1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult1Layout.createSequentialGroup()
-                .addGroup(pannRisult1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore1)
-                    .addComponent(indicatore2, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pannRisult1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore4)
-                    .addComponent(indicatore3))
-                .addGap(0, 8, Short.MAX_VALUE))
+                pannRisult1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult1Layout.createSequentialGroup()
+                                .addGroup(pannRisult1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore1)
+                                        .addComponent(indicatore2, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pannRisult1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore4)
+                                        .addComponent(indicatore3))
+                                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         buco1.setFont(new Font(".SF NS Text", 0, 18)); // NOI18N
@@ -702,36 +702,36 @@ public class MasterMind extends JFrame {
         GroupLayout panRisp1Layout = new GroupLayout(panRisp1);
         panRisp1.setLayout(panRisp1Layout);
         panRisp1Layout.setHorizontalGroup(
-            panRisp1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pannRisult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(buco1, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco3, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco4, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                panRisp1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(pannRisult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)
+                                .addComponent(buco1, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco3, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco4, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21))
         );
         panRisp1Layout.setVerticalGroup(
-            panRisp1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp1Layout.createSequentialGroup()
-                .addComponent(pannRisult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panRisp1Layout.createSequentialGroup()
-                .addGroup(panRisp1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, panRisp1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(buco3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buco4, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panRisp1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panRisp1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(buco2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buco1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                panRisp1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp1Layout.createSequentialGroup()
+                                .addComponent(pannRisult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(panRisp1Layout.createSequentialGroup()
+                                .addGroup(panRisp1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, panRisp1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(buco3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(buco4, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(panRisp1Layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addGroup(panRisp1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(buco2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(buco1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap())
         );
 
         jSeparator1.setForeground(new Color(149, 61, 51));
@@ -755,31 +755,31 @@ public class MasterMind extends JFrame {
         GroupLayout pannRisult2Layout = new GroupLayout(pannRisult2);
         pannRisult2.setLayout(pannRisult2Layout);
         pannRisult2Layout.setHorizontalGroup(
-            pannRisult2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult2Layout.createSequentialGroup()
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pannRisult2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult2Layout.createSequentialGroup()
-                        .addComponent(indicatore5)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore6, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult2Layout.createSequentialGroup()
-                        .addComponent(indicatore7)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore8)))
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                pannRisult2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult2Layout.createSequentialGroup()
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(pannRisult2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult2Layout.createSequentialGroup()
+                                                .addComponent(indicatore5)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore6, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult2Layout.createSequentialGroup()
+                                                .addComponent(indicatore7)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore8)))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pannRisult2Layout.setVerticalGroup(
-            pannRisult2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult2Layout.createSequentialGroup()
-                .addGroup(pannRisult2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore5)
-                    .addComponent(indicatore6, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pannRisult2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore8)
-                    .addComponent(indicatore7))
-                .addGap(0, 8, Short.MAX_VALUE))
+                pannRisult2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult2Layout.createSequentialGroup()
+                                .addGroup(pannRisult2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore5)
+                                        .addComponent(indicatore6, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pannRisult2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore8)
+                                        .addComponent(indicatore7))
+                                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         buco5.setFont(new Font(".SF NS Text", 0, 18)); // NOI18N
@@ -818,36 +818,36 @@ public class MasterMind extends JFrame {
         GroupLayout panRisp2Layout = new GroupLayout(panRisp2);
         panRisp2.setLayout(panRisp2Layout);
         panRisp2Layout.setHorizontalGroup(
-            panRisp2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pannRisult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(buco5, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco6, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco7, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco8, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                panRisp2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(pannRisult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)
+                                .addComponent(buco5, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco6, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco7, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco8, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21))
         );
         panRisp2Layout.setVerticalGroup(
-            panRisp2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp2Layout.createSequentialGroup()
-                .addComponent(pannRisult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panRisp2Layout.createSequentialGroup()
-                .addGroup(panRisp2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, panRisp2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(buco7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buco8, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panRisp2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panRisp2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(buco6, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buco5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                panRisp2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp2Layout.createSequentialGroup()
+                                .addComponent(pannRisult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(panRisp2Layout.createSequentialGroup()
+                                .addGroup(panRisp2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, panRisp2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(buco7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(buco8, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(panRisp2Layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addGroup(panRisp2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(buco6, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(buco5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap())
         );
 
         jSeparator2.setForeground(new Color(149, 61, 51));
@@ -871,31 +871,31 @@ public class MasterMind extends JFrame {
         GroupLayout pannRisult3Layout = new GroupLayout(pannRisult3);
         pannRisult3.setLayout(pannRisult3Layout);
         pannRisult3Layout.setHorizontalGroup(
-            pannRisult3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult3Layout.createSequentialGroup()
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pannRisult3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult3Layout.createSequentialGroup()
-                        .addComponent(indicatore9)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore10, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult3Layout.createSequentialGroup()
-                        .addComponent(indicatore11)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore12)))
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                pannRisult3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult3Layout.createSequentialGroup()
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(pannRisult3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult3Layout.createSequentialGroup()
+                                                .addComponent(indicatore9)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore10, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult3Layout.createSequentialGroup()
+                                                .addComponent(indicatore11)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore12)))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pannRisult3Layout.setVerticalGroup(
-            pannRisult3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult3Layout.createSequentialGroup()
-                .addGroup(pannRisult3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore9)
-                    .addComponent(indicatore10, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pannRisult3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore12)
-                    .addComponent(indicatore11))
-                .addGap(0, 8, Short.MAX_VALUE))
+                pannRisult3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult3Layout.createSequentialGroup()
+                                .addGroup(pannRisult3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore9)
+                                        .addComponent(indicatore10, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pannRisult3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore12)
+                                        .addComponent(indicatore11))
+                                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         buco9.setFont(new Font(".SF NS Text", 0, 18)); // NOI18N
@@ -934,36 +934,36 @@ public class MasterMind extends JFrame {
         GroupLayout panRisp3Layout = new GroupLayout(panRisp3);
         panRisp3.setLayout(panRisp3Layout);
         panRisp3Layout.setHorizontalGroup(
-            panRisp3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pannRisult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(buco9, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco10, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco11, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco12, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                panRisp3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp3Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(pannRisult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)
+                                .addComponent(buco9, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco10, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco11, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco12, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21))
         );
         panRisp3Layout.setVerticalGroup(
-            panRisp3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp3Layout.createSequentialGroup()
-                .addComponent(pannRisult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panRisp3Layout.createSequentialGroup()
-                .addGroup(panRisp3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, panRisp3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(buco11, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buco12, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panRisp3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panRisp3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(buco10, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buco9, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                panRisp3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp3Layout.createSequentialGroup()
+                                .addComponent(pannRisult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(panRisp3Layout.createSequentialGroup()
+                                .addGroup(panRisp3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, panRisp3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(buco11, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(buco12, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(panRisp3Layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addGroup(panRisp3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(buco10, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(buco9, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap())
         );
 
         jSeparator3.setForeground(new Color(149, 61, 51));
@@ -987,31 +987,31 @@ public class MasterMind extends JFrame {
         GroupLayout pannRisult4Layout = new GroupLayout(pannRisult4);
         pannRisult4.setLayout(pannRisult4Layout);
         pannRisult4Layout.setHorizontalGroup(
-            pannRisult4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult4Layout.createSequentialGroup()
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pannRisult4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult4Layout.createSequentialGroup()
-                        .addComponent(indicatore13)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore14, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult4Layout.createSequentialGroup()
-                        .addComponent(indicatore15)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore16)))
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                pannRisult4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult4Layout.createSequentialGroup()
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(pannRisult4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult4Layout.createSequentialGroup()
+                                                .addComponent(indicatore13)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore14, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult4Layout.createSequentialGroup()
+                                                .addComponent(indicatore15)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore16)))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pannRisult4Layout.setVerticalGroup(
-            pannRisult4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult4Layout.createSequentialGroup()
-                .addGroup(pannRisult4Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore13)
-                    .addComponent(indicatore14, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pannRisult4Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore16)
-                    .addComponent(indicatore15))
-                .addGap(0, 8, Short.MAX_VALUE))
+                pannRisult4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult4Layout.createSequentialGroup()
+                                .addGroup(pannRisult4Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore13)
+                                        .addComponent(indicatore14, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pannRisult4Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore16)
+                                        .addComponent(indicatore15))
+                                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         buco13.setFont(new Font(".SF NS Text", 0, 18)); // NOI18N
@@ -1050,36 +1050,36 @@ public class MasterMind extends JFrame {
         GroupLayout panRisp4Layout = new GroupLayout(panRisp4);
         panRisp4.setLayout(panRisp4Layout);
         panRisp4Layout.setHorizontalGroup(
-            panRisp4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pannRisult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(buco13, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco14, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco15, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco16, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                panRisp4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp4Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(pannRisult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)
+                                .addComponent(buco13, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco14, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco15, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco16, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21))
         );
         panRisp4Layout.setVerticalGroup(
-            panRisp4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp4Layout.createSequentialGroup()
-                .addComponent(pannRisult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panRisp4Layout.createSequentialGroup()
-                .addGroup(panRisp4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, panRisp4Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(buco15, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buco16, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panRisp4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panRisp4Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(buco14, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buco13, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                panRisp4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp4Layout.createSequentialGroup()
+                                .addComponent(pannRisult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(panRisp4Layout.createSequentialGroup()
+                                .addGroup(panRisp4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, panRisp4Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(buco15, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(buco16, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(panRisp4Layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addGroup(panRisp4Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(buco14, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(buco13, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap())
         );
 
         jSeparator4.setForeground(new Color(149, 61, 51));
@@ -1103,31 +1103,31 @@ public class MasterMind extends JFrame {
         GroupLayout pannRisult5Layout = new GroupLayout(pannRisult5);
         pannRisult5.setLayout(pannRisult5Layout);
         pannRisult5Layout.setHorizontalGroup(
-            pannRisult5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult5Layout.createSequentialGroup()
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pannRisult5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult5Layout.createSequentialGroup()
-                        .addComponent(indicatore17)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore18, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult5Layout.createSequentialGroup()
-                        .addComponent(indicatore19)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore20)))
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                pannRisult5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult5Layout.createSequentialGroup()
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(pannRisult5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult5Layout.createSequentialGroup()
+                                                .addComponent(indicatore17)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore18, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult5Layout.createSequentialGroup()
+                                                .addComponent(indicatore19)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore20)))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pannRisult5Layout.setVerticalGroup(
-            pannRisult5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult5Layout.createSequentialGroup()
-                .addGroup(pannRisult5Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore17)
-                    .addComponent(indicatore18, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pannRisult5Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore20)
-                    .addComponent(indicatore19))
-                .addGap(0, 8, Short.MAX_VALUE))
+                pannRisult5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult5Layout.createSequentialGroup()
+                                .addGroup(pannRisult5Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore17)
+                                        .addComponent(indicatore18, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pannRisult5Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore20)
+                                        .addComponent(indicatore19))
+                                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         buco17.setFont(new Font(".SF NS Text", 0, 18)); // NOI18N
@@ -1166,36 +1166,36 @@ public class MasterMind extends JFrame {
         GroupLayout panRisp5Layout = new GroupLayout(panRisp5);
         panRisp5.setLayout(panRisp5Layout);
         panRisp5Layout.setHorizontalGroup(
-            panRisp5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pannRisult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(buco17, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco18, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco19, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco20, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                panRisp5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp5Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(pannRisult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)
+                                .addComponent(buco17, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco18, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco19, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco20, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21))
         );
         panRisp5Layout.setVerticalGroup(
-            panRisp5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp5Layout.createSequentialGroup()
-                .addComponent(pannRisult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panRisp5Layout.createSequentialGroup()
-                .addGroup(panRisp5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, panRisp5Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(buco19, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buco20, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panRisp5Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panRisp5Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(buco18, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buco17, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                panRisp5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp5Layout.createSequentialGroup()
+                                .addComponent(pannRisult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(panRisp5Layout.createSequentialGroup()
+                                .addGroup(panRisp5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, panRisp5Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(buco19, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(buco20, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(panRisp5Layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addGroup(panRisp5Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(buco18, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(buco17, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap())
         );
 
         jSeparator5.setForeground(new Color(149, 61, 51));
@@ -1219,31 +1219,31 @@ public class MasterMind extends JFrame {
         GroupLayout pannRisult6Layout = new GroupLayout(pannRisult6);
         pannRisult6.setLayout(pannRisult6Layout);
         pannRisult6Layout.setHorizontalGroup(
-            pannRisult6Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult6Layout.createSequentialGroup()
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pannRisult6Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult6Layout.createSequentialGroup()
-                        .addComponent(indicatore21)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore22, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult6Layout.createSequentialGroup()
-                        .addComponent(indicatore23)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore24)))
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                pannRisult6Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult6Layout.createSequentialGroup()
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(pannRisult6Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult6Layout.createSequentialGroup()
+                                                .addComponent(indicatore21)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore22, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult6Layout.createSequentialGroup()
+                                                .addComponent(indicatore23)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore24)))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pannRisult6Layout.setVerticalGroup(
-            pannRisult6Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult6Layout.createSequentialGroup()
-                .addGroup(pannRisult6Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore21)
-                    .addComponent(indicatore22, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pannRisult6Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore24)
-                    .addComponent(indicatore23))
-                .addGap(0, 8, Short.MAX_VALUE))
+                pannRisult6Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult6Layout.createSequentialGroup()
+                                .addGroup(pannRisult6Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore21)
+                                        .addComponent(indicatore22, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pannRisult6Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore24)
+                                        .addComponent(indicatore23))
+                                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         buco21.setFont(new Font(".SF NS Text", 0, 18)); // NOI18N
@@ -1282,36 +1282,36 @@ public class MasterMind extends JFrame {
         GroupLayout panRisp6Layout = new GroupLayout(panRisp6);
         panRisp6.setLayout(panRisp6Layout);
         panRisp6Layout.setHorizontalGroup(
-            panRisp6Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pannRisult6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(buco21, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco22, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco23, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco24, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                panRisp6Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp6Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(pannRisult6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)
+                                .addComponent(buco21, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco22, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco23, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco24, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21))
         );
         panRisp6Layout.setVerticalGroup(
-            panRisp6Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp6Layout.createSequentialGroup()
-                .addComponent(pannRisult6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panRisp6Layout.createSequentialGroup()
-                .addGroup(panRisp6Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, panRisp6Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(buco23, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buco24, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panRisp6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panRisp6Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(buco22, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buco21, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                panRisp6Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp6Layout.createSequentialGroup()
+                                .addComponent(pannRisult6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(panRisp6Layout.createSequentialGroup()
+                                .addGroup(panRisp6Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, panRisp6Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(buco23, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(buco24, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(panRisp6Layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addGroup(panRisp6Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(buco22, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(buco21, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap())
         );
 
         jSeparator6.setForeground(new Color(149, 61, 51));
@@ -1335,31 +1335,31 @@ public class MasterMind extends JFrame {
         GroupLayout pannRisult7Layout = new GroupLayout(pannRisult7);
         pannRisult7.setLayout(pannRisult7Layout);
         pannRisult7Layout.setHorizontalGroup(
-            pannRisult7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult7Layout.createSequentialGroup()
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pannRisult7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult7Layout.createSequentialGroup()
-                        .addComponent(indicatore25)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore26, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult7Layout.createSequentialGroup()
-                        .addComponent(indicatore27)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore28)))
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                pannRisult7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult7Layout.createSequentialGroup()
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(pannRisult7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult7Layout.createSequentialGroup()
+                                                .addComponent(indicatore25)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore26, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult7Layout.createSequentialGroup()
+                                                .addComponent(indicatore27)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore28)))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pannRisult7Layout.setVerticalGroup(
-            pannRisult7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult7Layout.createSequentialGroup()
-                .addGroup(pannRisult7Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore25)
-                    .addComponent(indicatore26, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pannRisult7Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore28)
-                    .addComponent(indicatore27))
-                .addGap(0, 8, Short.MAX_VALUE))
+                pannRisult7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult7Layout.createSequentialGroup()
+                                .addGroup(pannRisult7Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore25)
+                                        .addComponent(indicatore26, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pannRisult7Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore28)
+                                        .addComponent(indicatore27))
+                                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         buco25.setFont(new Font(".SF NS Text", 0, 18)); // NOI18N
@@ -1398,36 +1398,36 @@ public class MasterMind extends JFrame {
         GroupLayout panRisp7Layout = new GroupLayout(panRisp7);
         panRisp7.setLayout(panRisp7Layout);
         panRisp7Layout.setHorizontalGroup(
-            panRisp7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pannRisult7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(buco25, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco26, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco27, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco28, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                panRisp7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp7Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(pannRisult7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)
+                                .addComponent(buco25, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco26, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco27, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco28, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21))
         );
         panRisp7Layout.setVerticalGroup(
-            panRisp7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp7Layout.createSequentialGroup()
-                .addComponent(pannRisult7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panRisp7Layout.createSequentialGroup()
-                .addGroup(panRisp7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, panRisp7Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(buco27, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buco28, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panRisp7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panRisp7Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(buco26, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buco25, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                panRisp7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp7Layout.createSequentialGroup()
+                                .addComponent(pannRisult7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(panRisp7Layout.createSequentialGroup()
+                                .addGroup(panRisp7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, panRisp7Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(buco27, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(buco28, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(panRisp7Layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addGroup(panRisp7Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(buco26, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(buco25, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap())
         );
 
         jSeparator7.setForeground(new Color(149, 61, 51));
@@ -1451,31 +1451,31 @@ public class MasterMind extends JFrame {
         GroupLayout pannRisult8Layout = new GroupLayout(pannRisult8);
         pannRisult8.setLayout(pannRisult8Layout);
         pannRisult8Layout.setHorizontalGroup(
-            pannRisult8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult8Layout.createSequentialGroup()
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pannRisult8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult8Layout.createSequentialGroup()
-                        .addComponent(indicatore29)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore30, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult8Layout.createSequentialGroup()
-                        .addComponent(indicatore31)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore32)))
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                pannRisult8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult8Layout.createSequentialGroup()
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(pannRisult8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult8Layout.createSequentialGroup()
+                                                .addComponent(indicatore29)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore30, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult8Layout.createSequentialGroup()
+                                                .addComponent(indicatore31)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore32)))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pannRisult8Layout.setVerticalGroup(
-            pannRisult8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult8Layout.createSequentialGroup()
-                .addGroup(pannRisult8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore29)
-                    .addComponent(indicatore30, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pannRisult8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore32)
-                    .addComponent(indicatore31))
-                .addGap(0, 8, Short.MAX_VALUE))
+                pannRisult8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult8Layout.createSequentialGroup()
+                                .addGroup(pannRisult8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore29)
+                                        .addComponent(indicatore30, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pannRisult8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore32)
+                                        .addComponent(indicatore31))
+                                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         buco29.setFont(new Font(".SF NS Text", 0, 18)); // NOI18N
@@ -1514,36 +1514,36 @@ public class MasterMind extends JFrame {
         GroupLayout panRisp8Layout = new GroupLayout(panRisp8);
         panRisp8.setLayout(panRisp8Layout);
         panRisp8Layout.setHorizontalGroup(
-            panRisp8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pannRisult8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(buco29, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco30, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco31, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco32, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                panRisp8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp8Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(pannRisult8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)
+                                .addComponent(buco29, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco30, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco31, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco32, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21))
         );
         panRisp8Layout.setVerticalGroup(
-            panRisp8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp8Layout.createSequentialGroup()
-                .addComponent(pannRisult8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panRisp8Layout.createSequentialGroup()
-                .addGroup(panRisp8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, panRisp8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(buco31, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buco32, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panRisp8Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panRisp8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(buco30, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buco29, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                panRisp8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp8Layout.createSequentialGroup()
+                                .addComponent(pannRisult8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(panRisp8Layout.createSequentialGroup()
+                                .addGroup(panRisp8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, panRisp8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(buco31, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(buco32, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(panRisp8Layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addGroup(panRisp8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(buco30, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(buco29, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap())
         );
 
         jSeparator8.setForeground(new Color(149, 61, 51));
@@ -1567,31 +1567,31 @@ public class MasterMind extends JFrame {
         GroupLayout pannRisult9Layout = new GroupLayout(pannRisult9);
         pannRisult9.setLayout(pannRisult9Layout);
         pannRisult9Layout.setHorizontalGroup(
-            pannRisult9Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult9Layout.createSequentialGroup()
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pannRisult9Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult9Layout.createSequentialGroup()
-                        .addComponent(indicatore33)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore34, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult9Layout.createSequentialGroup()
-                        .addComponent(indicatore35)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore36)))
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                pannRisult9Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult9Layout.createSequentialGroup()
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(pannRisult9Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult9Layout.createSequentialGroup()
+                                                .addComponent(indicatore33)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore34, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult9Layout.createSequentialGroup()
+                                                .addComponent(indicatore35)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore36)))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pannRisult9Layout.setVerticalGroup(
-            pannRisult9Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult9Layout.createSequentialGroup()
-                .addGroup(pannRisult9Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore33)
-                    .addComponent(indicatore34, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pannRisult9Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore36)
-                    .addComponent(indicatore35))
-                .addGap(0, 8, Short.MAX_VALUE))
+                pannRisult9Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult9Layout.createSequentialGroup()
+                                .addGroup(pannRisult9Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore33)
+                                        .addComponent(indicatore34, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pannRisult9Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore36)
+                                        .addComponent(indicatore35))
+                                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         buco33.setFont(new Font(".SF NS Text", 0, 18)); // NOI18N
@@ -1630,36 +1630,36 @@ public class MasterMind extends JFrame {
         GroupLayout panRisp9Layout = new GroupLayout(panRisp9);
         panRisp9.setLayout(panRisp9Layout);
         panRisp9Layout.setHorizontalGroup(
-            panRisp9Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pannRisult9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(buco33, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco34, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco35, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco36, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                panRisp9Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp9Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(pannRisult9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)
+                                .addComponent(buco33, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco34, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco35, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco36, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21))
         );
         panRisp9Layout.setVerticalGroup(
-            panRisp9Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp9Layout.createSequentialGroup()
-                .addComponent(pannRisult9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panRisp9Layout.createSequentialGroup()
-                .addGroup(panRisp9Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, panRisp9Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(buco35, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buco36, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panRisp9Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panRisp9Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(buco34, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buco33, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                panRisp9Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp9Layout.createSequentialGroup()
+                                .addComponent(pannRisult9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(panRisp9Layout.createSequentialGroup()
+                                .addGroup(panRisp9Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, panRisp9Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(buco35, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(buco36, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(panRisp9Layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addGroup(panRisp9Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(buco34, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(buco33, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap())
         );
 
         jSeparator9.setForeground(new Color(149, 61, 51));
@@ -1683,31 +1683,31 @@ public class MasterMind extends JFrame {
         GroupLayout pannRisult10Layout = new GroupLayout(pannRisult10);
         pannRisult10.setLayout(pannRisult10Layout);
         pannRisult10Layout.setHorizontalGroup(
-            pannRisult10Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult10Layout.createSequentialGroup()
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pannRisult10Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult10Layout.createSequentialGroup()
-                        .addComponent(indicatore37)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore38, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
-                    .addGroup(GroupLayout.Alignment.TRAILING, pannRisult10Layout.createSequentialGroup()
-                        .addComponent(indicatore39)
-                        .addGap(18, 18, 18)
-                        .addComponent(indicatore40)))
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                pannRisult10Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult10Layout.createSequentialGroup()
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(pannRisult10Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult10Layout.createSequentialGroup()
+                                                .addComponent(indicatore37)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore38, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pannRisult10Layout.createSequentialGroup()
+                                                .addComponent(indicatore39)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(indicatore40)))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pannRisult10Layout.setVerticalGroup(
-            pannRisult10Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pannRisult10Layout.createSequentialGroup()
-                .addGroup(pannRisult10Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore37)
-                    .addComponent(indicatore38, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pannRisult10Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(indicatore40)
-                    .addComponent(indicatore39))
-                .addGap(0, 8, Short.MAX_VALUE))
+                pannRisult10Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pannRisult10Layout.createSequentialGroup()
+                                .addGroup(pannRisult10Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore37)
+                                        .addComponent(indicatore38, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pannRisult10Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(indicatore40)
+                                        .addComponent(indicatore39))
+                                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         buco37.setFont(new Font(".SF NS Text", 0, 18)); // NOI18N
@@ -1746,133 +1746,133 @@ public class MasterMind extends JFrame {
         GroupLayout panRisp10Layout = new GroupLayout(panRisp10);
         panRisp10.setLayout(panRisp10Layout);
         panRisp10Layout.setHorizontalGroup(
-            panRisp10Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pannRisult10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(buco37, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco38, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco39, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buco40, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                panRisp10Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp10Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(pannRisult10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)
+                                .addComponent(buco37, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco38, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco39, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buco40, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21))
         );
         panRisp10Layout.setVerticalGroup(
-            panRisp10Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panRisp10Layout.createSequentialGroup()
-                .addComponent(pannRisult10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panRisp10Layout.createSequentialGroup()
-                .addGroup(panRisp10Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, panRisp10Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(buco39, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buco40, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panRisp10Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panRisp10Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(buco38, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buco37, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                panRisp10Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(panRisp10Layout.createSequentialGroup()
+                                .addComponent(pannRisult10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(panRisp10Layout.createSequentialGroup()
+                                .addGroup(panRisp10Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, panRisp10Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(buco39, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(buco40, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(panRisp10Layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addGroup(panRisp10Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(buco38, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(buco37, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap())
         );
 
         GroupLayout pannelloDiGiocoLayout = new GroupLayout(pannelloDiGioco);
         pannelloDiGioco.setLayout(pannelloDiGiocoLayout);
         pannelloDiGiocoLayout.setHorizontalGroup(
-            pannelloDiGiocoLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(GroupLayout.Alignment.TRAILING, pannelloDiGiocoLayout.createSequentialGroup()
-                .addGroup(pannelloDiGiocoLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(panRisp1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSeparator1)
-                    .addComponent(panRisp2, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panRisp3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSeparator2)
-                    .addComponent(jSeparator3)
-                    .addComponent(panRisp4, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSeparator4)
-                    .addComponent(panRisp5, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSeparator5, GroupLayout.Alignment.TRAILING)
-                    .addComponent(panRisp6, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSeparator6)
-                    .addComponent(panRisp7, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSeparator7)
-                    .addComponent(panRisp8, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSeparator8)
-                    .addComponent(panRisp9, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSeparator9, GroupLayout.Alignment.TRAILING)
-                    .addComponent(panRisp10, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pannelloTentativi, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                pannelloDiGiocoLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(GroupLayout.Alignment.TRAILING, pannelloDiGiocoLayout.createSequentialGroup()
+                                .addGroup(pannelloDiGiocoLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addComponent(panRisp1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jSeparator1)
+                                        .addComponent(panRisp2, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(panRisp3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jSeparator2)
+                                        .addComponent(jSeparator3)
+                                        .addComponent(panRisp4, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jSeparator4)
+                                        .addComponent(panRisp5, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jSeparator5, GroupLayout.Alignment.TRAILING)
+                                        .addComponent(panRisp6, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jSeparator6)
+                                        .addComponent(panRisp7, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jSeparator7)
+                                        .addComponent(panRisp8, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jSeparator8)
+                                        .addComponent(panRisp9, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jSeparator9, GroupLayout.Alignment.TRAILING)
+                                        .addComponent(panRisp10, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pannelloTentativi, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
         );
         pannelloDiGiocoLayout.setVerticalGroup(
-            pannelloDiGiocoLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(pannelloTentativi, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(pannelloDiGiocoLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(panRisp10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panRisp9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator8, GroupLayout.PREFERRED_SIZE, 3, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panRisp8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator7, GroupLayout.PREFERRED_SIZE, 3, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panRisp7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panRisp6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panRisp5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panRisp4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panRisp3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, GroupLayout.PREFERRED_SIZE, 3, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panRisp2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panRisp1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                pannelloDiGiocoLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(pannelloTentativi, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pannelloDiGiocoLayout.createSequentialGroup()
+                                .addContainerGap(16, Short.MAX_VALUE)
+                                .addComponent(panRisp10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(panRisp9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator8, GroupLayout.PREFERRED_SIZE, 3, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(panRisp8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator7, GroupLayout.PREFERRED_SIZE, 3, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(panRisp7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(panRisp6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(panRisp5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(panRisp4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(panRisp3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator2, GroupLayout.PREFERRED_SIZE, 3, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(panRisp2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(panRisp1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
         );
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(pannelloCodice, GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pannelloScrittaMM, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pannelloDiGioco, GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
-            .addComponent(pannelloControllo, GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(pannelloCodice, GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(pannelloScrittaMM, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pannelloDiGioco, GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
+                        .addComponent(pannelloControllo, GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pannelloCodice, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(pannelloScrittaMM, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(pannelloDiGioco, GroupLayout.PREFERRED_SIZE, 631, GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pannelloControllo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(pannelloCodice, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addComponent(pannelloScrittaMM, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(pannelloDiGioco, GroupLayout.PREFERRED_SIZE, 631, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pannelloControllo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -2074,16 +2074,16 @@ public class MasterMind extends JFrame {
 
     // Metodi setup
     private void initVariables() {
-        pioliCodice = new JLabel[] {
+        pioliCodice = new JLabel[]{
                 pioloCodice1, pioloCodice2, pioloCodice3, pioloCodice4
         };
 
-        pioli = new JLabel[] {
+        pioli = new JLabel[]{
                 pioloRosso, pioloRosa, pioloArancio, pioloCiano,
                 pioloVerde, pioloGiallo, pioloBlu, pioloViola
         };
 
-        indicatori = new JLabel[] {
+        indicatori = new JLabel[]{
                 indicatore1, indicatore2, indicatore3, indicatore4,
                 indicatore5, indicatore6, indicatore7, indicatore8,
                 indicatore9, indicatore10, indicatore11, indicatore12,
@@ -2096,7 +2096,7 @@ public class MasterMind extends JFrame {
                 indicatore37, indicatore38, indicatore39, indicatore40,
         };
 
-        buchi = new JLabel[] {
+        buchi = new JLabel[]{
                 buco1, buco2, buco3, buco4,
                 buco5, buco6, buco7, buco8,
                 buco9, buco10, buco11, buco12,
@@ -2109,7 +2109,7 @@ public class MasterMind extends JFrame {
                 buco37, buco38, buco39, buco40,
         };
 
-        buchiTentativi = new JLabel[] {
+        buchiTentativi = new JLabel[]{
                 bucoTentativo1, bucoTentativo2, bucoTentativo3, bucoTentativo4,
                 bucoTentativo5, bucoTentativo6, bucoTentativo7, bucoTentativo8,
                 bucoTentativo9, bucoTentativo10,
@@ -2153,7 +2153,7 @@ public class MasterMind extends JFrame {
 
         // Aggiungo un MouseListener alle 8 label dei pioli per renderli cliccabili
         int cont = 0;
-        for(JLabel piolo: pioli) {
+        for (JLabel piolo : pioli) {
             int finalCont = cont;
             piolo.addMouseListener(new MouseAdapter() {
                 @Override
@@ -2190,10 +2190,14 @@ public class MasterMind extends JFrame {
                     case 56 -> riempiBucoConPiolo(7);
                 }
             }
+
             @Override
-            public void keyTyped(KeyEvent e) {}
+            public void keyTyped(KeyEvent e) {
+            }
+
             @Override
-            public void keyReleased(KeyEvent e) {}
+            public void keyReleased(KeyEvent e) {
+            }
         });
     }
 
@@ -2225,15 +2229,14 @@ public class MasterMind extends JFrame {
         }
 
         // Genero quattro colori attraverso il metodo getRandom della classe Colori
-        for(int i=0; i<4; i++) {
+        for (int i = 0; i < 4; i++) {
             Color daAggiungereAlCodice;
             // Se non vengono accettati duplicati rigenero il colore finchè è già presente nel codice
             if (!duplicati) {
                 do {
                     daAggiungereAlCodice = ColoriPioli.getRandom(limiteColori);
                 } while (codice.contains(daAggiungereAlCodice));
-            }
-            else
+            } else
                 daAggiungereAlCodice = ColoriPioli.getRandom(limiteColori);
 
             codice.add(daAggiungereAlCodice);
@@ -2241,7 +2244,7 @@ public class MasterMind extends JFrame {
 
         // Disattivo quei pioli con non servono per via del limite di colori con cui si gioca la partita
         int bottoniDisattivi = 8 - limiteColori;
-        for (int i=7; i>(7 - bottoniDisattivi); i--) {
+        for (int i = 7; i > (7 - bottoniDisattivi); i--) {
             pioli[i].setEnabled(false);
             // Rimuovo anche il MouseListenr
             pioli[i].removeMouseListener(pioli[i].getMouseListeners()[0]);
@@ -2252,13 +2255,12 @@ public class MasterMind extends JFrame {
         JOptionPane.showMessageDialog(null, """
                 Per selezionare il piolo da inserire è possibile usare anche usare i tasti numerici.
                 Ad esempio, per inserire il piolo rosso in un buco, puoi utilizzare il tasto "1", per inserire il piolo rosa puoi usare il tasto "2" etc...
-                
+                                
                 Inoltre, è possibile premere i bottoni "precedente" e "successivo" anche premendo rispettivamente i tasti "freccia indietro" e "freccia avanti".
-                
+                                
                 Buona fortuna! 
                 """);
     }
-
 
 
     // Metodi di funzionamento
@@ -2274,15 +2276,14 @@ public class MasterMind extends JFrame {
 
     private void bucoPrecedente() {
         // Controllo se sotto al selettore era presente un piolo inserito e se si lo rimetto altrimenti reimposto il colore standard al buco
-        if(ColoriPioli.esisteColore(coloreSottoSelettore)) {
+        if (ColoriPioli.esisteColore(coloreSottoSelettore)) {
             buchi[indiceBucoCorrente].setForeground(coloreSottoSelettore);
             buchi[indiceBucoCorrente].setText("⬤");
-        }
-        else
+        } else
             buchi[indiceBucoCorrente].setForeground(coloreBuchi);
 
         // Se il selettore è correntemente al primo buco di un tentativo non permetto di tornare indietro alla riga del tentativo precedente
-        if(indiceBucoCorrente == 0 || ((indiceBucoCorrente + 1) % 4) == 1)
+        if (indiceBucoCorrente == 0 || ((indiceBucoCorrente + 1) % 4) == 1)
             JOptionPane.showMessageDialog(null, "Non puoi tornare al tentativo precedente");
         else
             indiceBucoCorrente--;
@@ -2295,15 +2296,14 @@ public class MasterMind extends JFrame {
 
     private void bucoSuccessivo() {
         // Controllo se sotto al selettore era presente un piolo inserito e se si lo rimetto altrimenti reimposto il colore standard al buco
-        if(ColoriPioli.esisteColore(coloreSottoSelettore)) {
+        if (ColoriPioli.esisteColore(coloreSottoSelettore)) {
             buchi[indiceBucoCorrente].setForeground(coloreSottoSelettore);
             buchi[indiceBucoCorrente].setText("⬤");
-        }
-        else
+        } else
             buchi[indiceBucoCorrente].setForeground(coloreBuchi);
 
         // Se il selettore è correntemente al quarto buco di un tentativo passo al tentativo successivo
-        if(((indiceBucoCorrente + 1) % 4) == 0)
+        if (((indiceBucoCorrente + 1) % 4) == 0)
             terminaTentativo();
         else
             indiceBucoCorrente++;
@@ -2316,7 +2316,7 @@ public class MasterMind extends JFrame {
 
     private void terminaTentativo() {
         // Creo un array con i quattro colori selezionati
-        Color[] coloriBuchiTentativo = new Color[] {
+        Color[] coloriBuchiTentativo = new Color[]{
                 buchi[indiceBucoCorrente - 3].getForeground(),
                 buchi[indiceBucoCorrente - 2].getForeground(),
                 buchi[indiceBucoCorrente - 1].getForeground(),
@@ -2324,7 +2324,7 @@ public class MasterMind extends JFrame {
         };
 
         // Se sono stati lasciati buchi liberi non permetto di passare alla riga del prossimo tentativo
-        if(!controllaCompletezzaTentativo(coloriBuchiTentativo)) {
+        if (!controllaCompletezzaTentativo(coloriBuchiTentativo)) {
             JOptionPane.showMessageDialog(null, "Non hai ancora messo un piolo su tutti e quattro i buchi.");
             return;
         }
@@ -2332,9 +2332,9 @@ public class MasterMind extends JFrame {
         // Controllo se l'utente ha vinto, perso, o se può continuare a giocare
         int stato = controllaCorrettezzaTentativo(coloriBuchiTentativo);
 
-        if(stato == -1)
+        if (stato == -1)
             sconfitta();
-        else if(stato == 1)
+        else if (stato == 1)
             vittoria();
         else
             indiceBucoCorrente++;
@@ -2360,9 +2360,9 @@ public class MasterMind extends JFrame {
         ArrayList<Color> controllati = new ArrayList<>();
 
         // Controllo prima se c'è qualche colore corretto confrontando pari pari il codice della soluzione con quello inserito dall'utente
-        for (int i=0; i<4; i++) {
+        for (int i = 0; i < 4; i++) {
             // Se il colore inserito dall'utente è presente nel codice della soluzione allo stesso indice
-            if(codice.get(i).equals(coloriBuchiTentativo[i])) {
+            if (codice.get(i).equals(coloriBuchiTentativo[i])) {
                 // Aggiungo il colore all'array di quelli controllati
                 controllati.add(coloriBuchiTentativo[i]);
                 corretti++;
@@ -2370,35 +2370,35 @@ public class MasterMind extends JFrame {
         }
 
         // Ora controllo i colori che sono solamente presenti
-        for (int i=0; i<4; i++) {
+        for (int i = 0; i < 4; i++) {
             // Se il colore inserito dall'utente è presente nel codice della soluzione
-            if(codice.contains(coloriBuchiTentativo[i])) {
+            if (codice.contains(coloriBuchiTentativo[i])) {
                 // Se c'è la possibilità che siano presenti duplicati nel codice della soluzione
-                if(duplicati) {
+                if (duplicati) {
                     int quantColoreNelCodice = 0, quantControllati = 0;
 
                     // Conto la quantità di pioli del colore che sto esaminando in questo momento (coloriBuchiTentativo[i]) all'interno del codice della soluzione
-                    for(Color colore: codice) {
+                    for (Color colore : codice) {
                         if (colore.equals(coloriBuchiTentativo[i]))
                             quantColoreNelCodice++;
                     }
 
                     // Conto la quantità di pioli del colore che sto esaminando in questo momento (coloriBuchiTentativo[i]) all'interno dei colori già controllati
-                    for(Color colore: controllati) {
+                    for (Color colore : controllati) {
                         if (colore.equals(coloriBuchiTentativo[i]))
                             quantControllati++;
                     }
 
                     // Se la quantità dei controllati di quel colore è minore della quantità di quel colore all'interno del codice di soluzione
                     // vuol dire che posso aggiungere 1 al numero di colori presenti
-                    if(quantControllati < quantColoreNelCodice) {
+                    if (quantControllati < quantColoreNelCodice) {
                         controllati.add(coloriBuchiTentativo[i]);
                         presenti++;
                     }
                 }
                 // Altrimenti se non sono accettati duplicati controllo solamente che all'interno dell'array
                 // dei colori controllati non sia già presente il colore che sto esaminando
-                else if(!controllati.contains(coloriBuchiTentativo[i])) {
+                else if (!controllati.contains(coloriBuchiTentativo[i])) {
                     controllati.add(coloriBuchiTentativo[i]);
                     presenti++;
                 }
@@ -2409,11 +2409,11 @@ public class MasterMind extends JFrame {
         aggiornaIndicatori(corretti, presenti);
 
         // Se ha indovinato correttamente i 4 colori ritorna 1
-        if(corretti == 4)
+        if (corretti == 4)
             return 1;
-        // Se ha esaurito i tentativi disponibili ritorna -1
-        else if(((indiceBucoCorrente + 1)/4) >= settaggi.getNumTentativi())
-                return -1;
+            // Se ha esaurito i tentativi disponibili ritorna -1
+        else if (((indiceBucoCorrente + 1) / 4) >= settaggi.getNumTentativi())
+            return -1;
         else
             return 0;
     }
@@ -2422,12 +2422,12 @@ public class MasterMind extends JFrame {
         // L'array di indicatori contiene i 4 indicatori che sono affianco delle varie righe dei tentativi
         // quindi gli indicatori da aggiornare saranno quelli dall'indice indiceBucoCorrente -3 all'indice indiceBucoCorrente perchè vanno di pari passo
         int contatoreIndicatore = indiceBucoCorrente - 3;
-        for (int i=0; i<corretti; i++) {
+        for (int i = 0; i < corretti; i++) {
             indicatori[contatoreIndicatore].setForeground(Color.RED);
             contatoreIndicatore++;
         }
 
-        for (int i=0; i<presenti; i++) {
+        for (int i = 0; i < presenti; i++) {
             indicatori[contatoreIndicatore].setForeground(Color.WHITE);
             contatoreIndicatore++;
         }
@@ -2435,7 +2435,7 @@ public class MasterMind extends JFrame {
 
     private void vittoria() {
         // Segnalo nel buco del tentativo, a lato del codice inserito dall'utente, che la sequenza è corretta colorando il buco del tentativo di rosso
-        buchiTentativi[indiceBucoCorrente/4].setForeground(Color.RED);
+        buchiTentativi[indiceBucoCorrente / 4].setForeground(Color.RED);
         finisciPartita();
         JOptionPane.showMessageDialog(null, "Complimenti hai indovinato il codice!\n\nPuoi chiudere la finestra del gioco per tornare al menù.");
     }
@@ -2454,7 +2454,7 @@ public class MasterMind extends JFrame {
         removeWindowListener(getWindowListeners()[0]);
 
         // Mostro il codice corretto nei pioli dedicati alla soluzione
-        for (int i=0; i<4; i++)
+        for (int i = 0; i < 4; i++)
             pioliCodice[i].setForeground(codice.get(i));
     }
 }

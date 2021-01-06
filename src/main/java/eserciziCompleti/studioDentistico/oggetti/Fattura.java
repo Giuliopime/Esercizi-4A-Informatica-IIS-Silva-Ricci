@@ -9,9 +9,9 @@ public class Fattura implements Serializable {
     private long data;
 
     public Fattura(UUID IDPaziente, UUID[] interventi) {
-        if(IDPaziente == null)
+        if (IDPaziente == null)
             throw new IllegalArgumentException("È necessario fornire un paziente");
-        if(interventi == null || interventi.length == 0)
+        if (interventi == null || interventi.length == 0)
             throw new IllegalArgumentException("È necessario fornire almeno un intervento");
 
         this.IDPaziente = IDPaziente;

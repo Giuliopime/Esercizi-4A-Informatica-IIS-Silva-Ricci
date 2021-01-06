@@ -1,17 +1,10 @@
 package eserciziCompleti.studioDentistico.grafica.mainPanels;
 
-import com.intellij.uiDesigner.core.GridConstraints;
-import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.intellij.uiDesigner.core.Spacer;
 import eserciziCompleti.studioDentistico.gestori.GestoreImpostazioni;
 import eserciziCompleti.studioDentistico.grafica.NavBarUtil;
 import eserciziCompleti.studioDentistico.oggetti.Impostazioni;
 
 import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
-import javax.swing.text.StyleContext;
-import java.awt.*;
-import java.util.Locale;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 

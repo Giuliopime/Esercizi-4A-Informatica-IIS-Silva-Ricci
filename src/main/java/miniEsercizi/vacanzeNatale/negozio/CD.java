@@ -1,6 +1,6 @@
 package miniEsercizi.vacanzeNatale.negozio;
 
-public class CD extends Articolo{
+public class CD extends Articolo {
     private int numBrani;
 
     public CD(String codice, String titolo, double costo, int numBrani) {

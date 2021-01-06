@@ -16,7 +16,7 @@ public class GestoreGrafica extends JFrame {
     public static final String pathFileDat = "fileDat/studioDentistico/";
 
     public static GestoreGrafica getInstance() {
-        if(instance == null)
+        if (instance == null)
             instance = new GestoreGrafica();
 
         return instance;
@@ -48,7 +48,7 @@ public class GestoreGrafica extends JFrame {
     }
 
     public void changePanel(TipoPanel tipoPanel, String[] args) {
-        if(tipoPanel == null) {
+        if (tipoPanel == null) {
             setContentPane(new HomePage().getMainPanel());
         } else {
             switch (tipoPanel) {

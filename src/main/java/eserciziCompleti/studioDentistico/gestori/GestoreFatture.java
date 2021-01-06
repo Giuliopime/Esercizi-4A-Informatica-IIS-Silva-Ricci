@@ -43,7 +43,7 @@ public class GestoreFatture {
     }
 
     public static GestoreFatture getInstance() {
-        if(instance == null)
+        if (instance == null)
             instance = new GestoreFatture();
 
         return instance;
@@ -55,7 +55,7 @@ public class GestoreFatture {
 
         fatture = new ArrayList<>();
 
-        while(fis.available() > 0)
+        while (fis.available() > 0)
             fatture.add((Fattura) ois.readObject());
 
         ois.close();
@@ -67,7 +67,7 @@ public class GestoreFatture {
             FileOutputStream fos = new FileOutputStream(GestoreGrafica.pathFileDat + nomeFile);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-            for (Fattura i: fatture)
+            for (Fattura i : fatture)
                 oos.writeObject(i);
 
             oos.close();
@@ -85,10 +85,10 @@ public class GestoreFatture {
     public ArrayList<Fattura> getFatture() {
         ArrayList<Fattura> listaFatture = fatture;
 
-        if(filtriFattura != null && query != null)
+        if (filtriFattura != null && query != null)
             listaFatture = getFattureFiltrate();
 
-        if(ordinamentoFatture != null)
+        if (ordinamentoFatture != null)
             ordinaFatture(listaFatture);
 
         return listaFatture;
@@ -115,11 +115,11 @@ public class GestoreFatture {
 
     private ArrayList<TipoQueryFattura> creaArrayQueries() {
         ArrayList<TipoQueryFattura> tipiQuery = new ArrayList<>();
-        if(filtriFattura.isData())
+        if (filtriFattura.isData())
             tipiQuery.add(TipoQueryFattura.DataCreazione);
-        if(filtriFattura.isPaziente())
+        if (filtriFattura.isPaziente())
             tipiQuery.add(TipoQueryFattura.Paziente);
-        if(filtriFattura.isIntervento())
+        if (filtriFattura.isIntervento())
             tipiQuery.add(TipoQueryFattura.Intervento);
 
         return tipiQuery;
@@ -177,10 +177,10 @@ public class GestoreFatture {
         switch (ordinamentoFatture) {
             case DATA -> listaFatture.sort(Comparator.comparing(Fattura::getData));
             case INTERVENTO -> listaFatture.sort(Comparator.comparing(fattura -> GestoreInterventi.getInstance().getInterventi().indexOf(GestoreInterventi.getInstance().getIntervento(fattura.getInterventi()[0]))));
-            case PAZIENTE ->  listaFatture.sort(Comparator.comparing(fattura -> GestorePazienti.getInstance().getPazienti().indexOf(GestorePazienti.getInstance().getPaziente(fattura.getIDPaziente()))));
+            case PAZIENTE -> listaFatture.sort(Comparator.comparing(fattura -> GestorePazienti.getInstance().getPazienti().indexOf(GestorePazienti.getInstance().getPaziente(fattura.getIDPaziente()))));
         }
 
-        if(ordinamentoFatture.equals(OrdinamentoFatture.DATA))
+        if (ordinamentoFatture.equals(OrdinamentoFatture.DATA))
             Collections.reverse(listaFatture);
     }
 }

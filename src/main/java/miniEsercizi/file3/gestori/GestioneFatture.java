@@ -34,22 +34,22 @@ public class GestioneFatture {
     }
 
 
-    public static void caricaFattureDaFile() throws IOException, ClassNotFoundException{
+    public static void caricaFattureDaFile() throws IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream("fatture.dat");
         ObjectInputStream ois = new ObjectInputStream(fis);
         fatture = new ArrayList<>();
 
-        while(fis.available() > 0){
+        while (fis.available() > 0) {
             fatture.add((Fattura) ois.readObject());
         }
     }
 
 
-    private static void registraSuFile() throws IOException{
+    private static void registraSuFile() throws IOException {
         FileOutputStream fos = new FileOutputStream("fatture.dat");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-        for(Fattura c: fatture)
+        for (Fattura c : fatture)
             oos.writeObject(c);
 
         oos.close();

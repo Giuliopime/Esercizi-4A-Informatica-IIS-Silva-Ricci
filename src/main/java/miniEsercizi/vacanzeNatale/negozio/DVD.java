@@ -1,6 +1,6 @@
 package miniEsercizi.vacanzeNatale.negozio;
 
-public class DVD extends Articolo{
+public class DVD extends Articolo {
     private int lunghezzaFilm;
 
     public DVD(String codice, String titolo, double costo, int lunghezzaFilm) {

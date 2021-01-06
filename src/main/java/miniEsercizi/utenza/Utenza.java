@@ -21,7 +21,7 @@ public class Utenza {
         this.consumoAttuale = consumoAttuale >= 0 ? consumoAttuale : 0;
         this.consumoPrecedente = consumoPrecedente >= 0 ? consumoPrecedente : 0;
 
-        if(this.consumoAttuale < this.consumoPrecedente) this.consumoAttuale = this.consumoPrecedente;
+        if (this.consumoAttuale < this.consumoPrecedente) this.consumoAttuale = this.consumoPrecedente;
     }
 
     public double getConsumo(double metroCubo) {

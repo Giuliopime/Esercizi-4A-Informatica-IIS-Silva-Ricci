@@ -1,8 +1,5 @@
 package eserciziCompleti.studioDentistico.grafica.panelsComponenti;
 
-import com.intellij.uiDesigner.core.GridConstraints;
-import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.intellij.uiDesigner.core.Spacer;
 import eserciziCompleti.studioDentistico.enums.AzioneDialog;
 import eserciziCompleti.studioDentistico.enums.TipoIntervento;
 import eserciziCompleti.studioDentistico.enums.TipoPanel;
@@ -16,12 +13,9 @@ import eserciziCompleti.studioDentistico.oggetti.Intervento;
 import eserciziCompleti.studioDentistico.oggetti.Paziente;
 
 import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
-import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class PanelIntervento {
@@ -123,7 +117,7 @@ public class PanelIntervento {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                if(GestorePazienti.getInstance().getPazienti().size() == 0) {
+                if (GestorePazienti.getInstance().getPazienti().size() == 0) {
                     new DialogNessunPaziente();
                     return;
                 }

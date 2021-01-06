@@ -36,18 +36,10 @@ Il resto del funzionamento è commentato all'interno del codice
 */
 
 
-import com.intellij.uiDesigner.core.GridConstraints;
-import com.intellij.uiDesigner.core.GridLayoutManager;
-
 import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
-import javax.swing.text.StyleContext;
 import java.awt.*;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Milionario {
