@@ -1,9 +1,9 @@
 package eserciziCompleti.studioDentistico.gestori;
 
-import eserciziCompleti.studioDentistico.enums.ordinamento.OrdinamentoPazienti;
 import eserciziCompleti.studioDentistico.enums.TipiQuery.TipoQueryPaziente;
-import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriPaziente;
+import eserciziCompleti.studioDentistico.enums.ordinamento.OrdinamentoPazienti;
 import eserciziCompleti.studioDentistico.oggetti.Paziente;
+import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriPaziente;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -78,7 +78,14 @@ public class GestorePazienti {
     }
 
     public void eliminaPaziente(UUID idPaziente) {
-        pazienti.removeIf(paziente -> paziente.getIDPaziente().equals(idPaziente));
+        pazienti.removeIf(paziente -> {
+            if(paziente.getIDPaziente().equals(idPaziente)) {
+                GestoreInterventi.getInstance().eliminaInterventiDiPaziente(paziente.getIDPaziente());
+                GestoreFatture.getInstance().eliminaFattureDiPaziente(paziente.getIDPaziente());
+                return true;
+            }
+            return false;
+        });
         salvaPazienti();
     }
 

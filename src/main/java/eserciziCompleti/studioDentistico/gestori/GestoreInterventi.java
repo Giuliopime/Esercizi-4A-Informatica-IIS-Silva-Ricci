@@ -1,11 +1,11 @@
 package eserciziCompleti.studioDentistico.gestori;
 
-import eserciziCompleti.studioDentistico.enums.ordinamento.OrdinamentoInterventi;
 import eserciziCompleti.studioDentistico.enums.TipiQuery.TipoQueryIntervento;
-import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriIntervento;
-import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriPaziente;
+import eserciziCompleti.studioDentistico.enums.ordinamento.OrdinamentoInterventi;
 import eserciziCompleti.studioDentistico.oggetti.Intervento;
 import eserciziCompleti.studioDentistico.oggetti.Paziente;
+import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriIntervento;
+import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriPaziente;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -79,6 +79,11 @@ public class GestoreInterventi {
 
     public void eliminaIntervento(UUID idIntervento) {
         interventi.removeIf(intervento -> intervento.getIDIntervento().equals(idIntervento));
+        salvaInterventi();
+    }
+
+    public void eliminaInterventiDiPaziente(UUID IDPaziente) {
+        interventi.removeIf(intervento -> intervento.getIDPaziente().equals(IDPaziente));
         salvaInterventi();
     }
 

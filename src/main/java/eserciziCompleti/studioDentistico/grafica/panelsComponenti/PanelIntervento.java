@@ -1,14 +1,14 @@
 package eserciziCompleti.studioDentistico.grafica.panelsComponenti;
 
 import eserciziCompleti.studioDentistico.enums.AzioneDialog;
-import eserciziCompleti.studioDentistico.enums.TipoIntervento;
 import eserciziCompleti.studioDentistico.enums.Schermata;
+import eserciziCompleti.studioDentistico.enums.TipoIntervento;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.gestori.GestoreInterventi;
 import eserciziCompleti.studioDentistico.gestori.GestorePazienti;
 import eserciziCompleti.studioDentistico.grafica.Colori;
 import eserciziCompleti.studioDentistico.grafica.dialogs.interventi.DialogIntervento;
-import eserciziCompleti.studioDentistico.grafica.dialogs.pazienti.DialogNessunPaziente;
+import eserciziCompleti.studioDentistico.grafica.dialogs.DialogAvviso;
 import eserciziCompleti.studioDentistico.oggetti.Intervento;
 import eserciziCompleti.studioDentistico.oggetti.Paziente;
 
@@ -118,7 +118,7 @@ public class PanelIntervento {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 if (GestorePazienti.getInstance().getPazienti().size() == 0) {
-                    new DialogNessunPaziente();
+                    new DialogAvviso("Nessun paziente", "Devi prima creare un paziente");
                     return;
                 }
                 DialogIntervento dialogIntervento = new DialogIntervento("Nuovo Intervento");

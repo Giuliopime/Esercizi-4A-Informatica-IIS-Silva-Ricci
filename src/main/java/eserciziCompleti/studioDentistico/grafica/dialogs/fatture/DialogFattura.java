@@ -159,5 +159,4 @@ public class DialogFattura extends JDialog {
 
         cbPaziente.setSelectedIndex(0);
     }
-
 }

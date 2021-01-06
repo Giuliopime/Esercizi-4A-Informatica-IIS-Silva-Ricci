@@ -1,4 +1,4 @@
-package eserciziCompleti.studioDentistico.grafica.dialogs.pazienti;
+package eserciziCompleti.studioDentistico.grafica.dialogs;
 
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.grafica.Colori;
@@ -7,17 +7,20 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class DialogNessunPaziente extends JDialog {
+public class DialogAvviso extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
+    private JLabel avviso;
 
-    public DialogNessunPaziente() {
+    public DialogAvviso(String titolo, String stringAvviso) {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
+        setTitle(titolo);
 
         initListeners();
         initGrafica();
+        avviso.setText(stringAvviso);
 
 
         pack();

@@ -1,11 +1,11 @@
 package eserciziCompleti.studioDentistico.gestori;
 
-import eserciziCompleti.studioDentistico.enums.ordinamento.OrdinamentoFatture;
 import eserciziCompleti.studioDentistico.enums.TipiQuery.TipoQueryFattura;
+import eserciziCompleti.studioDentistico.enums.ordinamento.OrdinamentoFatture;
 import eserciziCompleti.studioDentistico.oggetti.Fattura;
-import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriFattura;
 import eserciziCompleti.studioDentistico.oggetti.Intervento;
 import eserciziCompleti.studioDentistico.oggetti.Paziente;
+import eserciziCompleti.studioDentistico.oggetti.filtri.FiltriFattura;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -79,6 +79,11 @@ public class GestoreFatture {
 
     public void aggiungiFattura(Fattura fattura) {
         fatture.add(fattura);
+        salvaFatture();
+    }
+
+    public void eliminaFattureDiPaziente(UUID IDPaziente) {
+        fatture.removeIf(fattura -> fattura.getIDPaziente().equals(IDPaziente));
         salvaFatture();
     }
 

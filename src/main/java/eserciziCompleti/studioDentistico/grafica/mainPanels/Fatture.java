@@ -8,8 +8,9 @@ import eserciziCompleti.studioDentistico.grafica.NavBarUtil;
 import eserciziCompleti.studioDentistico.grafica.RequestFocusListener;
 import eserciziCompleti.studioDentistico.grafica.dialogs.fatture.DialogFattura;
 import eserciziCompleti.studioDentistico.grafica.dialogs.fatture.DialogFiltriFatture;
-import eserciziCompleti.studioDentistico.grafica.dialogs.pazienti.DialogNessunPaziente;
 import eserciziCompleti.studioDentistico.grafica.dialogs.fatture.DialogOrdinaFatture;
+import eserciziCompleti.studioDentistico.grafica.dialogs.DialogAvviso;
+import eserciziCompleti.studioDentistico.grafica.dialogs.fatture.DialogStampaFattura;
 import eserciziCompleti.studioDentistico.oggetti.Fattura;
 import eserciziCompleti.studioDentistico.oggetti.Impostazioni;
 import eserciziCompleti.studioDentistico.oggetti.Intervento;
@@ -74,7 +75,7 @@ public class Fatture implements FocusListener {
 
 
         JButton[] bottoniContenuto = new JButton[]{
-                filtriButton, btnOrdina, btnNuovaFattura
+                filtriButton, btnOrdina, btnNuovaFattura, btnStampaFattura
         };
 
         for (JButton btn : bottoniContenuto) {
@@ -102,7 +103,7 @@ public class Fatture implements FocusListener {
 
         btnNuovaFattura.addActionListener(e -> {
             if (GestorePazienti.getInstance().getPazienti().size() == 0) {
-                new DialogNessunPaziente();
+                new DialogAvviso("Nessun paziente", "Devi prima creare un paziente");
                 return;
             }
             DialogFattura dialogFattura = new DialogFattura("Nuova Fattura");
@@ -110,6 +111,15 @@ public class Fatture implements FocusListener {
                 GestoreFatture.getInstance().aggiungiFattura(dialogFattura.getFattura());
                 GestoreGrafica.getInstance().changePanel(Schermata.FATTURE, new String[]{ricerca});
             }
+        });
+
+        btnStampaFattura.addActionListener(e -> {
+            if(GestoreFatture.getInstance().getFatture().size() == 0) {
+                new DialogAvviso("Nessuna Fattura", "Devi prima creare una nuova fattura");
+                return;
+            }
+
+            new DialogStampaFattura();
         });
 
         btnOrdina.addActionListener(e -> {
