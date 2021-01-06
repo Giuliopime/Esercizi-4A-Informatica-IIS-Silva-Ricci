@@ -87,7 +87,7 @@ public class Fatture implements FocusListener {
 
                 public void mouseExited(MouseEvent evt) {
                     btn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-                    btn.setBackground(btn.equals(btnNuovaFattura) ? Colori.verdeChiaro : Colori.bianco);
+                    btn.setBackground(btn.equals(btnNuovaFattura) || btn.equals(btnStampaFattura) ? Colori.verdeChiaro : Colori.bianco);
                 }
             });
         }
