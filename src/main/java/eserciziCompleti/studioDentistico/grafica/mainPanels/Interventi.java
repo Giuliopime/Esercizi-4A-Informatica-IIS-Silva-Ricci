@@ -36,6 +36,7 @@ public class Interventi implements FocusListener {
     private JButton btnOrdina;
     private JPanel listaInterventi;
     private JScrollPane scrollPaneInterventi;
+    private JLabel labelImpostazioni;
 
     private String ricerca;
 
@@ -46,7 +47,7 @@ public class Interventi implements FocusListener {
     public Interventi(String[] ricerca) {
         this.ricerca = ricerca != null ? ricerca[0] : null;
 
-        NavBarUtil.initNavBar(bottoniNav, logo);
+        NavBarUtil.initNavBar(bottoniNav, logo, labelImpostazioni);
         initGrafica();
     }
 

@@ -25,7 +25,7 @@ public class DialogFattura extends JDialog {
     private JTextArea tieniPremutoCTRLPerTextArea;
     private JComboBox cbPaziente;
 
-    private String titolo;
+    private final String titolo;
     private Fattura fattura;
     private AzioneDialog azione = AzioneDialog.NIENTE;
     private ArrayList<Paziente> pazienti;

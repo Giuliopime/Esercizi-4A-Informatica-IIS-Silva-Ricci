@@ -1,34 +1,32 @@
-package eserciziCompleti.studioDentistico.grafica.dialogs.pazienti;
+package eserciziCompleti.studioDentistico.grafica.dialogs;
 
 import eserciziCompleti.studioDentistico.enums.ordinamento.OrdinamentoPazienti;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
+import eserciziCompleti.studioDentistico.gestori.GestoreImpostazioni;
 import eserciziCompleti.studioDentistico.grafica.Colori;
+import eserciziCompleti.studioDentistico.oggetti.Impostazioni;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class DialogOrdinaPazienti extends JDialog {
+public class DialogImpostazioni extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
     private JLabel labelErrore;
-    private JRadioButton rbDataNascita;
-    private JRadioButton rbCognome;
-    private JRadioButton rbNome;
-    private JRadioButton rbDataModifica;
-    private JRadioButton rbNessuno;
-    private JRadioButton rbDataCreazione;
+    private JTextField tfNomeStudio;
+    private JButton btnEsporta;
 
-    private OrdinamentoPazienti ordinamentoPazienti;
+    private Impostazioni impostazioni;
 
-    public DialogOrdinaPazienti(OrdinamentoPazienti ordinamentoPazienti) {
-        this.ordinamentoPazienti = ordinamentoPazienti;
+    public DialogImpostazioni() {
+        impostazioni = GestoreImpostazioni.getInstance().getImpostazioni();
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
-        caricaOrdinamento();
+        caricaImpostazioni();
         initListeners();
         initGrafica();
 
@@ -39,38 +37,27 @@ public class DialogOrdinaPazienti extends JDialog {
         setVisible(true);
     }
 
-    private void caricaOrdinamento() {
-        if (ordinamentoPazienti == null)
-            rbNessuno.setSelected(true);
-
-        else {
-            switch (ordinamentoPazienti) {
-                case NOME -> rbNome.setSelected(true);
-                case COGNOME -> rbCognome.setSelected(true);
-                case DATACREAZIONE -> rbDataCreazione.setSelected(true);
-                case DATAULTIMAMODIFICA -> rbDataModifica.setSelected(true);
-                case DATANASCITA -> rbDataNascita.setSelected(true);
-                default -> rbNessuno.setSelected(true);
-            }
-        }
+    private void caricaImpostazioni() {
+        tfNomeStudio.setText(impostazioni.getNomeStudio());
     }
 
     private void onOK() {
-        ordinamentoPazienti = rbDataCreazione.isSelected() ? OrdinamentoPazienti.DATACREAZIONE :
-                rbDataModifica.isSelected() ? OrdinamentoPazienti.DATAULTIMAMODIFICA :
-                        rbNome.isSelected() ? OrdinamentoPazienti.NOME :
-                                rbCognome.isSelected() ? OrdinamentoPazienti.COGNOME :
-                                        rbDataNascita.isSelected() ? OrdinamentoPazienti.DATANASCITA :
-                                                null;
+        if(tfNomeStudio.getText().isBlank()) {
+            labelErrore.setIcon(new ImageIcon(getClass().getResource("/studioDentistico/errorIcon.png")));
+            labelErrore.setText("Errore: fornire un nome per lo studio");
+            return;
+        }
+        impostazioni.setNomeStudio(tfNomeStudio.getText());
         dispose();
     }
 
     private void onCancel() {
+        impostazioni = null;
         dispose();
     }
 
-    public OrdinamentoPazienti getOrdinamentoPazienti() {
-        return ordinamentoPazienti;
+    public Impostazioni getImpostazioni() {
+        return impostazioni;
     }
 
     private void initListeners() {
@@ -110,5 +97,30 @@ public class DialogOrdinaPazienti extends JDialog {
                 }
             });
         }
+
+        btnEsporta.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                onEsporta();
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                btnEsporta.setCursor(new Cursor(Cursor.HAND_CURSOR));
+                btnEsporta.setBackground(Colori.verdeChiaroHover);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                btnEsporta.setCursor(new Cursor(Cursor.HAND_CURSOR));
+                btnEsporta.setBackground(Colori.bluScuro);
+            }
+        });
+
+        btnEsporta.addActionListener(e -> onEsporta());
+    }
+
+    private void onEsporta() {
+
     }
 }

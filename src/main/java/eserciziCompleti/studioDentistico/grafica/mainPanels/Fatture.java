@@ -45,6 +45,7 @@ public class Fatture implements FocusListener {
     private JButton btnNuovaFattura;
     private JScrollPane scrollPaneTabella;
     private JButton btnStampaFattura;
+    private JLabel labelImpostazioni;
     private JPanel listaFatture;
 
     private String ricerca;
@@ -56,7 +57,7 @@ public class Fatture implements FocusListener {
     public Fatture(String[] ricerca) {
         this.ricerca = ricerca != null ? ricerca[0] : null;
 
-        NavBarUtil.initNavBar(bottoniNav, logo);
+        NavBarUtil.initNavBar(bottoniNav, logo, labelImpostazioni);
         initGrafica();
     }
 

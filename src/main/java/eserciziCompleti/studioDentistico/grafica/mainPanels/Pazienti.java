@@ -36,6 +36,7 @@ public class Pazienti implements FocusListener {
     private JPanel listaPazienti;
     private JButton btnOrdina;
     private JScrollPane scrollPanePazienti;
+    private JLabel labelImpostazioni;
     private JPanel test;
 
     private String ricerca;
@@ -47,7 +48,7 @@ public class Pazienti implements FocusListener {
     public Pazienti(String[] ricerca) {
         this.ricerca = ricerca != null ? ricerca[0] : null;
 
-        NavBarUtil.initNavBar(bottoniNav, logo);
+        NavBarUtil.initNavBar(bottoniNav, logo, labelImpostazioni);
         initGrafica();
     }
 

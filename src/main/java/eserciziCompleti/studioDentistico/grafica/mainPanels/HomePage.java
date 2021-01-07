@@ -20,6 +20,7 @@ public class HomePage {
     private JLabel logoContenuto;
     private JLabel testoBenvenuto;
     private JLabel descrizioneBenvenuto;
+    private JLabel labelImpostazioni;
 
     private JButton[] bottoniNav = new JButton[]{
             btnPazienti, btnInterventi, btnFatture
@@ -39,7 +40,7 @@ public class HomePage {
     }
 
     private void initGrafica() {
-        NavBarUtil.initNavBar(bottoniNav, logo);
+        NavBarUtil.initNavBar(bottoniNav, logo, labelImpostazioni);
     }
 
 
