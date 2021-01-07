@@ -26,6 +26,7 @@ public class DialogAvviso extends JDialog {
         pack();
         setResizable(false);
         setLocationRelativeTo(GestoreGrafica.getInstance().getFrame());
+        setAlwaysOnTop(true);
         setVisible(true);
     }
 
