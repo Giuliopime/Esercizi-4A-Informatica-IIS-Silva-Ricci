@@ -4,11 +4,35 @@ import eserciziCompleti.studioDentistico.oggetti.Impostazioni;
 
 import java.io.*;
 
+/**
+ * <p>
+ *      Singleton per gestire le Impostazioni.
+ *      L'oggetto Impostazioni viene salvato su file di record (.dat)
+ * </p>
+ *
+ * <p>
+ *      La classe presenta metodi per:
+ * </p>
+ *      <ul>
+ *      <li>Ottenere le Impostazioni </li>
+ *      <li>Modificare le Impostazioni </li>
+ *      </ul>
+ */
 public class GestoreImpostazioni {
-    private static String nomeFile = "impostazioni.dat";
+    /** Istanza del Sigleton */
     private static GestoreImpostazioni instance;
+    /** Nome del file su cui vengono salvati le impostazioni*/
+    private static final String nomeFile = "impostazioni.dat";
+    /** Oggetto Impostazioni */
     private Impostazioni impostazioni;
 
+    private GestoreImpostazioni() {
+        caricaDaFile();
+    }
+
+    /**
+     * @return Istanza del singleton
+     */
     public static GestoreImpostazioni getInstance() {
         if (instance == null)
             instance = new GestoreImpostazioni();
@@ -16,11 +40,10 @@ public class GestoreImpostazioni {
         return instance;
     }
 
-    private GestoreImpostazioni() {
-        caricaImpostazioni();
-    }
-
-    public void caricaImpostazioni() {
+    /**
+     * Carica le impostazioni del file di record sulla variabile di classe {@link GestoreImpostazioni#impostazioni}
+     */
+    public void caricaDaFile() {
         try {
             FileInputStream fis = new FileInputStream(GestoreGrafica.pathFileDat + nomeFile);
             ObjectInputStream ois = new ObjectInputStream(fis);
@@ -33,11 +56,14 @@ public class GestoreImpostazioni {
             System.out.println("Non è stato possibile caricare le impostazioni dal file " + nomeFile);
 
             impostazioni = new Impostazioni();
-            salvaImpostazioni();
+            salvaSuFile();
         }
     }
 
-    public void salvaImpostazioni() {
+    /**
+     * Salva le impostazioni sul file di record
+     */
+    public void salvaSuFile() {
         try {
             FileOutputStream fos = new FileOutputStream(GestoreGrafica.pathFileDat + nomeFile);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -52,11 +78,19 @@ public class GestoreImpostazioni {
         }
     }
 
+    /**
+     * Modifica le impostazioni
+     * @param impostazioni nuove impostazioni (già modificate)
+     */
     public void modificaImpostazioni(Impostazioni impostazioni) {
         this.impostazioni = impostazioni;
-        salvaImpostazioni();
+        salvaSuFile();
     }
 
+    /**
+     * Getter per le impostazioni
+     * @return oggetto Impostazioni
+     */
     public Impostazioni getImpostazioni() {
         return impostazioni;
     }

@@ -170,8 +170,7 @@ public class GestoreFatture {
 
         // Creo un Set per ottenere una lista di fatture univoche
         Set<Fattura> fattureFiltratiUnivoche = new HashSet<>(fattureFiltrate);
-        fattureFiltrate = new ArrayList<>();
-        fattureFiltrate.addAll(fattureFiltratiUnivoche);
+        fattureFiltrate = new ArrayList<>(fattureFiltratiUnivoche);
 
         // Resetto il filtro e la stringa di ricerca
         filtriFattura = null;
