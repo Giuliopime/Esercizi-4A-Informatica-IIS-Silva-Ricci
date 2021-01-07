@@ -33,6 +33,8 @@ public class Paziente implements Serializable {
             throw new IllegalArgumentException("Il numero di telefono deve contenere solo numeri");
         if (dataNascita == null)
             throw new IllegalArgumentException("È necessario fornire la data di nascita del paziente");
+        if(!codiceFiscale.matches("[a-zA-Z]{6}\\d\\d[a-zA-Z]\\d\\d[a-zA-Z]\\d\\d\\d[a-zA-Z]"))
+            throw new IllegalArgumentException("Il codice fiscale non è valido");
 
         this.codiceFiscale = codiceFiscale;
         this.nome = nome;
