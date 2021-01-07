@@ -11,10 +11,28 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+/**
+ * <p>
+ *      Singleton per gestire il JFrame del programma.
+ * </p>
+ *
+ * <p>
+ *      La classe presenta metodi per:
+ * </p>
+ *      <ul>
+ *      <li>Cambiare il contentPane del JFrame </li>
+ *      </ul>
+ */
 public class GestoreGrafica extends JFrame {
+    /** Istanza della classe*/
     private static GestoreGrafica instance;
+    /** Path per la directory dove verranno salvati i file dat*/
     public static final String pathFileDat = "fileDat/studioDentistico/";
 
+    /**
+     * Getter per l'istanza del singleton
+     * @return Istanza del singleton GestoreGrafica
+     */
     public static GestoreGrafica getInstance() {
         if (instance == null)
             instance = new GestoreGrafica();
@@ -37,6 +55,7 @@ public class GestoreGrafica extends JFrame {
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
+                // Salvo tutto sui vari file .dat
                 GestorePazienti.getInstance().salvaSuFile();
                 GestoreInterventi.getInstance().salvaSuFile();
                 GestoreFatture.getInstance().salvaSuFile();
@@ -47,6 +66,11 @@ public class GestoreGrafica extends JFrame {
         });
     }
 
+    /**
+     * Naviga ad un'altra {@link Schermata}
+     * @param schermata Il tipo di {@link Schermata} a cui navigare
+     * @param args Argomenti per il costruttore della nuova Schermata
+     */
     public void changePanel(Schermata schermata, String[] args) {
         if (schermata == null) {
             setContentPane(new HomePage().getMainPanel());
@@ -58,9 +82,14 @@ public class GestoreGrafica extends JFrame {
                 default -> setContentPane(new HomePage().getMainPanel());
             }
         }
+        // Ricarica il JFrame
         validate();
     }
 
+    /**
+     * Getter per il JFrame
+     * @return JFrame del programma
+     */
     public JFrame getFrame() {
         return this;
     }
