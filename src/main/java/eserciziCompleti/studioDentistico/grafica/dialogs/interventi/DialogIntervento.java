@@ -34,7 +34,7 @@ public class DialogIntervento extends JDialog {
 
     private String titolo;
     private Intervento intervento;
-    private AzioneDialog azione = AzioneDialog.Niente;
+    private AzioneDialog azione = AzioneDialog.NIENTE;
     private ArrayList<Paziente> pazienti;
 
     public DialogIntervento(String titolo) {
@@ -116,7 +116,7 @@ public class DialogIntervento extends JDialog {
     private void onCancella() {
         ConfermaUscita uscitaDialog = new ConfermaUscita("Conferma uscita", "Sei sicuro di voler uscire?");
         if (uscitaDialog.haConfermato()) {
-            azione = AzioneDialog.Niente;
+            azione = AzioneDialog.NIENTE;
             dispose();
         }
     }
@@ -170,7 +170,7 @@ public class DialogIntervento extends JDialog {
         }
 
         if (intervento != null && intervento.equals(intervento2))
-            azione = AzioneDialog.Niente;
+            azione = AzioneDialog.NIENTE;
         else {
             azione = AzioneDialog.SALVA;
             intervento2.setUltimaModifica(new Date().getTime());

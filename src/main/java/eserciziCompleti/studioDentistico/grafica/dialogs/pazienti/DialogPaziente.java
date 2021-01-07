@@ -39,7 +39,7 @@ public class DialogPaziente extends JDialog {
     private Paziente paziente;
     private JDatePickerImpl datePicker;
     private JDatePanelImpl datePanel;
-    private AzioneDialog azione = AzioneDialog.Niente;
+    private AzioneDialog azione = AzioneDialog.NIENTE;
 
     public DialogPaziente(String titolo) {
         this.titolo = titolo;
@@ -144,7 +144,7 @@ public class DialogPaziente extends JDialog {
     private void onCancella() {
         ConfermaUscita uscitaDialog = new ConfermaUscita("Conferma uscita", "Sei sicuro di voler uscire?");
         if (uscitaDialog.haConfermato()) {
-            azione = AzioneDialog.Niente;
+            azione = AzioneDialog.NIENTE;
             dispose();
         }
     }
@@ -180,7 +180,7 @@ public class DialogPaziente extends JDialog {
         }
 
         if (paziente != null && paziente.equals(paziente2))
-            azione = AzioneDialog.Niente;
+            azione = AzioneDialog.NIENTE;
         else {
             azione = AzioneDialog.SALVA;
             paziente2.setUltimaModifica(new Date().getTime());

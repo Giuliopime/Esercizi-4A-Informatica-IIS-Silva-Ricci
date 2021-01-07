@@ -1,5 +1,8 @@
 package eserciziCompleti.studioDentistico.enums.ordinamento;
 
+/**
+ *  Diverse modalità di ordinamento degli interventi
+ */
 public enum OrdinamentoInterventi {
     DATACREAZIONE("Data creazione"),
     DATAULTIMAMODIFICA("Data ultima modifica"),

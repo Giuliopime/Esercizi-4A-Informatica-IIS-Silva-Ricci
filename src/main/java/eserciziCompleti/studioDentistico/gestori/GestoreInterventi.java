@@ -146,15 +146,15 @@ public class GestoreInterventi {
     private ArrayList<TipoQueryIntervento> creaArrayQueries() {
         ArrayList<TipoQueryIntervento> tipiQuery = new ArrayList<>();
         if (filtriIntervento.isPaziente())
-            tipiQuery.add(TipoQueryIntervento.Paziente);
+            tipiQuery.add(TipoQueryIntervento.PAZIENTE);
         if (filtriIntervento.isTipo())
-            tipiQuery.add(TipoQueryIntervento.Tipo);
+            tipiQuery.add(TipoQueryIntervento.TIPO);
         if (filtriIntervento.isCosto())
-            tipiQuery.add(TipoQueryIntervento.Costo);
+            tipiQuery.add(TipoQueryIntervento.COSTO);
         if (filtriIntervento.isTempo())
-            tipiQuery.add(TipoQueryIntervento.Tempo);
+            tipiQuery.add(TipoQueryIntervento.TEMPO);
         if (filtriIntervento.isData())
-            tipiQuery.add(TipoQueryIntervento.Data);
+            tipiQuery.add(TipoQueryIntervento.DATA);
 
         return tipiQuery;
     }
@@ -166,13 +166,13 @@ public class GestoreInterventi {
         query = query.toLowerCase();
 
         switch (tipoQueryIntervento) {
-            case Tipo -> interventiFiltrati = streamInterventi.filter(intervento -> intervento.getTipoIntervento().nome.toLowerCase().contains(query));
-            case Costo -> interventiFiltrati = streamInterventi.filter(intervento -> String.valueOf(intervento.getCosto()).toLowerCase().contains(query));
-            case Data -> interventiFiltrati = streamInterventi.filter(intervento -> {
+            case TIPO -> interventiFiltrati = streamInterventi.filter(intervento -> intervento.getTipoIntervento().nome.toLowerCase().contains(query));
+            case COSTO -> interventiFiltrati = streamInterventi.filter(intervento -> String.valueOf(intervento.getCosto()).toLowerCase().contains(query));
+            case DATA -> interventiFiltrati = streamInterventi.filter(intervento -> {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMMMMMMMMMM yyyy", Locale.ITALIAN);
                 return dateFormat.format(new Date(intervento.getDataCreazione())).toLowerCase().contains(query);
             });
-            case Tempo -> interventiFiltrati = streamInterventi.filter(intervento -> {
+            case TEMPO -> interventiFiltrati = streamInterventi.filter(intervento -> {
                 long ore = TimeUnit.MILLISECONDS.toHours(intervento.getTempoMedio());
                 long minuti = TimeUnit.MILLISECONDS.toMinutes(intervento.getTempoMedio() - (ore * 3600000));
                 String tempo = ore != 0 ? ore + (ore > 1 ? " ore" : " ora") : "";
@@ -181,7 +181,7 @@ public class GestoreInterventi {
 
                 return tempo.contains(query);
             });
-            case Paziente -> interventiFiltrati = streamInterventi.filter(intervento -> {
+            case PAZIENTE -> interventiFiltrati = streamInterventi.filter(intervento -> {
                 GestorePazienti gestorePazienti = GestorePazienti.getInstance();
                 gestorePazienti.filtriPaziente = new FiltriPaziente();
                 gestorePazienti.query = query;

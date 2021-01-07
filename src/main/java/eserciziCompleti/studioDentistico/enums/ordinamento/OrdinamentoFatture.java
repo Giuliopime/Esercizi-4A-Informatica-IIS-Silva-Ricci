@@ -1,5 +1,8 @@
 package eserciziCompleti.studioDentistico.enums.ordinamento;
 
+/**
+ *  Diverse modalità di ordinamento delle fatture
+ */
 public enum OrdinamentoFatture {
     DATA("Data"),
     PAZIENTE("Paziente"),

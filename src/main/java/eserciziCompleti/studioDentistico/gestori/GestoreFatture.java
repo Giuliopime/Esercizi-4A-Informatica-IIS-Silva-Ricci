@@ -121,11 +121,11 @@ public class GestoreFatture {
     private ArrayList<TipoQueryFattura> creaArrayQueries() {
         ArrayList<TipoQueryFattura> tipiQuery = new ArrayList<>();
         if (filtriFattura.isData())
-            tipiQuery.add(TipoQueryFattura.DataCreazione);
+            tipiQuery.add(TipoQueryFattura.DATA_CREAZIONE);
         if (filtriFattura.isPaziente())
-            tipiQuery.add(TipoQueryFattura.Paziente);
+            tipiQuery.add(TipoQueryFattura.PAZIENTE);
         if (filtriFattura.isIntervento())
-            tipiQuery.add(TipoQueryFattura.Intervento);
+            tipiQuery.add(TipoQueryFattura.INTERVENTO);
 
         return tipiQuery;
     }
@@ -137,18 +137,18 @@ public class GestoreFatture {
         query = query.toLowerCase();
 
         switch (tipoQueryFattura) {
-            case DataCreazione -> fattureFiltrate = streamFatture.filter(fattura -> {
+            case DATA_CREAZIONE -> fattureFiltrate = streamFatture.filter(fattura -> {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMMMMMMMMMM yyyy", Locale.ITALIAN);
                 return dateFormat.format(new Date(fattura.getData())).toLowerCase().contains(query);
             });
-            case Intervento -> fattureFiltrate = streamFatture.filter(fattura -> {
+            case INTERVENTO -> fattureFiltrate = streamFatture.filter(fattura -> {
                 GestoreInterventi.getInstance().filtriIntervento = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriIntervento();
                 GestoreInterventi.getInstance().query = query;
 
                 ArrayList<Intervento> interventiFiltrati = GestoreInterventi.getInstance().getInterventi();
                 return interventiFiltrati.stream().anyMatch(intervento -> Arrays.asList(fattura.getInterventi()).contains(intervento.getIDIntervento()));
             });
-            case Paziente -> fattureFiltrate = streamFatture.filter(fattura -> {
+            case PAZIENTE -> fattureFiltrate = streamFatture.filter(fattura -> {
                 GestorePazienti.getInstance().filtriPaziente = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriPaziente();
                 GestorePazienti.getInstance().query = query;
 

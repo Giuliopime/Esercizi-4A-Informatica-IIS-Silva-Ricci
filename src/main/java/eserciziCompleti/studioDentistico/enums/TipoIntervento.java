@@ -1,5 +1,8 @@
 package eserciziCompleti.studioDentistico.enums;
 
+/**
+ *  Possibili tipologie di intervento
+ */
 public enum TipoIntervento {
     ESTRAZIONE("Estrazione"), CARIE("Carie"), PULIZIA("Pulizia"), CONTROLLO("Controllo"), APPARECCHIO("Apparecchio");
 

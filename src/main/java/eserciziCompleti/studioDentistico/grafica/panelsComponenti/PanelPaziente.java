@@ -46,7 +46,7 @@ public class PanelPaziente {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 DialogPaziente dialogPaziente = new DialogPaziente("Modifica Paziente", paziente);
-                if (!dialogPaziente.getAzione().equals(AzioneDialog.Niente)) {
+                if (!dialogPaziente.getAzione().equals(AzioneDialog.NIENTE)) {
                     if (dialogPaziente.getAzione().equals(AzioneDialog.SALVA))
                         GestorePazienti.getInstance().modificaPaziente(dialogPaziente.getPaziente());
                     else

@@ -79,7 +79,7 @@ public class PanelIntervento {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 DialogIntervento dialogIntervento = new DialogIntervento("Modifica Intervento", intervento);
-                if (!dialogIntervento.getAzione().equals(AzioneDialog.Niente)) {
+                if (!dialogIntervento.getAzione().equals(AzioneDialog.NIENTE)) {
                     if (dialogIntervento.getAzione().equals(AzioneDialog.SALVA))
                         GestoreInterventi.getInstance().modificaIntervento(dialogIntervento.getIntervento());
                     else

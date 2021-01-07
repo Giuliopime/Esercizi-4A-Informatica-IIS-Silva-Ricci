@@ -27,7 +27,7 @@ public class DialogFattura extends JDialog {
 
     private String titolo;
     private Fattura fattura;
-    private AzioneDialog azione = AzioneDialog.Niente;
+    private AzioneDialog azione = AzioneDialog.NIENTE;
     private ArrayList<Paziente> pazienti;
     private ArrayList<Intervento> interventi;
 
@@ -100,7 +100,7 @@ public class DialogFattura extends JDialog {
     private void onCancella() {
         ConfermaUscita uscitaDialog = new ConfermaUscita("Conferma uscita", "Sei sicuro di voler uscire?");
         if (uscitaDialog.haConfermato()) {
-            azione = AzioneDialog.Niente;
+            azione = AzioneDialog.NIENTE;
             dispose();
         }
     }

@@ -147,25 +147,25 @@ public class GestorePazienti {
     private ArrayList<TipoQueryPaziente> creaArrayQueries() {
         ArrayList<TipoQueryPaziente> tipiQuery = new ArrayList<>();
         if (filtriPaziente.isNome())
-            tipiQuery.add(TipoQueryPaziente.Nome);
+            tipiQuery.add(TipoQueryPaziente.NOME);
         if (filtriPaziente.isCognome())
-            tipiQuery.add(TipoQueryPaziente.Cognome);
+            tipiQuery.add(TipoQueryPaziente.COGNOME);
         if (filtriPaziente.isCodiceFiscale())
-            tipiQuery.add(TipoQueryPaziente.codiceFiscale);
+            tipiQuery.add(TipoQueryPaziente.CODICE_FISCALE);
         if (filtriPaziente.isDataDiNascita())
-            tipiQuery.add(TipoQueryPaziente.DataDiNascita);
+            tipiQuery.add(TipoQueryPaziente.DATA_DI_NASCITA);
         if (filtriPaziente.isOccupazione())
-            tipiQuery.add(TipoQueryPaziente.Occupazione);
+            tipiQuery.add(TipoQueryPaziente.OCCUPAZIONE);
         if (filtriPaziente.isLuogoDiNascita())
-            tipiQuery.add(TipoQueryPaziente.LuogoDiNascita);
+            tipiQuery.add(TipoQueryPaziente.LUOGO_DI_NASCITA);
         if (filtriPaziente.isNumTelefonico())
-            tipiQuery.add(TipoQueryPaziente.numTelefono);
+            tipiQuery.add(TipoQueryPaziente.NUM_TELEFONO);
         if (filtriPaziente.isProvincia())
-            tipiQuery.add(TipoQueryPaziente.Provincia);
+            tipiQuery.add(TipoQueryPaziente.PROVINCIA);
         if (filtriPaziente.isResidenza())
-            tipiQuery.add(TipoQueryPaziente.Residenza);
+            tipiQuery.add(TipoQueryPaziente.RESIDENZA);
         if (filtriPaziente.isSesso())
-            tipiQuery.add(TipoQueryPaziente.Sesso);
+            tipiQuery.add(TipoQueryPaziente.SESSO);
 
         return tipiQuery;
     }
@@ -177,17 +177,17 @@ public class GestorePazienti {
         query = query.toLowerCase();
 
         switch (tipoQueryPaziente) {
-            case Nome -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getNome().toLowerCase().contains(query));
-            case Cognome -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getCognome().toLowerCase().contains(query));
-            case LuogoDiNascita -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getLuogoNascita().toLowerCase().contains(query));
-            case Residenza -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getResidenza().toLowerCase().contains(query));
-            case Provincia -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getProvincia().toLowerCase().contains(query));
-            case Occupazione -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getOccupazione().toLowerCase().contains(query));
-            case Sesso -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getSesso().toLowerCase().contains(query));
-            case numTelefono -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getNumTelefono().toLowerCase().contains(query));
-            case codiceFiscale -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getCodiceFiscale().toLowerCase().contains(query));
-            case isMaggiorenne -> pazientiFiltrati = streamPazienti.filter(paziente -> Boolean.toString(paziente.isMaggiorenne()).toLowerCase().contains(query));
-            case DataDiNascita -> pazientiFiltrati = streamPazienti.filter(paziente -> {
+            case NOME -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getNome().toLowerCase().contains(query));
+            case COGNOME -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getCognome().toLowerCase().contains(query));
+            case LUOGO_DI_NASCITA -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getLuogoNascita().toLowerCase().contains(query));
+            case RESIDENZA -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getResidenza().toLowerCase().contains(query));
+            case PROVINCIA -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getProvincia().toLowerCase().contains(query));
+            case OCCUPAZIONE -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getOccupazione().toLowerCase().contains(query));
+            case SESSO -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getSesso().toLowerCase().contains(query));
+            case NUM_TELEFONO -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getNumTelefono().toLowerCase().contains(query));
+            case CODICE_FISCALE -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getCodiceFiscale().toLowerCase().contains(query));
+            case IS_MAGGIORENNE -> pazientiFiltrati = streamPazienti.filter(paziente -> Boolean.toString(paziente.isMaggiorenne()).toLowerCase().contains(query));
+            case DATA_DI_NASCITA -> pazientiFiltrati = streamPazienti.filter(paziente -> {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMMMMMMMMMM yyyy", Locale.ITALIAN);
                 return dateFormat.format(new Date(paziente.getDataNascita())).toLowerCase().contains(query);
             });

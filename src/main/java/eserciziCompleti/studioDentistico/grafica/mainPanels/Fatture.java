@@ -107,7 +107,7 @@ public class Fatture implements FocusListener {
                 return;
             }
             DialogFattura dialogFattura = new DialogFattura("Nuova Fattura");
-            if (!dialogFattura.getAzione().equals(AzioneDialog.Niente)) {
+            if (!dialogFattura.getAzione().equals(AzioneDialog.NIENTE)) {
                 GestoreFatture.getInstance().aggiungiFattura(dialogFattura.getFattura());
                 GestoreGrafica.getInstance().changePanel(Schermata.FATTURE, new String[]{ricerca});
             }
