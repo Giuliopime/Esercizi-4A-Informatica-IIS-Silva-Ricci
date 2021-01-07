@@ -108,7 +108,7 @@ public class Fatture implements FocusListener {
             }
             DialogFattura dialogFattura = new DialogFattura("Nuova Fattura");
             if (!dialogFattura.getAzione().equals(AzioneDialog.NIENTE)) {
-                GestoreFatture.getInstance().aggiungiFattura(dialogFattura.getFattura());
+                GestoreFatture.getInstance().aggiungi(dialogFattura.getFattura());
                 GestoreGrafica.getInstance().changePanel(Schermata.FATTURE, new String[]{ricerca});
             }
         });
@@ -131,7 +131,7 @@ public class Fatture implements FocusListener {
             GestoreFatture.getInstance().ordinamentoFatture = dialogOrdinaFatture.getOrdinamentoFatture();
             if (ricerca != null) {
                 GestoreFatture.getInstance().filtriFattura = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriFattura();
-                GestoreFatture.getInstance().query = ricerca;
+                GestoreFatture.getInstance().stringaRicercaPerFiltro = ricerca;
             }
             GestoreGrafica.getInstance().changePanel(Schermata.FATTURE, new String[]{ricerca});
         });
@@ -161,11 +161,11 @@ public class Fatture implements FocusListener {
         String query = inputRicerca.getText();
         if (query == null || query.isBlank()) {
             GestoreFatture.getInstance().filtriFattura = null;
-            GestoreFatture.getInstance().query = null;
+            GestoreFatture.getInstance().stringaRicercaPerFiltro = null;
             ricerca = null;
         } else {
             GestoreFatture.getInstance().filtriFattura = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriFattura();
-            GestoreFatture.getInstance().query = query;
+            GestoreFatture.getInstance().stringaRicercaPerFiltro = query;
             ricerca = query;
         }
 

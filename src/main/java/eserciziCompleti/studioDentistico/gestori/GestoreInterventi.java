@@ -311,6 +311,7 @@ public class GestoreInterventi {
             case PAZIENTE -> listaInterventi.sort(Comparator.comparing(intervento -> GestorePazienti.getInstance().getPazienti().indexOf(GestorePazienti.getInstance().getPaziente(intervento.getIDPaziente()))));
         }
 
+        // Inverto l'ArrayList se è stato ordinato per data (cosí da ottenere le date più recenti per prime all'interno dell'array)
         if (ordinamentoInterventi.equals(OrdinamentoInterventi.COSTO) || ordinamentoInterventi.equals(OrdinamentoInterventi.TEMPO) || ordinamentoInterventi.equals(OrdinamentoInterventi.DATACREAZIONE) || ordinamentoInterventi.equals(OrdinamentoInterventi.DATAULTIMAMODIFICA))
             Collections.reverse(listaInterventi);
     }

@@ -69,7 +69,7 @@ public class GestorePazienti {
         // Imposto un executor per eseguire il metodo salvaSuFile ogni 5 minuti
         executor.scheduleAtFixedRate(salvaPazientiSuFile, 0, 5, TimeUnit.MINUTES);
 
-        // Inizializzo la variabile ordinamentoPazienti e filtriPazienti prendendo il valore dalle Impostazioni, gestite dal Gestore apposito
+        // Inizializzo la variabile ordinamentoPazienti e filtriPaziente prendendo il valore dalle Impostazioni, gestite dal Gestore apposito
         ordinamentoPazienti = GestoreImpostazioni.getInstance().getImpostazioni().getOrdinamentoPazienti();
         filtriPaziente = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriPaziente();
     }

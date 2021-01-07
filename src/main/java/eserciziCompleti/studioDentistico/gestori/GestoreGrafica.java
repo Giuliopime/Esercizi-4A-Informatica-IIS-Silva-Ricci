@@ -39,7 +39,7 @@ public class GestoreGrafica extends JFrame {
             public void windowClosing(WindowEvent e) {
                 GestorePazienti.getInstance().salvaSuFile();
                 GestoreInterventi.getInstance().salvaSuFile();
-                GestoreFatture.getInstance().salvaFatture();
+                GestoreFatture.getInstance().salvaSuFile();
                 GestoreImpostazioni.getInstance().salvaImpostazioni();
                 dispose();
                 System.exit(0);

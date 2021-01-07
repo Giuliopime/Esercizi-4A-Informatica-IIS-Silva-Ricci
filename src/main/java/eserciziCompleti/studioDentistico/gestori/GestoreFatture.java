@@ -16,32 +16,67 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * <p>
+ *      Singleton per gestire la lista di oggetti Fattura.
+ *      La lista di oggetti Fattura viene salvata su file di record (.dat)
+ * </p>
+ *
+ * <p>
+ *      La classe presenta metodi per:
+ * </p>
+ *      <ul>
+ *      <li>Aggiungere una Fattura </li>
+ *      <li>Ottenere la lista completa delle fatture* </li>
+ *      </ul>
+ *
+ *
+ * <p>
+ *     *Per ottenere una lista ordinata di fatture occorre modificare la variabile pubblica {@link GestoreFatture#ordinamentoFatture}
+ * </p>
+ * <p>
+ *     *Per ottenere una lista filtrata di fatture occorre modificare le due variabili pubbliche {@link GestoreFatture#filtriFattura} e {@link GestoreFatture#stringaRicercaPerFiltro}
+ * </p>
+ */
 public class GestoreFatture {
-    private static final String nomeFile = "fatture.dat";
-    private static final ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+    /** Istanza del Sigleton */
     private static GestoreFatture instance;
+    /** Nome del file su cui vengono salvati le fatture*/
+    private static final String nomeFile = "fatture.dat";
+    /** Executor utilizzato per salvare ad intervallo di tempo le fatture su file di record */
+    private static final ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+
+    /** ArrayList contenente tutti gli oggetti Intervento*/
     private ArrayList<Fattura> fatture;
+
+    /** Filtro utilizzato per filtrare l'ArrayList di fatture nel metodo {@link GestoreFatture#getFatture()} */
     public FiltriFattura filtriFattura;
-    public String query;
+    /** Stringa di ricerca utilizzata per filtrare l'ArrayList di fatture nel metodo {@link GestoreFatture#getFatture() } */
+    public String stringaRicercaPerFiltro;
+    /** Modalità di ordinamento delle fatture per il metodo {@link GestoreFatture#getFatture() } */
     public OrdinamentoFatture ordinamentoFatture;
 
     private GestoreFatture() {
         fatture = new ArrayList<>();
         try {
-            caricaFatture();
+            caricaDaFile();
         } catch (IOException | ClassNotFoundException e) {
-            salvaFatture();
+            salvaSuFile();
         }
 
-        Runnable salvaPazientiSuFile = () -> {
-            salvaFatture();
-        };
+        Runnable salvaPazientiSuFile = this::salvaSuFile;
 
+        // Imposto un executor per eseguire il metodo salvaSuFile ogni 5 minuti
         executor.scheduleAtFixedRate(salvaPazientiSuFile, 0, 5, TimeUnit.MINUTES);
 
+        // Inizializzo la variabile ordinamentoFatture e filtriFattura prendendo il valore dalle Impostazioni, gestite dal Gestore apposito
         ordinamentoFatture = GestoreImpostazioni.getInstance().getImpostazioni().getOrdinamentoFatture();
+        filtriFattura = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriFattura();
     }
 
+    /**
+     * @return Istanza del singleton
+     */
     public static GestoreFatture getInstance() {
         if (instance == null)
             instance = new GestoreFatture();
@@ -49,7 +84,12 @@ public class GestoreFatture {
         return instance;
     }
 
-    public void caricaFatture() throws IOException, ClassNotFoundException {
+    /**
+     * Carica tutti le fatture presenti sul file di record nell'ArrayList di fatture
+     * @throws IOException se avvengono errori con i file di record
+     * @throws ClassNotFoundException se manca la classe Fattura nel progetto
+     */
+    public void caricaDaFile() throws IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream(GestoreGrafica.pathFileDat + nomeFile);
         ObjectInputStream ois = new ObjectInputStream(fis);
 
@@ -62,7 +102,10 @@ public class GestoreFatture {
         fis.close();
     }
 
-    public void salvaFatture() {
+    /**
+     * Salva tutti le fatture nell'ArrayList di fatture all'interno del file di record
+     */
+    public void salvaSuFile() {
         try {
             FileOutputStream fos = new FileOutputStream(GestoreGrafica.pathFileDat + nomeFile);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -77,20 +120,37 @@ public class GestoreFatture {
         }
     }
 
-    public void aggiungiFattura(Fattura fattura) {
+    /**
+     * Aggiungi una nuova Fattura all'ArrayList di fatture
+     * @param fattura oggetto Fattura da aggiungere
+     */
+    public void aggiungi(Fattura fattura) {
         fatture.add(fattura);
-        salvaFatture();
+        salvaSuFile();
     }
 
+    /**
+     * Elimina tutte le fatture di un certo Paziente
+     * @param IDPaziente ID del Paziente del quale rimuovere tutte le fatture
+     */
     public void eliminaFattureDiPaziente(UUID IDPaziente) {
         fatture.removeIf(fattura -> fattura.getIDPaziente().equals(IDPaziente));
-        salvaFatture();
+        salvaSuFile();
     }
 
+    /**
+     * <p>Getter per l'ArrayList di fatture</p>
+     * <p> Per ottenere un ArrayList di fatture filtrato,
+     * modificare le variabili pubbliche di classe {@link GestoreFatture#filtriFattura} ed {@link GestoreFatture#stringaRicercaPerFiltro}</p>
+     *
+     * <p> Per ottenere un ArrayList di fatture con un ordinamento specifico,
+     * modificare la variabile pubblica di classe {@link GestoreFatture#ordinamentoFatture} </p>
+     * @return ArrayList di oggetti Fattura
+     */
     public ArrayList<Fattura> getFatture() {
         ArrayList<Fattura> listaFatture = fatture;
 
-        if (filtriFattura != null && query != null)
+        if (filtriFattura != null && stringaRicercaPerFiltro != null)
             listaFatture = getFattureFiltrate();
 
         if (ordinamentoFatture != null)
@@ -99,6 +159,7 @@ public class GestoreFatture {
         return listaFatture;
     }
 
+    // Filtra l'ArrayList di fatture in base alle variabili pubbliche di classe filtriFattura e stringaRicercaPerFiltro
     public ArrayList<Fattura> getFattureFiltrate() {
         ArrayList<Fattura> fattureFiltrate = new ArrayList<>();
 
@@ -107,17 +168,19 @@ public class GestoreFatture {
         for (TipoQueryFattura queryFattura : tipiQuery)
             fattureFiltrate.addAll(filtraFatture(queryFattura));
 
-
+        // Creo un Set per ottenere una lista di fatture univoche
         Set<Fattura> fattureFiltratiUnivoche = new HashSet<>(fattureFiltrate);
         fattureFiltrate = new ArrayList<>();
         fattureFiltrate.addAll(fattureFiltratiUnivoche);
 
+        // Resetto il filtro e la stringa di ricerca
         filtriFattura = null;
-        query = null;
+        stringaRicercaPerFiltro = null;
 
         return fattureFiltrate;
     }
 
+    // Genera un ArrayList di TipoQueryFattura da utilizzare poi nel metodo filtraFatture
     private ArrayList<TipoQueryFattura> creaArrayQueries() {
         ArrayList<TipoQueryFattura> tipiQuery = new ArrayList<>();
         if (filtriFattura.isData())
@@ -130,27 +193,29 @@ public class GestoreFatture {
         return tipiQuery;
     }
 
+    // Ottiene un ArrayList di fatture filtrate in base al TipoQueryFattura e la stringaRicercaPerFiltro
     private ArrayList<Fattura> filtraFatture(TipoQueryFattura tipoQueryFattura) {
+        // Creo la stream di fatture (per comodità)
         Stream<Fattura> fattureFiltrate;
         Stream<Fattura> streamFatture = fatture.stream();
 
-        query = query.toLowerCase();
+        stringaRicercaPerFiltro = stringaRicercaPerFiltro.toLowerCase();
 
         switch (tipoQueryFattura) {
             case DATA_CREAZIONE -> fattureFiltrate = streamFatture.filter(fattura -> {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMMMMMMMMMM yyyy", Locale.ITALIAN);
-                return dateFormat.format(new Date(fattura.getData())).toLowerCase().contains(query);
+                return dateFormat.format(new Date(fattura.getData())).toLowerCase().contains(stringaRicercaPerFiltro);
             });
             case INTERVENTO -> fattureFiltrate = streamFatture.filter(fattura -> {
                 GestoreInterventi.getInstance().filtriIntervento = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriIntervento();
-                GestoreInterventi.getInstance().stringaRicercaPerFiltro = query;
+                GestoreInterventi.getInstance().stringaRicercaPerFiltro = stringaRicercaPerFiltro;
 
                 ArrayList<Intervento> interventiFiltrati = GestoreInterventi.getInstance().getInterventi();
                 return interventiFiltrati.stream().anyMatch(intervento -> Arrays.asList(fattura.getInterventi()).contains(intervento.getIDIntervento()));
             });
             case PAZIENTE -> fattureFiltrate = streamFatture.filter(fattura -> {
                 GestorePazienti.getInstance().filtriPaziente = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriPaziente();
-                GestorePazienti.getInstance().stringaRicercaPerFiltro = query;
+                GestorePazienti.getInstance().stringaRicercaPerFiltro = stringaRicercaPerFiltro;
 
                 ArrayList<Paziente> pazientiFiltrati = GestorePazienti.getInstance().getPazienti();
                 return pazientiFiltrati.stream().anyMatch(paziente -> paziente.getIDPaziente().equals(fattura.getIDPaziente()));
@@ -159,25 +224,27 @@ public class GestoreFatture {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMMMMMMMMMM yyyy", Locale.ITALIAN);
 
                 GestoreInterventi.getInstance().filtriIntervento = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriIntervento();
-                GestoreInterventi.getInstance().stringaRicercaPerFiltro = query;
+                GestoreInterventi.getInstance().stringaRicercaPerFiltro = stringaRicercaPerFiltro;
 
                 ArrayList<Intervento> interventiFiltrati = GestoreInterventi.getInstance().getInterventi();
 
                 GestorePazienti.getInstance().filtriPaziente = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriPaziente();
-                GestorePazienti.getInstance().stringaRicercaPerFiltro = query;
+                GestorePazienti.getInstance().stringaRicercaPerFiltro = stringaRicercaPerFiltro;
 
                 ArrayList<Paziente> pazientiFiltrati = GestorePazienti.getInstance().getPazienti();
 
-                return dateFormat.format(new Date(fattura.getData())).toLowerCase().contains(query) ||
+                return dateFormat.format(new Date(fattura.getData())).toLowerCase().contains(stringaRicercaPerFiltro) ||
                         interventiFiltrati.stream().anyMatch(intervento -> Arrays.asList(fattura.getInterventi()).contains(intervento.getIDIntervento())) ||
                         pazientiFiltrati.stream().anyMatch(paziente -> paziente.getIDPaziente().equals(fattura.getIDPaziente()));
 
             });
         }
 
+        // Ritorno un ArrayList creato dalla stream filtrata
         return fattureFiltrate.collect(Collectors.toCollection(ArrayList::new));
     }
 
+    // Ordina le fatture di un ArrayList di fatture in base alla variabile di classe pubblica ordinamentoFatture
     private void ordinaFatture(ArrayList<Fattura> listaFatture) {
         switch (ordinamentoFatture) {
             case DATA -> listaFatture.sort(Comparator.comparing(Fattura::getData));
@@ -185,6 +252,7 @@ public class GestoreFatture {
             case PAZIENTE -> listaFatture.sort(Comparator.comparing(fattura -> GestorePazienti.getInstance().getPazienti().indexOf(GestorePazienti.getInstance().getPaziente(fattura.getIDPaziente()))));
         }
 
+        // Inverto l'ArrayList se è stato ordinato per data (cosí da ottenere le date più recenti per prime all'interno dell'array)
         if (ordinamentoFatture.equals(OrdinamentoFatture.DATA))
             Collections.reverse(listaFatture);
     }
