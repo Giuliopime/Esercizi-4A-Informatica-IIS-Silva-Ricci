@@ -14,15 +14,47 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * <p>
+ *      Singleton per gestire la lista di oggetti Paziente.
+ *      La lista di oggetti Paziente viene salvata su file di record (.dat)
+ * </p>
+ *
+ * <p>
+ *      La classe presenta metodi per:
+ * </p>
+ *      <ul>
+ *      <li>Aggiungere un Paziente </li>
+ *      <li>Rimuovere un Paziente </li>
+ *      <li>Modificare un Paziente </li>
+ *      <li>Ottenere la lista completa dei Pazienti* </li>
+ *      </ul>
+ *
+ *
+ * <p>
+ *     *Per ottenere una lista ordinata di pazienti occorre modificare la variabile pubblica {@link OrdinamentoPazienti ordinamentoPazienti}
+ * </p>
+ * <p>
+ *     *Per ottenere una lista filtrata di pazienti occorre modificare le due variabili pubbliche {@link FiltriPaziente filtriPaziente} e {@link String query}
+ * </p>
+ */
 public class GestorePazienti {
-    private static final String nomeFile = "pazienti.dat";
-    private static final ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+    /** Istanza del Sigleton */
     private static GestorePazienti instance;
-    private ArrayList<Paziente> pazienti;
-    public FiltriPaziente filtriPaziente;
-    public String query;
-    public OrdinamentoPazienti ordinamentoPazienti;
+    /** Nome del file su cui vengono salvati i Pazienti*/
+    private static final String nomeFile = "pazienti.dat";
+    /** Executor utilizzato per salvare ad intervallo di tempo i pazienti su file di record */
+    private static final ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
 
+    /** ArrayList contenente tutti gli oggetti Paziente*/
+    private ArrayList<Paziente> pazienti;
+
+    /** Filtro utilizzato per filtrare l'ArrayList di pazienti nel metodo getPazienti() */
+    public FiltriPaziente filtriPaziente;
+    /** Stringa di ricerca utilizzata per filtrare l'ArrayList di pazienti nel metodo getPazienti() */
+    public String stringaRicercaPerFiltro;
+    /** Modalità di ordinamento dei pazienti per il metodo getPazienti() */
+    public OrdinamentoPazienti ordinamentoPazienti;
 
     private GestorePazienti() {
         pazienti = new ArrayList<>();
@@ -36,11 +68,17 @@ public class GestorePazienti {
             salvaPazienti();
         };
 
+        // Imposto un executor per eseguire il metodo salvaPazientiSuFile ogni 5 minuti
         executor.scheduleAtFixedRate(salvaPazientiSuFile, 0, 5, TimeUnit.MINUTES);
 
+        // Inizializzo la variabile ordinamentoPazienti e filtriPazienti prendendo il valore dalle Impostazioni, gestite dal Gestore apposito
         ordinamentoPazienti = GestoreImpostazioni.getInstance().getImpostazioni().getOrdinamentoPazienti();
+        filtriPaziente = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriPaziente();
     }
 
+    /**
+     * @return Istanza del singleton
+     */
     public static GestorePazienti getInstance() {
         if (instance == null)
             instance = new GestorePazienti();
@@ -49,6 +87,11 @@ public class GestorePazienti {
     }
 
 
+    /**
+     * Carica tutti i pazienti presenti sul file di record nell'ArrayList di pazienti
+     * @throws IOException se avvengono errori con i file di record
+     * @throws ClassNotFoundException se manca la classe Paziente nel progetto
+     */
     public void caricaPazienti() throws IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream(GestoreGrafica.pathFileDat + nomeFile);
         ObjectInputStream ois = new ObjectInputStream(fis);
@@ -62,6 +105,9 @@ public class GestorePazienti {
         fis.close();
     }
 
+    /**
+     * Salva tutti i pazienti nell'ArrayList di pazienti all'interno del file di record
+     */
     public void salvaPazienti() {
         try {
             FileOutputStream fos = new FileOutputStream(GestoreGrafica.pathFileDat + nomeFile);
@@ -77,9 +123,13 @@ public class GestorePazienti {
         }
     }
 
-    public void eliminaPaziente(UUID idPaziente) {
+    /**
+     * Rimuove un paziente dall'ArrayList di pazienti
+     * @param IDPaziente ID del Paziente da rimuovere
+     */
+    public void eliminaPaziente(UUID IDPaziente) {
         pazienti.removeIf(paziente -> {
-            if(paziente.getIDPaziente().equals(idPaziente)) {
+            if(paziente.getIDPaziente().equals(IDPaziente)) {
                 GestoreInterventi.getInstance().eliminaInterventiDiPaziente(paziente.getIDPaziente());
                 GestoreFatture.getInstance().eliminaFattureDiPaziente(paziente.getIDPaziente());
                 return true;
@@ -89,6 +139,10 @@ public class GestorePazienti {
         salvaPazienti();
     }
 
+    /**
+     * Modifica un paziente già esistente all'interno dell'ArrayList di pazienti
+     * @param paziente Paziente (già modificato)
+     */
     public void modificaPaziente(Paziente paziente) {
         ListIterator<Paziente> iterator = pazienti.listIterator();
         while (iterator.hasNext()) {
@@ -100,23 +154,41 @@ public class GestorePazienti {
         }
     }
 
+    /**
+     * Aggiungi un nuovo Paziente all'ArrayList di pazienti
+     * @param paziente oggetto Paziente da aggiungere
+     */
     public void aggiungiPaziente(Paziente paziente) {
         pazienti.add(paziente);
         salvaPazienti();
     }
 
-    public Paziente getPaziente(UUID idPaziente) {
+    /**
+     * Prendere un paziente dall'ArrayList di pazienti attraverso il suo ID
+     * @param IDPaziente ID del Paziente da ottenere
+     * @return Paziente oppure null in caso nessun paziente venga trovato
+     */
+    public Paziente getPaziente(UUID IDPaziente) {
         for (Paziente paziente : pazienti) {
-            if (paziente.getIDPaziente().equals(idPaziente))
+            if (paziente.getIDPaziente().equals(IDPaziente))
                 return paziente;
         }
 
         return null;
     }
 
+    /**
+     * <p>Getter per l'ArrayList di pazienti</p>
+     * <p> Per ottenere un ArrayList di pazienti filtrato,
+     * modificare le variabili pubbliche di classe {@link GestorePazienti#filtriPaziente} ed {@link GestorePazienti#stringaRicercaPerFiltro}</p>
+     *
+     * <p> Per ottenere un ArrayList di pazienti con un ordinamento specifico,
+     * modificare la variabile pubblica di classe {@link GestorePazienti#ordinamentoPazienti} </p>
+     * @return ArrayList di oggetti Paziente
+     */
     public ArrayList<Paziente> getPazienti() {
         ArrayList<Paziente> listaPazienti = pazienti;
-        if (filtriPaziente != null && query != null)
+        if (filtriPaziente != null && stringaRicercaPerFiltro != null)
             listaPazienti = getPazientiFiltrati();
 
         if (ordinamentoPazienti != null)
@@ -125,7 +197,8 @@ public class GestorePazienti {
         return listaPazienti;
     }
 
-    public ArrayList<Paziente> getPazientiFiltrati() {
+    // Filtra l'ArrayList di pazienti in base alle variabili pubbliche di classe filtriPaziente e stringaRicercaPerFiltro
+    private ArrayList<Paziente> getPazientiFiltrati() {
         ArrayList<Paziente> pazientiFiltrati = new ArrayList<>();
 
         ArrayList<TipoQueryPaziente> tipiQuery = creaArrayQueries();
@@ -134,16 +207,20 @@ public class GestorePazienti {
             pazientiFiltrati.addAll(filtraPazienti(queryPaziente));
 
 
+        // Creo un Set per ottenere una lista di pazienti univoci
         Set<Paziente> pazientiFiltratiUnivoci = new HashSet<>(pazientiFiltrati);
+
         pazientiFiltrati = new ArrayList<>();
         pazientiFiltrati.addAll(pazientiFiltratiUnivoci);
 
+        // Resetto il filtro e la stringa di ricerca
         filtriPaziente = null;
-        query = null;
+        stringaRicercaPerFiltro = null;
 
         return pazientiFiltrati;
     }
 
+    // Genera un ArrayList di TipoQueryPaziente da utilizzare poi nel metodo filtraPazienti
     private ArrayList<TipoQueryPaziente> creaArrayQueries() {
         ArrayList<TipoQueryPaziente> tipiQuery = new ArrayList<>();
         if (filtriPaziente.isNome())
@@ -170,43 +247,47 @@ public class GestorePazienti {
         return tipiQuery;
     }
 
+    // Ottiene un ArrayList di pazienti filtrati in base al TipoQueryPaziente e la stringaRicercaPerFiltro
     private ArrayList<Paziente> filtraPazienti(TipoQueryPaziente tipoQueryPaziente) {
+        // Creo la stream di pazienti (per comodità)
         Stream<Paziente> pazientiFiltrati;
         Stream<Paziente> streamPazienti = pazienti.stream();
 
-        query = query.toLowerCase();
+        stringaRicercaPerFiltro = stringaRicercaPerFiltro.toLowerCase();
 
         switch (tipoQueryPaziente) {
-            case NOME -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getNome().toLowerCase().contains(query));
-            case COGNOME -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getCognome().toLowerCase().contains(query));
-            case LUOGO_DI_NASCITA -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getLuogoNascita().toLowerCase().contains(query));
-            case RESIDENZA -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getResidenza().toLowerCase().contains(query));
-            case PROVINCIA -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getProvincia().toLowerCase().contains(query));
-            case OCCUPAZIONE -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getOccupazione().toLowerCase().contains(query));
-            case SESSO -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getSesso().toLowerCase().contains(query));
-            case NUM_TELEFONO -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getNumTelefono().toLowerCase().contains(query));
-            case CODICE_FISCALE -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getCodiceFiscale().toLowerCase().contains(query));
-            case IS_MAGGIORENNE -> pazientiFiltrati = streamPazienti.filter(paziente -> Boolean.toString(paziente.isMaggiorenne()).toLowerCase().contains(query));
+            case NOME -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getNome().toLowerCase().contains(stringaRicercaPerFiltro));
+            case COGNOME -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getCognome().toLowerCase().contains(stringaRicercaPerFiltro));
+            case LUOGO_DI_NASCITA -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getLuogoNascita().toLowerCase().contains(stringaRicercaPerFiltro));
+            case RESIDENZA -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getResidenza().toLowerCase().contains(stringaRicercaPerFiltro));
+            case PROVINCIA -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getProvincia().toLowerCase().contains(stringaRicercaPerFiltro));
+            case OCCUPAZIONE -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getOccupazione().toLowerCase().contains(stringaRicercaPerFiltro));
+            case SESSO -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getSesso().toLowerCase().contains(stringaRicercaPerFiltro));
+            case NUM_TELEFONO -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getNumTelefono().toLowerCase().contains(stringaRicercaPerFiltro));
+            case CODICE_FISCALE -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getCodiceFiscale().toLowerCase().contains(stringaRicercaPerFiltro));
+            case IS_MAGGIORENNE -> pazientiFiltrati = streamPazienti.filter(paziente -> Boolean.toString(paziente.isMaggiorenne()).toLowerCase().contains(stringaRicercaPerFiltro));
             case DATA_DI_NASCITA -> pazientiFiltrati = streamPazienti.filter(paziente -> {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMMMMMMMMMM yyyy", Locale.ITALIAN);
-                return dateFormat.format(new Date(paziente.getDataNascita())).toLowerCase().contains(query);
+                return dateFormat.format(new Date(paziente.getDataNascita())).toLowerCase().contains(stringaRicercaPerFiltro);
             });
-            default -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getNome().toLowerCase().contains(query)
-                    || paziente.getCognome().toLowerCase().contains(query)
-                    || paziente.getLuogoNascita().toLowerCase().contains(query)
-                    || paziente.getResidenza().toLowerCase().contains(query)
-                    || paziente.getProvincia().toLowerCase().contains(query)
-                    || paziente.getOccupazione().toLowerCase().contains(query)
-                    || paziente.getSesso().toLowerCase().contains(query)
-                    || paziente.getNumTelefono().toLowerCase().contains(query)
-                    || paziente.getCodiceFiscale().toLowerCase().contains(query)
-                    || String.valueOf(paziente.getDataNascita()).toLowerCase().contains(query)
-                    || Boolean.toString(paziente.isMaggiorenne()).toLowerCase().contains(query));
+            default -> pazientiFiltrati = streamPazienti.filter(paziente -> paziente.getNome().toLowerCase().contains(stringaRicercaPerFiltro)
+                    || paziente.getCognome().toLowerCase().contains(stringaRicercaPerFiltro)
+                    || paziente.getLuogoNascita().toLowerCase().contains(stringaRicercaPerFiltro)
+                    || paziente.getResidenza().toLowerCase().contains(stringaRicercaPerFiltro)
+                    || paziente.getProvincia().toLowerCase().contains(stringaRicercaPerFiltro)
+                    || paziente.getOccupazione().toLowerCase().contains(stringaRicercaPerFiltro)
+                    || paziente.getSesso().toLowerCase().contains(stringaRicercaPerFiltro)
+                    || paziente.getNumTelefono().toLowerCase().contains(stringaRicercaPerFiltro)
+                    || paziente.getCodiceFiscale().toLowerCase().contains(stringaRicercaPerFiltro)
+                    || String.valueOf(paziente.getDataNascita()).toLowerCase().contains(stringaRicercaPerFiltro)
+                    || Boolean.toString(paziente.isMaggiorenne()).toLowerCase().contains(stringaRicercaPerFiltro));
         }
 
+        // Ritorno un ArrayList creato dalla stream filtrata
         return pazientiFiltrati.collect(Collectors.toCollection(ArrayList::new));
     }
 
+    // Ordina i pazienti di un ArrayList di pazienti in base alla variabile di classe pubblica ordinamentoPazienti
     private void ordinaPazienti(ArrayList<Paziente> listaPazienti) {
         switch (ordinamentoPazienti) {
             case NOME -> listaPazienti.sort(Comparator.comparing(paziente -> paziente.getNome().toLowerCase()));
@@ -216,6 +297,7 @@ public class GestorePazienti {
             case DATAULTIMAMODIFICA -> listaPazienti.sort(Comparator.comparing(Paziente::getUltimaModifica));
         }
 
+        // Inverto l'ArrayList se è stato ordinato per data (cosí da ottenere le date più recenti per prime all'interno dell'array)
         if (ordinamentoPazienti.equals(OrdinamentoPazienti.DATANASCITA) || ordinamentoPazienti.equals(OrdinamentoPazienti.DATACREAZIONE) || ordinamentoPazienti.equals(OrdinamentoPazienti.DATAULTIMAMODIFICA))
             Collections.reverse(listaPazienti);
     }

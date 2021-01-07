@@ -150,7 +150,7 @@ public class GestoreFatture {
             });
             case PAZIENTE -> fattureFiltrate = streamFatture.filter(fattura -> {
                 GestorePazienti.getInstance().filtriPaziente = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriPaziente();
-                GestorePazienti.getInstance().query = query;
+                GestorePazienti.getInstance().stringaRicercaPerFiltro = query;
 
                 ArrayList<Paziente> pazientiFiltrati = GestorePazienti.getInstance().getPazienti();
                 return pazientiFiltrati.stream().anyMatch(paziente -> paziente.getIDPaziente().equals(fattura.getIDPaziente()));
@@ -164,7 +164,7 @@ public class GestoreFatture {
                 ArrayList<Intervento> interventiFiltrati = GestoreInterventi.getInstance().getInterventi();
 
                 GestorePazienti.getInstance().filtriPaziente = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriPaziente();
-                GestorePazienti.getInstance().query = query;
+                GestorePazienti.getInstance().stringaRicercaPerFiltro = query;
 
                 ArrayList<Paziente> pazientiFiltrati = GestorePazienti.getInstance().getPazienti();
 

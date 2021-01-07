@@ -110,7 +110,7 @@ public class Pazienti implements FocusListener {
             GestorePazienti.getInstance().ordinamentoPazienti = dialogOrdinaPazienti.getOrdinamentoPazienti();
             if (ricerca != null) {
                 GestorePazienti.getInstance().filtriPaziente = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriPaziente();
-                GestorePazienti.getInstance().query = ricerca;
+                GestorePazienti.getInstance().stringaRicercaPerFiltro = ricerca;
             }
             GestoreGrafica.getInstance().changePanel(Schermata.PAZIENTI, new String[]{ricerca});
         });
@@ -136,11 +136,11 @@ public class Pazienti implements FocusListener {
         String query = inputRicerca.getText();
         if (query == null || query.isBlank()) {
             GestorePazienti.getInstance().filtriPaziente = null;
-            GestorePazienti.getInstance().query = null;
+            GestorePazienti.getInstance().stringaRicercaPerFiltro = null;
             ricerca = null;
         } else {
             GestorePazienti.getInstance().filtriPaziente = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriPaziente();
-            GestorePazienti.getInstance().query = query;
+            GestorePazienti.getInstance().stringaRicercaPerFiltro = query;
             ricerca = query;
         }
 

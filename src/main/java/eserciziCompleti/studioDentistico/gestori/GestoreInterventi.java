@@ -184,7 +184,7 @@ public class GestoreInterventi {
             case PAZIENTE -> interventiFiltrati = streamInterventi.filter(intervento -> {
                 GestorePazienti gestorePazienti = GestorePazienti.getInstance();
                 gestorePazienti.filtriPaziente = new FiltriPaziente();
-                gestorePazienti.query = query;
+                gestorePazienti.stringaRicercaPerFiltro = query;
                 for (Paziente paziente : gestorePazienti.getPazienti()) {
                     if (paziente.getIDPaziente().equals(intervento.getIDPaziente()))
                         return true;
@@ -205,7 +205,7 @@ public class GestoreInterventi {
 
                 GestorePazienti gestorePazienti = GestorePazienti.getInstance();
                 gestorePazienti.filtriPaziente = new FiltriPaziente();
-                gestorePazienti.query = query;
+                gestorePazienti.stringaRicercaPerFiltro = query;
                 for (Paziente paziente : gestorePazienti.getPazienti()) {
                     if (paziente.getIDPaziente().equals(intervento.getIDPaziente()))
                         accetta = true;
