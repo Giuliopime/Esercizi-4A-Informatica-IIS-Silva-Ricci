@@ -1,6 +1,5 @@
 package eserciziCompleti.studioDentistico.grafica.dialogs;
 
-import eserciziCompleti.studioDentistico.enums.ordinamento.OrdinamentoPazienti;
 import eserciziCompleti.studioDentistico.gestori.*;
 import eserciziCompleti.studioDentistico.grafica.Colori;
 import eserciziCompleti.studioDentistico.oggetti.Fattura;
@@ -18,7 +17,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
