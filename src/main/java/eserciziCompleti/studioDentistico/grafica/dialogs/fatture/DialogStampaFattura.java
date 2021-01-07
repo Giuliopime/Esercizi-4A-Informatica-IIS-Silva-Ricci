@@ -8,11 +8,8 @@ import com.itextpdf.text.pdf.PdfWriter;
 import eserciziCompleti.studioDentistico.gestori.*;
 import eserciziCompleti.studioDentistico.grafica.Colori;
 import eserciziCompleti.studioDentistico.grafica.dialogs.ConfermaUscita;
+import eserciziCompleti.studioDentistico.grafica.dialogs.DialogAvviso;
 import eserciziCompleti.studioDentistico.oggetti.*;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
 import javax.swing.*;
 import java.awt.*;
@@ -189,6 +186,7 @@ public class DialogStampaFattura extends JDialog {
 
             document.add(chunk4);
             document.close();
+            new DialogAvviso("Fattura Stampata", "Fattura creata con successo come file pdf nella cartella selezionata");
 
             dispose();
         } catch (IllegalArgumentException e) {
