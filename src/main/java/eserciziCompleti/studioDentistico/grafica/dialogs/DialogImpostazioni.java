@@ -140,8 +140,6 @@ public class DialogImpostazioni extends JDialog {
 
     private void onEsporta() {
         try {
-            ArrayList<Fattura> fatture = GestoreFatture.getInstance().getFatture();
-
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
             int scelta = fileChooser.showSaveDialog(this);
@@ -158,6 +156,7 @@ public class DialogImpostazioni extends JDialog {
 
             creaSheetPazienti(workbook);
             creaSheetInterventi(workbook);
+            creaSheetFatture(workbook);
 
             FileOutputStream fileExcel = new FileOutputStream(fileChooser.getSelectedFile().getPath() + "/" + nomeFile + ".xlsx");
             workbook.write(fileExcel);
@@ -167,7 +166,7 @@ public class DialogImpostazioni extends JDialog {
             new DialogAvviso("File Excel creato", "File Excel creato con successo nella cartella selezionata");
         } catch (IOException e) {
             new DialogAvviso("Errore file Excel", "È avvenuto un errore inaspettato nella creazione del file Excel");
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
 
