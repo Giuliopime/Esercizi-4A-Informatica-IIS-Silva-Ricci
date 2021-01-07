@@ -32,16 +32,16 @@ import java.util.stream.Stream;
  *
  *
  * <p>
- *     *Per ottenere una lista ordinata di pazienti occorre modificare la variabile pubblica {@link OrdinamentoPazienti ordinamentoPazienti}
+ *     *Per ottenere una lista ordinata di pazienti occorre modificare la variabile pubblica {@link GestorePazienti#ordinamentoPazienti}
  * </p>
  * <p>
- *     *Per ottenere una lista filtrata di pazienti occorre modificare le due variabili pubbliche {@link FiltriPaziente filtriPaziente} e {@link String query}
+ *     *Per ottenere una lista filtrata di pazienti occorre modificare le due variabili pubbliche {@link GestorePazienti#filtriPaziente} e {@link GestorePazienti#stringaRicercaPerFiltro}
  * </p>
  */
 public class GestorePazienti {
     /** Istanza del Sigleton */
     private static GestorePazienti instance;
-    /** Nome del file su cui vengono salvati i Pazienti*/
+    /** Nome del file su cui vengono salvati i pazienti*/
     private static final String nomeFile = "pazienti.dat";
     /** Executor utilizzato per salvare ad intervallo di tempo i pazienti su file di record */
     private static final ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
@@ -49,26 +49,24 @@ public class GestorePazienti {
     /** ArrayList contenente tutti gli oggetti Paziente*/
     private ArrayList<Paziente> pazienti;
 
-    /** Filtro utilizzato per filtrare l'ArrayList di pazienti nel metodo getPazienti() */
+    /** Filtro utilizzato per filtrare l'ArrayList di pazienti nel metodo {@link GestorePazienti#getPazienti() } */
     public FiltriPaziente filtriPaziente;
-    /** Stringa di ricerca utilizzata per filtrare l'ArrayList di pazienti nel metodo getPazienti() */
+    /** Stringa di ricerca utilizzata per filtrare l'ArrayList di pazienti nel metodo {@link GestorePazienti#getPazienti() } */
     public String stringaRicercaPerFiltro;
-    /** Modalità di ordinamento dei pazienti per il metodo getPazienti() */
+    /** Modalità di ordinamento dei pazienti per il metodo {@link GestorePazienti#getPazienti() } */
     public OrdinamentoPazienti ordinamentoPazienti;
 
     private GestorePazienti() {
         pazienti = new ArrayList<>();
         try {
-            caricaPazienti();
+            caricaDaFile();
         } catch (IOException | ClassNotFoundException e) {
-            salvaPazienti();
+            salvaSuFile();
         }
 
-        Runnable salvaPazientiSuFile = () -> {
-            salvaPazienti();
-        };
+        Runnable salvaPazientiSuFile = this::salvaSuFile;
 
-        // Imposto un executor per eseguire il metodo salvaPazientiSuFile ogni 5 minuti
+        // Imposto un executor per eseguire il metodo salvaSuFile ogni 5 minuti
         executor.scheduleAtFixedRate(salvaPazientiSuFile, 0, 5, TimeUnit.MINUTES);
 
         // Inizializzo la variabile ordinamentoPazienti e filtriPazienti prendendo il valore dalle Impostazioni, gestite dal Gestore apposito
@@ -92,7 +90,7 @@ public class GestorePazienti {
      * @throws IOException se avvengono errori con i file di record
      * @throws ClassNotFoundException se manca la classe Paziente nel progetto
      */
-    public void caricaPazienti() throws IOException, ClassNotFoundException {
+    public void caricaDaFile() throws IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream(GestoreGrafica.pathFileDat + nomeFile);
         ObjectInputStream ois = new ObjectInputStream(fis);
 
@@ -108,7 +106,7 @@ public class GestorePazienti {
     /**
      * Salva tutti i pazienti nell'ArrayList di pazienti all'interno del file di record
      */
-    public void salvaPazienti() {
+    public void salvaSuFile() {
         try {
             FileOutputStream fos = new FileOutputStream(GestoreGrafica.pathFileDat + nomeFile);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -127,28 +125,28 @@ public class GestorePazienti {
      * Rimuove un paziente dall'ArrayList di pazienti
      * @param IDPaziente ID del Paziente da rimuovere
      */
-    public void eliminaPaziente(UUID IDPaziente) {
+    public void elimina(UUID IDPaziente) {
         pazienti.removeIf(paziente -> {
             if(paziente.getIDPaziente().equals(IDPaziente)) {
-                GestoreInterventi.getInstance().eliminaInterventiDiPaziente(paziente.getIDPaziente());
+                GestoreInterventi.getInstance().eliminaTuttiPerPaziente(paziente.getIDPaziente());
                 GestoreFatture.getInstance().eliminaFattureDiPaziente(paziente.getIDPaziente());
                 return true;
             }
             return false;
         });
-        salvaPazienti();
+        salvaSuFile();
     }
 
     /**
      * Modifica un paziente già esistente all'interno dell'ArrayList di pazienti
      * @param paziente Paziente (già modificato)
      */
-    public void modificaPaziente(Paziente paziente) {
+    public void modifica(Paziente paziente) {
         ListIterator<Paziente> iterator = pazienti.listIterator();
         while (iterator.hasNext()) {
             if (iterator.next().getIDPaziente().equals(paziente.getIDPaziente())) {
                 iterator.set(paziente);
-                salvaPazienti();
+                salvaSuFile();
                 break;
             }
         }
@@ -158,9 +156,9 @@ public class GestorePazienti {
      * Aggiungi un nuovo Paziente all'ArrayList di pazienti
      * @param paziente oggetto Paziente da aggiungere
      */
-    public void aggiungiPaziente(Paziente paziente) {
+    public void aggiungi(Paziente paziente) {
         pazienti.add(paziente);
-        salvaPazienti();
+        salvaSuFile();
     }
 
     /**
@@ -210,8 +208,7 @@ public class GestorePazienti {
         // Creo un Set per ottenere una lista di pazienti univoci
         Set<Paziente> pazientiFiltratiUnivoci = new HashSet<>(pazientiFiltrati);
 
-        pazientiFiltrati = new ArrayList<>();
-        pazientiFiltrati.addAll(pazientiFiltratiUnivoci);
+        pazientiFiltrati = new ArrayList<>(pazientiFiltratiUnivoci);
 
         // Resetto il filtro e la stringa di ricerca
         filtriPaziente = null;

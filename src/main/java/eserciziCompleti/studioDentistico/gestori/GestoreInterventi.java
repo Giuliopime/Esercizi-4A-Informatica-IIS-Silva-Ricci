@@ -16,32 +16,69 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * <p>
+ *      Singleton per gestire la lista di oggetti Intervento.
+ *      La lista di oggetti Intervento viene salvata su file di record (.dat)
+ * </p>
+ *
+ * <p>
+ *      La classe presenta metodi per:
+ * </p>
+ *      <ul>
+ *      <li>Aggiungere un Intervento </li>
+ *      <li>Rimuovere un Intervento </li>
+ *      <li>Modificare un Intervento </li>
+ *      <li>Ottenere la lista completa degli Interventi* </li>
+ *      </ul>
+ *
+ *
+ * <p>
+ *     *Per ottenere una lista ordinata di interventi occorre modificare la variabile pubblica {@link GestoreInterventi#ordinamentoInterventi}
+ * </p>
+ * <p>
+ *     *Per ottenere una lista filtrata di pazienti occorre modificare le due variabili pubbliche {@link GestoreInterventi#filtriIntervento} e {@link GestoreInterventi#stringaRicercaPerFiltro}
+ * </p>
+ */
 public class GestoreInterventi {
-    private static final String nomeFile = "interventi.dat";
-    private static final ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+    /** Istanza del Sigleton */
     private static GestoreInterventi instance;
+    /** Nome del file su cui vengono salvati gli interventi*/
+    private static final String nomeFile = "interventi.dat";
+    /** Executor utilizzato per salvare ad intervallo di tempo gli interventi su file di record */
+    private static final ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+
+    /** ArrayList contenente tutti gli oggetti Intervento*/
     private ArrayList<Intervento> interventi;
+
+    /** Filtro utilizzato per filtrare l'ArrayList di interventi nel metodo {@link GestoreInterventi#getInterventi()} */
     public FiltriIntervento filtriIntervento;
-    public String query;
+    /** Stringa di ricerca utilizzata per filtrare l'ArrayList di interventi nel metodo {@link GestoreInterventi#getInterventi()} */
+    public String stringaRicercaPerFiltro;
+    /** Modalità di ordinamento degli interventi per il metodo {@link GestoreInterventi#getInterventi()} */
     public OrdinamentoInterventi ordinamentoInterventi;
 
     private GestoreInterventi() {
         interventi = new ArrayList<>();
         try {
-            caricaInterventi();
+            caricaDaFile();
         } catch (IOException | ClassNotFoundException e) {
-            salvaInterventi();
+            salvaSuFile();
         }
 
-        Runnable salvaPazientiSuFile = () -> {
-            salvaInterventi();
-        };
+        Runnable salvaPazientiSuFile = this::salvaSuFile;
 
+        // Imposto un executor per eseguire il metodo salvaSuFile ogni 5 minuti
         executor.scheduleAtFixedRate(salvaPazientiSuFile, 0, 5, TimeUnit.MINUTES);
 
+        // Inizializzo la variabile ordinamentoInterventi e filtriIntervento prendendo il valore dalle Impostazioni, gestite dal Gestore apposito
         ordinamentoInterventi = GestoreImpostazioni.getInstance().getImpostazioni().getOrdinamentoInterventi();
+        filtriIntervento = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriIntervento();
     }
 
+    /**
+     * @return Istanza del singleton
+     */
     public static GestoreInterventi getInstance() {
         if (instance == null)
             instance = new GestoreInterventi();
@@ -49,7 +86,12 @@ public class GestoreInterventi {
         return instance;
     }
 
-    public void caricaInterventi() throws IOException, ClassNotFoundException {
+    /**
+     * Carica tutti gli interventi presenti sul file di record nell'ArrayList di interventi
+     * @throws IOException se avvengono errori con i file di record
+     * @throws ClassNotFoundException se manca la classe Intervento nel progetto
+     */
+    public void caricaDaFile() throws IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream(GestoreGrafica.pathFileDat + nomeFile);
         ObjectInputStream ois = new ObjectInputStream(fis);
 
@@ -62,7 +104,10 @@ public class GestoreInterventi {
         fis.close();
     }
 
-    public void salvaInterventi() {
+    /**
+     * Salva tutti gli interventi nell'ArrayList di interventi all'interno del file di record
+     */
+    public void salvaSuFile() {
         try {
             FileOutputStream fos = new FileOutputStream(GestoreGrafica.pathFileDat + nomeFile);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -77,45 +122,75 @@ public class GestoreInterventi {
         }
     }
 
-    public void eliminaIntervento(UUID idIntervento) {
-        interventi.removeIf(intervento -> intervento.getIDIntervento().equals(idIntervento));
-        salvaInterventi();
+    /**
+     * Rimuove un intervento dall'ArrayList di interventi
+     * @param IDIntervento ID dell'Intervento da rimuovere
+     */
+    public void elimina(UUID IDIntervento) {
+        interventi.removeIf(intervento -> intervento.getIDIntervento().equals(IDIntervento));
+        salvaSuFile();
     }
 
-    public void eliminaInterventiDiPaziente(UUID IDPaziente) {
+    /**
+     * Rimuove tutti gli interventi di un determinato Paziente
+     * @param IDPaziente ID del Paziente del quale rimuovere tutti gli interventi
+     */
+    public void eliminaTuttiPerPaziente(UUID IDPaziente) {
         interventi.removeIf(intervento -> intervento.getIDPaziente().equals(IDPaziente));
-        salvaInterventi();
+        salvaSuFile();
     }
 
-    public void modificaIntervento(Intervento intervento) {
+    /**
+     * Modifica un intervento già esistente all'interno dell'ArrayList di interventi
+     * @param intervento Intervento (già modificato)
+     */
+    public void modifica(Intervento intervento) {
         ListIterator<Intervento> iterator = interventi.listIterator();
         while (iterator.hasNext()) {
             if (iterator.next().getIDIntervento().equals(intervento.getIDIntervento())) {
                 iterator.set(intervento);
-                salvaInterventi();
+                salvaSuFile();
                 break;
             }
         }
     }
 
-    public void aggiungiIntervento(Intervento intervento) {
+    /**
+     * Aggiungi un nuovo Intervento all'ArrayList di interventi
+     * @param intervento oggetto Intervento da aggiungere
+     */
+    public void aggiungi(Intervento intervento) {
         interventi.add(intervento);
-        salvaInterventi();
+        salvaSuFile();
     }
 
-    public Intervento getIntervento(UUID idIntervento) {
+    /**
+     * Prendere un intervento dall'ArrayList di interventi attraverso il suo ID
+     * @param IDIntervento ID dell'Intervento da ottenere
+     * @return Intervento oppure null in caso nessun intervento venga trovato
+     */
+    public Intervento getIntervento(UUID IDIntervento) {
         for (Intervento intervento : interventi) {
-            if (intervento.getIDIntervento().equals(idIntervento))
+            if (intervento.getIDIntervento().equals(IDIntervento))
                 return intervento;
         }
 
         return null;
     }
 
+    /**
+     * <p>Getter per l'ArrayList di interventi</p>
+     * <p> Per ottenere un ArrayList di interventi filtrato,
+     * modificare le variabili pubbliche di classe {@link GestoreInterventi#filtriIntervento} ed {@link GestoreInterventi#stringaRicercaPerFiltro}</p>
+     *
+     * <p> Per ottenere un ArrayList di interventi con un ordinamento specifico,
+     * modificare la variabile pubblica di classe {@link GestoreInterventi#ordinamentoInterventi} </p>
+     * @return ArrayList di oggetti Intervento
+     */
     public ArrayList<Intervento> getInterventi() {
         ArrayList<Intervento> listaInterventi = interventi;
 
-        if (filtriIntervento != null && query != null)
+        if (filtriIntervento != null && stringaRicercaPerFiltro != null)
             listaInterventi = getInterventiFiltrati();
 
         if (ordinamentoInterventi != null)
@@ -124,6 +199,7 @@ public class GestoreInterventi {
         return listaInterventi;
     }
 
+    // Filtra l'ArrayList di interventi in base alle variabili pubbliche di classe filtraIntervento e stringaDiRicercaPerFiltro
     public ArrayList<Intervento> getInterventiFiltrati() {
         ArrayList<Intervento> interventiFiltrati = new ArrayList<>();
 
@@ -132,17 +208,18 @@ public class GestoreInterventi {
         for (TipoQueryIntervento queryIntervento : tipiQuery)
             interventiFiltrati.addAll(filtraInterventi(queryIntervento));
 
-
+        // Creo un Set per ottenere una lista di interventi univoci
         Set<Intervento> interventiFiltratiUnivoci = new HashSet<>(interventiFiltrati);
-        interventiFiltrati = new ArrayList<>();
-        interventiFiltrati.addAll(interventiFiltratiUnivoci);
+        interventiFiltrati = new ArrayList<>(interventiFiltratiUnivoci);
 
+        // Resetto il filtro e la stringa di ricerca
         filtriIntervento = null;
-        query = null;
+        stringaRicercaPerFiltro = null;
 
         return interventiFiltrati;
     }
 
+    // Genera un ArrayList di TipoQueryIntervento da utilizzare poi nel metodo filtraInterventi
     private ArrayList<TipoQueryIntervento> creaArrayQueries() {
         ArrayList<TipoQueryIntervento> tipiQuery = new ArrayList<>();
         if (filtriIntervento.isPaziente())
@@ -159,18 +236,20 @@ public class GestoreInterventi {
         return tipiQuery;
     }
 
+    // Ottiene un ArrayList di interventi filtrati in base al TipoQueryIntervento e la stringaRicercaPerIntervento
     private ArrayList<Intervento> filtraInterventi(TipoQueryIntervento tipoQueryIntervento) {
+        // Creo la stream di pazienti (per comodità)
         Stream<Intervento> interventiFiltrati;
         Stream<Intervento> streamInterventi = interventi.stream();
 
-        query = query.toLowerCase();
+        stringaRicercaPerFiltro = stringaRicercaPerFiltro.toLowerCase();
 
         switch (tipoQueryIntervento) {
-            case TIPO -> interventiFiltrati = streamInterventi.filter(intervento -> intervento.getTipoIntervento().nome.toLowerCase().contains(query));
-            case COSTO -> interventiFiltrati = streamInterventi.filter(intervento -> String.valueOf(intervento.getCosto()).toLowerCase().contains(query));
+            case TIPO -> interventiFiltrati = streamInterventi.filter(intervento -> intervento.getTipoIntervento().nome.toLowerCase().contains(stringaRicercaPerFiltro));
+            case COSTO -> interventiFiltrati = streamInterventi.filter(intervento -> String.valueOf(intervento.getCosto()).toLowerCase().contains(stringaRicercaPerFiltro));
             case DATA -> interventiFiltrati = streamInterventi.filter(intervento -> {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMMMMMMMMMM yyyy", Locale.ITALIAN);
-                return dateFormat.format(new Date(intervento.getDataCreazione())).toLowerCase().contains(query);
+                return dateFormat.format(new Date(intervento.getDataCreazione())).toLowerCase().contains(stringaRicercaPerFiltro);
             });
             case TEMPO -> interventiFiltrati = streamInterventi.filter(intervento -> {
                 long ore = TimeUnit.MILLISECONDS.toHours(intervento.getTempoMedio());
@@ -179,12 +258,12 @@ public class GestoreInterventi {
                 tempo += ore != 0 ? " e" : "";
                 tempo += minuti == 1 ? "d 1 minuto" : " " + minuti + " minuti";
 
-                return tempo.contains(query);
+                return tempo.contains(stringaRicercaPerFiltro);
             });
             case PAZIENTE -> interventiFiltrati = streamInterventi.filter(intervento -> {
                 GestorePazienti gestorePazienti = GestorePazienti.getInstance();
                 gestorePazienti.filtriPaziente = new FiltriPaziente();
-                gestorePazienti.stringaRicercaPerFiltro = query;
+                gestorePazienti.stringaRicercaPerFiltro = stringaRicercaPerFiltro;
                 for (Paziente paziente : gestorePazienti.getPazienti()) {
                     if (paziente.getIDPaziente().equals(intervento.getIDPaziente()))
                         return true;
@@ -199,25 +278,29 @@ public class GestoreInterventi {
                 tempo += ore != 0 ? " e" : "";
                 tempo += minuti == 1 ? "d 1 minuto" : " " + minuti + " minuti";
 
-                boolean accetta = intervento.getTipoIntervento().nome.toLowerCase().contains(query)
-                        || String.valueOf(intervento.getCosto()).toLowerCase().contains(query)
-                        || tempo.contains(query);
+                boolean accetta = intervento.getTipoIntervento().nome.toLowerCase().contains(stringaRicercaPerFiltro)
+                        || String.valueOf(intervento.getCosto()).toLowerCase().contains(stringaRicercaPerFiltro)
+                        || tempo.contains(stringaRicercaPerFiltro);
 
                 GestorePazienti gestorePazienti = GestorePazienti.getInstance();
                 gestorePazienti.filtriPaziente = new FiltriPaziente();
-                gestorePazienti.stringaRicercaPerFiltro = query;
+                gestorePazienti.stringaRicercaPerFiltro = stringaRicercaPerFiltro;
                 for (Paziente paziente : gestorePazienti.getPazienti()) {
-                    if (paziente.getIDPaziente().equals(intervento.getIDPaziente()))
+                    if (paziente.getIDPaziente().equals(intervento.getIDPaziente())) {
                         accetta = true;
+                        break;
+                    }
                 }
 
                 return accetta;
             });
         }
 
+        // Ritorno un ArrayList creato dalla stream filtrata
         return interventiFiltrati.collect(Collectors.toCollection(ArrayList::new));
     }
 
+    // Ordina i pazienti di un ArrayList di interventi in base alla variabile di classe pubblica ordinamentoInterventi
     private void ordinaInterventi(ArrayList<Intervento> listaInterventi) {
         switch (ordinamentoInterventi) {
             case TIPOINTERVENTO -> listaInterventi.sort(Comparator.comparing(intervento -> intervento.getTipoIntervento().nome));

@@ -37,8 +37,8 @@ public class GestoreGrafica extends JFrame {
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
-                GestorePazienti.getInstance().salvaPazienti();
-                GestoreInterventi.getInstance().salvaInterventi();
+                GestorePazienti.getInstance().salvaSuFile();
+                GestoreInterventi.getInstance().salvaSuFile();
                 GestoreFatture.getInstance().salvaFatture();
                 GestoreImpostazioni.getInstance().salvaImpostazioni();
                 dispose();

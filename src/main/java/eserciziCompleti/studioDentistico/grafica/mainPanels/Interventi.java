@@ -94,7 +94,7 @@ public class Interventi implements FocusListener {
             GestoreInterventi.getInstance().ordinamentoInterventi = dialogOrdinaInterventi.getOrdinamentoInterventi();
             if (ricerca != null) {
                 GestoreInterventi.getInstance().filtriIntervento = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriIntervento();
-                GestoreInterventi.getInstance().query = ricerca;
+                GestoreInterventi.getInstance().stringaRicercaPerFiltro = ricerca;
             }
             GestoreGrafica.getInstance().changePanel(Schermata.INTERVENTI, new String[]{ricerca});
         });
@@ -134,11 +134,11 @@ public class Interventi implements FocusListener {
         String query = inputRicerca.getText();
         if (query == null || query.isBlank()) {
             GestoreInterventi.getInstance().filtriIntervento = null;
-            GestoreInterventi.getInstance().query = null;
+            GestoreInterventi.getInstance().stringaRicercaPerFiltro = null;
             ricerca = null;
         } else {
             GestoreInterventi.getInstance().filtriIntervento = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriIntervento();
-            GestoreInterventi.getInstance().query = query;
+            GestoreInterventi.getInstance().stringaRicercaPerFiltro = query;
             ricerca = query;
         }
 

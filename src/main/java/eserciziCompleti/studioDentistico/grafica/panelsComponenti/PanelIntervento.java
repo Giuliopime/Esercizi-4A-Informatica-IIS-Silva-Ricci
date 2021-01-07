@@ -81,9 +81,9 @@ public class PanelIntervento {
                 DialogIntervento dialogIntervento = new DialogIntervento("Modifica Intervento", intervento);
                 if (!dialogIntervento.getAzione().equals(AzioneDialog.NIENTE)) {
                     if (dialogIntervento.getAzione().equals(AzioneDialog.SALVA))
-                        GestoreInterventi.getInstance().modificaIntervento(dialogIntervento.getIntervento());
+                        GestoreInterventi.getInstance().modifica(dialogIntervento.getIntervento());
                     else
-                        GestoreInterventi.getInstance().eliminaIntervento(dialogIntervento.getIntervento().getIDIntervento());
+                        GestoreInterventi.getInstance().elimina(dialogIntervento.getIntervento().getIDIntervento());
 
                     GestoreGrafica.getInstance().changePanel(Schermata.INTERVENTI, null);
                 }
@@ -123,7 +123,7 @@ public class PanelIntervento {
                 }
                 DialogIntervento dialogIntervento = new DialogIntervento("Nuovo Intervento");
                 if (dialogIntervento.getAzione().equals(AzioneDialog.SALVA)) {
-                    GestoreInterventi.getInstance().aggiungiIntervento(dialogIntervento.getIntervento());
+                    GestoreInterventi.getInstance().aggiungi(dialogIntervento.getIntervento());
                     GestoreGrafica.getInstance().changePanel(Schermata.INTERVENTI, null);
                 }
             }

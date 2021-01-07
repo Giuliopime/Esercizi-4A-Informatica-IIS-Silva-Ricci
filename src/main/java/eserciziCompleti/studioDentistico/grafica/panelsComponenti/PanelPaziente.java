@@ -48,9 +48,9 @@ public class PanelPaziente {
                 DialogPaziente dialogPaziente = new DialogPaziente("Modifica Paziente", paziente);
                 if (!dialogPaziente.getAzione().equals(AzioneDialog.NIENTE)) {
                     if (dialogPaziente.getAzione().equals(AzioneDialog.SALVA))
-                        GestorePazienti.getInstance().modificaPaziente(dialogPaziente.getPaziente());
+                        GestorePazienti.getInstance().modifica(dialogPaziente.getPaziente());
                     else
-                        GestorePazienti.getInstance().eliminaPaziente(dialogPaziente.getPaziente().getIDPaziente());
+                        GestorePazienti.getInstance().elimina(dialogPaziente.getPaziente().getIDPaziente());
 
                     GestoreGrafica.getInstance().changePanel(Schermata.PAZIENTI, null);
                 }
@@ -84,7 +84,7 @@ public class PanelPaziente {
                 super.mouseClicked(e);
                 DialogPaziente dialogPaziente = new DialogPaziente("Nuovo paziente");
                 if (dialogPaziente.getAzione().equals(AzioneDialog.SALVA)) {
-                    GestorePazienti.getInstance().aggiungiPaziente(dialogPaziente.getPaziente());
+                    GestorePazienti.getInstance().aggiungi(dialogPaziente.getPaziente());
                     GestoreGrafica.getInstance().changePanel(Schermata.PAZIENTI, null);
                 }
             }

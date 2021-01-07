@@ -143,7 +143,7 @@ public class GestoreFatture {
             });
             case INTERVENTO -> fattureFiltrate = streamFatture.filter(fattura -> {
                 GestoreInterventi.getInstance().filtriIntervento = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriIntervento();
-                GestoreInterventi.getInstance().query = query;
+                GestoreInterventi.getInstance().stringaRicercaPerFiltro = query;
 
                 ArrayList<Intervento> interventiFiltrati = GestoreInterventi.getInstance().getInterventi();
                 return interventiFiltrati.stream().anyMatch(intervento -> Arrays.asList(fattura.getInterventi()).contains(intervento.getIDIntervento()));
@@ -159,7 +159,7 @@ public class GestoreFatture {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMMMMMMMMMM yyyy", Locale.ITALIAN);
 
                 GestoreInterventi.getInstance().filtriIntervento = GestoreImpostazioni.getInstance().getImpostazioni().getFiltriIntervento();
-                GestoreInterventi.getInstance().query = query;
+                GestoreInterventi.getInstance().stringaRicercaPerFiltro = query;
 
                 ArrayList<Intervento> interventiFiltrati = GestoreInterventi.getInstance().getInterventi();
 
