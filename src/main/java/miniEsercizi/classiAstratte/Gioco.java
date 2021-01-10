@@ -8,7 +8,7 @@ public class Gioco {
         String nomeG2 = JOptionPane.showInputDialog("Inserire nome secondo giocatore");
 
         Dado d1 = new Dado(), d2 = new Dado();
-        int p1 = 0, p2 = 0;
+        int p1, p2;
 
         do {
             p1 = Integer.parseInt(d1.lancio());
