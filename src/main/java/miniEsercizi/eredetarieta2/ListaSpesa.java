@@ -1,4 +1,4 @@
-package miniEsercizi.eredetarietà2;
+package miniEsercizi.eredetarieta2;
 
 import javax.swing.*;
 import java.text.SimpleDateFormat;

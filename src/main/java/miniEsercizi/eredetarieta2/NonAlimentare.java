@@ -1,4 +1,4 @@
-package miniEsercizi.eredetarietà2;
+package miniEsercizi.eredetarieta2;
 
 public class NonAlimentare extends Prodotto {
     private String materiale;

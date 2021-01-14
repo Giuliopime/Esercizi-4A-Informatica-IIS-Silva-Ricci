@@ -1,4 +1,4 @@
-package miniEsercizi.eredetarietà2;
+package miniEsercizi.eredetarieta2;
 
 import java.util.Date;
 
