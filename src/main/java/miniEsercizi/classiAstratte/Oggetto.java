@@ -1,7 +1,5 @@
 package miniEsercizi.classiAstratte;
 
-import java.util.HashSet;
-
 public abstract class Oggetto {
     protected String nome;
     protected String[] facce;
