@@ -18,6 +18,18 @@ public class Desktop extends Computer {
         this.prezzo = prezzo;
     }
 
+    public boolean aggiungiRAM(int ram) {
+        if(ram < 1)
+            return false;
+
+        RAM += ram;
+        return true;
+    }
+
+    public String toString() {
+        return "Desktop:\nSistema Operativo: " + SO + "\nRAM: " + RAM + "\nPrezzo: " + prezzo;
+    }
+
     public String getMonitor() {
         return monitor;
     }

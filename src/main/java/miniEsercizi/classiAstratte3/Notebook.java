@@ -16,6 +16,14 @@ public class Notebook extends Computer {
         this.batteriamAh = batteriamAh;
     }
 
+    public boolean aggiungiRAM(int ram) {
+        return false;
+    }
+
+    public String toString() {
+        return "Notebook:\nSistema Operativo: " + SO + "\nRAM: " + RAM + "\nPrezzo: " + prezzo;
+    }
+
     public double getPeso() {
         return peso;
     }

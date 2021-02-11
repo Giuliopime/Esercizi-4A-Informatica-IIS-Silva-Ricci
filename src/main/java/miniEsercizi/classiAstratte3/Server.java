@@ -10,6 +10,19 @@ public class Server extends Computer {
         this.costoMensile = costoMensile;
     }
 
+
+    public boolean aggiungiRAM(int ram) {
+        if(ram < 1)
+            return false;
+
+        RAM += ram;
+        return true;
+    }
+
+    public String toString() {
+        return "Server:\nSistema Operativo: " + SO + "\nRAM: " + RAM + "\nCosto mensile: "+costoMensile;
+    }
+
     public boolean isRaid() {
         return raid;
     }

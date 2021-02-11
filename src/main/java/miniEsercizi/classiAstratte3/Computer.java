@@ -1,12 +1,12 @@
 package miniEsercizi.classiAstratte3;
 
 public abstract class Computer {
-    private String SO;
-    private String CPU;
-    private int RAM;
-    private int memoriaNonVolatile;
-    private String tipoMemoriaNonVolatile;
-    private String IP;
+    protected String SO;
+    protected String CPU;
+    protected int RAM;
+    protected int memoriaNonVolatile;
+    protected String tipoMemoriaNonVolatile;
+    protected String IP;
 
     public Computer(String SO, String CPU, int RAM, int memoriaNonVolatile, String tipoMemoriaNonVolatile, String IP) {
         this.SO = SO;
@@ -16,6 +16,10 @@ public abstract class Computer {
         this.tipoMemoriaNonVolatile = tipoMemoriaNonVolatile;
         this.IP = IP;
     }
+
+    public abstract boolean aggiungiRAM(int ram);
+
+    public abstract String toString();
 
     public String getSO() {
         return SO;
