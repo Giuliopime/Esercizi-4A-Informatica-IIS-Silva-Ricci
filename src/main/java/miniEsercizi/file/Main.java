@@ -30,6 +30,7 @@ public class Main {
         try {
             FileReader fr = new FileReader("Test_file.txt");
             StringBuilder risultato = new StringBuilder();
+
             int cIndex = fr.read();
             while (cIndex > -1) {
                 risultato.append((char) cIndex);

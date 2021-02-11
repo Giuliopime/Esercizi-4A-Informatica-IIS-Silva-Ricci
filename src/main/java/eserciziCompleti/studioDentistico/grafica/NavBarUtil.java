@@ -1,7 +1,6 @@
 package eserciziCompleti.studioDentistico.grafica;
 
 import eserciziCompleti.studioDentistico.enums.Schermata;
-import eserciziCompleti.studioDentistico.gestori.GestoreFatture;
 import eserciziCompleti.studioDentistico.gestori.GestoreGrafica;
 import eserciziCompleti.studioDentistico.gestori.GestoreImpostazioni;
 import eserciziCompleti.studioDentistico.grafica.dialogs.DialogImpostazioni;
