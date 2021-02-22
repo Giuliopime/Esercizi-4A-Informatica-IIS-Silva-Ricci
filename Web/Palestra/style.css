@@ -1,0 +1,85 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.contenitore {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenuto, .navbar, .footer, .nome {
+    width: 100vw;
+}
+
+.contenuto {
+    flex-grow: 1;
+}
+
+.nome {
+   text-align: center;
+    padding: 1rem;
+    background-color: black;
+    font-size: 1.4rem;
+}
+
+#nome-palestra {
+    color: white;
+}
+#nome-palestra:hover {
+    color: aqua;
+}
+
+.navbar {
+    display: flex;
+}
+
+.elemento-nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    border-width: 0 2px;
+    border: black solid;
+    color: black;
+}
+
+.elemento-nav:hover {
+    background-color: aqua;
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: khaki;
+}
+
+.contenuto {
+    padding: 3rem;
+    font-size: 1.3rem;
+}
+
+#immagine1 {
+    width: 10rem;
+    height: 10rem;
+    float: left;
+    margin: 1rem;
+}
