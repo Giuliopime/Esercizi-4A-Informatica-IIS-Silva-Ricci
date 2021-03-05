@@ -1,0 +1,109 @@
+:root {
+    --black: #0b090a;
+    --darkgray: #161a1d;
+    --darkred: #660708;
+    --red: #ba181b;
+    --lightred: #e5383b;
+    --gray: #d3d3d3;
+    --lightgray: #f5f3f4;
+    --white: #ffffff;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+#header, #container, #footer {
+    width: 100vw;
+    background-color: var(--darkgray);
+    display: flex;
+}
+
+#header {
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: var(--lightgray);
+}
+
+#title {
+    font-size: 2rem;
+    font-family: 'Alfa Slab One', cursive;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+}
+
+#container {
+    height: 80vh;
+    flex-grow: 1;
+    display: flex;
+}
+
+#navbar {
+    width: 15vw;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    border-color: var(--lightgray);
+}
+
+
+.elemento-nav {
+    width: 75%;
+    text-align: center;
+    background-color: var(--red);
+    padding: 0.8rem 1rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--lightgray);
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--white);
+}
+.elemento-nav:hover {
+    background-color: var(--lightred);
+}
+
+
+#content {
+    width: 85vw;
+    background-color: var(--white);
+    background-image: url("background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2rem;
+    color: var(--black);
+    font-family: 'Roboto', sans-serif;
+}
+
+#footer {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    border-color: var(--lightgray);
+    font-family: 'Open Sans', sans-serif;
+}
