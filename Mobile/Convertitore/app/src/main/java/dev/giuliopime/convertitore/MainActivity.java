@@ -28,10 +28,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void converti(Valuta valuta) {
-        double rateo = valuta == Valuta.DOLLARO ? 1.2209 : 0.8191;
+        try {
+            double rateo = valuta == Valuta.DOLLARO ? 1.2209 : 0.8191;
 
-        double q = Double.parseDouble(inputText.getText().toString());
+            double q = Double.parseDouble(inputText.getText().toString());
 
-        risultatoText.setText(new DecimalFormat("#.##").format(q * rateo) + (valuta == Valuta.DOLLARO ? " $" : " €"));
+            risultatoText.setText(new DecimalFormat("#.##").format(q * rateo) + (valuta == Valuta.DOLLARO ? " $" : " €"));
+        } catch (Exception ignored) {}
     }
 }
