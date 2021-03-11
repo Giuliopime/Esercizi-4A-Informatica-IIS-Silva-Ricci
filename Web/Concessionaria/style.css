@@ -7,6 +7,7 @@
     --gray: #d3d3d3;
     --lightgray: #f5f3f4;
     --white: #ffffff;
+    --tspeed: 300ms;
 }
 
 html, body {
@@ -18,6 +19,10 @@ html, body {
     box-sizing: border-box;
 }
 
+::selection {
+    background-color: var(--darkgray);
+    color: var(--lightgray);
+}
 
 body {
     display: flex;
@@ -25,6 +30,16 @@ body {
     background-color: var(--white);
     color: var(--white);
     overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: var(--white);
+    text-decoration: none;
+    transition: all var(--tspeed);
+}
+a:hover {
+    color: var(--lightred);
 }
 
 #header, #container, #footer {
@@ -50,18 +65,18 @@ body {
 }
 
 #container {
-    height: 80vh;
+    height: 83vh;
     flex-grow: 1;
     display: flex;
 }
 
 #navbar {
     width: 15vw;
+    min-width: 15vw;
     background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
     border-style: solid;
     border-width: 0 1px 0 0;
     border-color: var(--lightgray);
@@ -69,36 +84,126 @@ body {
 
 
 .elemento-nav {
-    width: 75%;
+    width: 100%;
     text-align: center;
     background-color: var(--red);
-    padding: 0.8rem 1rem;
-    border-width: 1px;
+    padding: 1.3rem 1rem;
+    border-width: 0 0 1px 0;
     border-style: solid;
     border-color: var(--lightgray);
-    border-radius: 5px;
     text-decoration: none;
     color: var(--white);
+    transition: all var(--tspeed);
+}
+.elemento-nav:last-child {
+    border-width: 1px 0 0 0;
+    margin-top: auto;
 }
 .elemento-nav:hover {
-    background-color: var(--lightred);
+    background-color: var(--lightgray);
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 
-#content {
-    width: 85vw;
-    background-color: var(--white);
-    background-image: url("background.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 2rem;
+.content {
+    flex-grow: 1;
+    display: flex;
+    background-color: var(--black);
+    padding: 3rem 4rem;
     color: var(--black);
     font-family: 'Roboto', sans-serif;
 }
 
+#home {
+    display: flex;
+    flex-direction: column;
+    padding: 9rem 8rem 5rem 5rem;
+    color: var(--darkgray);
+    background-image: url("background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.title, .description {
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+}
+
+.title {
+    font-size: 3rem;
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 0.15rem;
+    padding: 2rem;
+}
+
+.description {
+    margin-top: 1.5rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+    width: 15rem;
+    background-color: var(--darkgray);
+    padding: 2rem;
+    padding-top: 0;
+    border-radius: 12px;
+    border: 1px solid var(--lightgray);
+    margin: 0 2rem;
+}
+.card-img {
+    width: inherit;
+    border-width: 0 1px;
+    border-color: var(--white);
+    border-style: solid;
+    border-radius: 12px 12px 0 0;
+}
+.nome {
+    color: var(--lightgray);
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+}
+.card-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.noleggia-btn, .visita-btn {
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+}
+.noleggia-btn {
+    margin-right: 1.5rem;
+    background-color: var(--red);
+}
+.visita-btn {
+    background-color: var(--lightgray);
+    color: var(--black);
+}
+.noleggia-btn:hover, .visita-btn:hover {
+    background-color: var(--black);
+    color: var(--lightgray);
+    cursor: pointer;
+}
+
 #footer {
-    height: 10vh;
+    height: 7vh;
     display: flex;
     align-items: center;
     justify-content: center;
