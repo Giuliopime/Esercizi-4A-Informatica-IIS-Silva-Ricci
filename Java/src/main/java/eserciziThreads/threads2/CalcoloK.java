@@ -1,4 +1,4 @@
-package miniEsercizi.threads2;
+package eserciziThreads.threads2;
 
 public class CalcoloK extends Thread {
     @Override

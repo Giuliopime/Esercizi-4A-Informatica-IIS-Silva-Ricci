@@ -1,4 +1,4 @@
-package miniEsercizi.threads2;
+package eserciziThreads.threads2;
 
 public class CalcoloY extends Thread {
     private final double a, b, c;

@@ -1,4 +1,4 @@
-package miniEsercizi.threads3;
+package eserciziThreads.threads3;
 
 public class Dormiente extends Thread {
     private final String nome;

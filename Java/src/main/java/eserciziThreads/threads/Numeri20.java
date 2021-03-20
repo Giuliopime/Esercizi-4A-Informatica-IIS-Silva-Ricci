@@ -1,4 +1,4 @@
-package miniEsercizi.threads;
+package eserciziThreads.threads;
 
 public class Numeri20 implements Runnable {
 

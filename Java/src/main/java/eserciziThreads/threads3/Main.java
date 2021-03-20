@@ -1,4 +1,4 @@
-package miniEsercizi.threads3;
+package eserciziThreads.threads3;
 
 import java.util.ArrayList;
 

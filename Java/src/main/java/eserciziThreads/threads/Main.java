@@ -1,4 +1,4 @@
-package miniEsercizi.threads;
+package eserciziThreads.threads;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
