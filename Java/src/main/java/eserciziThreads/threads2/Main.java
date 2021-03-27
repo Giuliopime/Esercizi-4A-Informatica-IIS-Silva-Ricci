@@ -14,6 +14,7 @@ public class Main {
     */
 
     public static void main(String[] args) throws InterruptedException {
+        System.out.println(System.currentTimeMillis());
         CalcoloX t1 = new CalcoloX(2, 3, 4);
         CalcoloY t2 = new CalcoloY(2, 3, 4);
         CalcoloZ t3 = new CalcoloZ(2, 3, 4);
@@ -37,5 +38,17 @@ public class Main {
         t5.join();
 
         System.out.println(k);
+        System.out.println(System.currentTimeMillis());
+
+        // Senza thread (più veloce perchè le operazioni sono molto piccole e solo aprire un nuovo thread richiede più tempo dell'effettuare i calcoli direttamente
+        System.out.println("----------------------");
+        System.out.println(System.currentTimeMillis());
+        double a = 3 * (2 - 1);
+        double b = 2 * (3 - 2);
+        double c = 3 * (4 - 3);
+        double d = b * c;
+        double e = a + d;
+        System.out.println(e);
+        System.out.println(System.currentTimeMillis());
     }
 }
