@@ -81,6 +81,7 @@ a:hover {
     border-style: solid;
     border-width: 0 1px 0 0;
     border-color: var(--lightgray);
+    transition: width 0.3s;
 }
 
 
@@ -109,11 +110,13 @@ a:hover {
 
 .content {
     flex-grow: 1;
+    flex-wrap: wrap;
     display: flex;
     background-color: var(--black);
     padding: 3rem 4rem;
     color: var(--black);
     font-family: 'Roboto', sans-serif;
+    overflow: auto;
 }
 
 #home {
@@ -161,7 +164,7 @@ a:hover {
     padding-top: 0;
     border-radius: 12px;
     border: 1px solid var(--lightgray);
-    margin: 0 2rem;
+    margin: 1.5rem 2rem;
 }
 .card-img {
     width: inherit;
@@ -220,6 +223,7 @@ a:hover {
 #form {
     background-color: rgba(255, 255, 255, 0.3);
     padding: 2rem;
+    transition: all 0.3s;
 }
 
 #noleggia {
@@ -231,7 +235,8 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid var(--white)
+    border: 1px solid var(--white);
+    width: 50%;
 }
 
 #form label {
@@ -279,4 +284,26 @@ a:hover {
 
 textarea:focus, input:focus, select:focus{
     outline: none;
+}
+
+@media screen and (max-height: 750px) {
+    #form {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #form {
+        width: 95%;
+    }
+
+    #navbar {
+        width: 30vw;
+    }
+}
+
+@media screen and (min-width: 751px) and (max-width: 950px) {
+    #form {
+        width: 85%;
+    }
 }

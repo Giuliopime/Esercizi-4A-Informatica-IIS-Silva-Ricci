@@ -2,9 +2,15 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
+    <!-- Per i media query -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Font di google -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans:wght@300&family=Roboto&display=swap" rel="stylesheet">
+
     <title>Noleggia - Concessionaria</title>
 
     <script type="text/javascript">
@@ -15,10 +21,8 @@
           const autoParam = urlParams.get('auto');
 
           // Se il parametro auto era presente prendo l'input field dell'auto e gli assegno il valore preso dall'url
-          if (autoParam) {
-             let selezioneAuto = document.getElementById("auto")
-             selezioneAuto.value = autoParam
-          }
+          if (autoParam)
+             document.getElementById("auto").value = autoParam
        }
 
        // Funzione per controllare l'input del form
@@ -47,24 +51,34 @@
 
 
           // Controllo la validità del contenuto dei campi
+          // Converto la data in millisecondi e controllo che sia valida attraverso isNaN, che controlla che millisecondi siano un numero
           if (isNaN(Date.parse(data)))
              return alert("La data fornita non è valida")
 
+          // Controllo che la data di ora non sia più avanti rispetto a quella selezionata dall'utente, deve essere nel futuro
           if (Date.now() > Date.parse(data))
              return alert("La data fornita è nel passato, inserisci una data futura per il termine del noleggio")
 
+          // Uso le regolar expressions per controllare che la mail sia formattata correttamente
           const emailRE = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
           if (!emailRE.test(email.toLowerCase()))
              return alert("L'email inserita non è valida")
 
+          // Controllo che il numero di telefono sia un numero
           if (isNaN(telefono))
              return alert("Il numero di telefono non è valido")
 
           // toLocaleString... rimuove le parti non necessarie per la data
           const dataLeggibile = new Date(data).toLocaleString().split(',')[0]
+          // Calcolo la differenza in millisecondi tra la data selezionata ed ora, poi divido per i millisecondi che ci sono in un giorno il risultato così da ottenere i giorni, poi approssimo per ottenere un intero
           const giorniNoleggio = Math.round((Date.parse(data) - Date.now()) / 86400000)
 
-          alert(`Noleggio effettuato con successo:\nNome: ${nome}\nCognome: ${cognome}\nEmail: ${email}\nTelefono: ${telefono}\nData termine noleggio: ${dataLeggibile}\nDurata noleggio: ${giorniNoleggio} giorni\nAuto: ${auto}\nMessaggio: ${messaggio}`)
+
+          const prezzoGiornaliero = 75
+          const prezzoTotale = giorniNoleggio * prezzoGiornaliero
+
+          // Mostro all'utente il riassunto del suo noleggio
+          alert(`Noleggio effettuato con successo:\nNome: ${nome}\nCognome: ${cognome}\nEmail: ${email}\nTelefono: ${telefono}\nData termine noleggio: ${dataLeggibile}\nDurata noleggio: ${giorniNoleggio} giorni\nCosto noleggio: €${prezzoTotale} (€75/giorno)\nAuto: ${auto}\nMessaggio: ${messaggio}`)
        }
     </script>
 </head>
