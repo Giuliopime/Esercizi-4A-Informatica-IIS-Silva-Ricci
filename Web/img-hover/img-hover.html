@@ -8,6 +8,7 @@
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
@@ -18,15 +19,23 @@
             justify-content: center;
         }
         .img {
-            height: 10rem;
-            width: 10rem;
+            height: 5rem;
+            width: 5rem;
             margin: 4rem;
             transition: all 1s;
         }
-        .img:hover {
-            cursor: pointer;
-            height: 20rem;
-            width: 20rem;
+        #img-1:hover #img-grande-1 {
+            display: block;
+        }
+        #img-2:hover  .contenitore-img-grande #img-grande-2 {
+            display: block;
+        }
+        .img-grande {
+            display: none;
+            height: 30rem;
+            width: 30rem;
+            margin: 4rem;
+            transition: all 1s;
         }
     </style>
 </head>
@@ -34,6 +43,10 @@
 <div id="contenitore">
     <img src="../Concessionaria/img/audi.jpg" id="img-1" class="img">
     <img src="../Concessionaria/img/audi2.jpg" id="img-2" class="img">
+</div>
+<div id="contenitore-img-grande">
+    <img src="../Concessionaria/img/audi.jpg" id="img-grande-1" class="img-grande">
+    <img src="../Concessionaria/img/audi2.jpg" id="img-grande-2" class="img-grande">
 </div>
 </body>
 </html>

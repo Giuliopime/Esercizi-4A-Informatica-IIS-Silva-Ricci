@@ -1,0 +1,115 @@
+:root {
+    --nero: #121212;
+    --grigio: #403E41;
+    --viola: #C994FF;
+    --rosa: #FF4C8F;
+    --azzurro: #33F3FF;
+    --giallo: #FFF48A;
+    --verde: #99FFAE;
+    --arancione: #FC9867;
+
+    --titolo: 3rem 'Inter', sans-serif;
+    --testo: 1rem 'Inter', sans-serif;
+
+    --vel-anim: 400ms;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+*, :before, :after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+::-moz-selection {
+    color: var(--black);
+    background: var(--azzurro);
+}
+
+::selection {
+    color: var(--black);
+    background: var(--azzurro);
+}
+
+.titolo {
+    font: var(--titolo);
+    font-weight: 600;
+    letter-spacing: 0.4rem;
+}
+
+.testo {
+    font: var(--testo);
+    font-weight: 500;
+}
+
+#selezione-carte-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+#container-input-selezione {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.8rem;
+    margin-top: 4rem;
+    background-color: var(--nero);
+    border-radius: 12px;
+
+    transition: background-color var(--vel-anim);
+}
+
+#container-input-selezione:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+#input-num-carte {
+    width: 35rem;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+
+    color: white;
+    margin: 1rem
+}
+
+#conferma-selezione {
+    width: 100%;
+    height: 5rem;
+    margin-top: 1rem;
+
+    background-color: var(--azzurro);
+    border: none;
+    border-radius: 7px;
+    font-size: 1.5rem;
+
+    transition: background-color var(--vel-anim);
+}
+
+#conferma-selezione:hover {
+    cursor: pointer;
+    background-color: var(--viola);
+}
+
+
