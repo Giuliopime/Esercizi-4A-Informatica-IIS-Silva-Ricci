@@ -5,7 +5,7 @@
     <title>Memory</title>
 
     <link rel="stylesheet"  href="style.css">
-    <link rel="script" href="script.js">
+    <script type="text/javascript" src="script.js"></script>
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -15,14 +15,31 @@
     <div id="selezione-carte-container">
         <div id="titolo-selezione" class="titolo">BENVENUTO!</div>
         <div id="container-input-selezione">
-            <input id="input-num-carte" class="testo" placeholder="Inserisci il numero di carte...">
+            <input type="text" id="input-num-carte" class="testo" placeholder="Inserisci il numero di carte...">
             <button id="conferma-selezione" class="testo" onclick="selezionaNumCarte()">
                 GIOCA
             </button>
         </div>
     </div>
-    <div id="board">
 
+    <div id="board">
+        <div id="title" class="centrato titolo">
+            Memory
+        </div>
+        <div id="board-header" class="centrato">
+            <div id="num-tentativi" class="testo">Tentativi errati: 0</div>
+            <div id="time-counter" class="testo">00:00:00</div>
+        </div>
+        <div id="cards-container" class="centrato">
+
+        </div>
+    </div>
+
+    <div id="schermata-vittoria" class="centrato">
+        <div id="vittoria-text">Complimenti hai vinto</div>
+        <div id="ricarica-pagina-text">
+            <a href="index.html">Clicca qui per rigiocare!</a>
+        </div>
     </div>
 </body>
 </html>
