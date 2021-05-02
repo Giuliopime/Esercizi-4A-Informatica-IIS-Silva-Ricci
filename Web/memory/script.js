@@ -87,7 +87,6 @@ window.onload = () => {
 }
 
 function selezionaNumCarte() {
-   // TODO: Errori nell'input
    numCarte = parseInt(document.getElementById("input-num-carte").value)
 
    if (isNaN(numCarte))
@@ -161,6 +160,7 @@ async function scopri(numCarta) {
       const sbagliato = emojiENumCartaPrecedente.emoji !== emojiCarta
 
       await sleep(750)
+
       if (sbagliato) {
          numeriCarteScoperte.splice(numeriCarteScoperte.findIndex(num => num === emojiENumCartaPrecedente.numCarta), 1)
          copri(emojiENumCartaPrecedente.numCarta)
@@ -168,9 +168,9 @@ async function scopri(numCarta) {
          document.getElementById("num-tentativi").innerText = `Tentativi errati: ${++tentativiErrati}`
       } else {
          numeriCarteScoperte.push(numCarta)
-         if (numeriCarteScoperte.length === numCarte) {
+         if (numeriCarteScoperte.length === numCarte)
             vittoria()
-         }
+
       }
 
       emojiENumCartaPrecedente = null
@@ -196,8 +196,7 @@ function vittoria() {
    schermataVittoria.style.display = "flex"
 }
 
-// Funzioni d'utilà
-
+// Funzioni d'utilità
 function formattaTempo(secondi) {
    let h = Math.floor(secondi / 3600),
       m = Math.floor(secondi / 60) % 60,

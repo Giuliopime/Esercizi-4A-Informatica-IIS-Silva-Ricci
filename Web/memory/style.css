@@ -148,12 +148,12 @@ body {
 
 .card {
     font-size: 3.5rem;
-    height: 10rem;
-    width: 15rem;
+    height: 9rem;
+    width: 14rem;
     margin: 1rem;
     background: linear-gradient(45deg, var(--azzurro), var(--rosa));
     border-radius: 10px;
-    transition: all ease-in-out 0.3s;
+    transition: all ease-in-out var(--vel-anim);
 }
 
 .scoperta {
@@ -161,3 +161,49 @@ body {
     border: 4px solid black;
 }
 
+#schermata-vittoria {
+    height: 100vh;
+    flex-direction: column;
+}
+
+#ricarica-pagina-text {
+    margin-top: 2rem;
+}
+
+#ricarica-pagina-text a {
+    color: black;
+    text-decoration: none;
+}
+
+#ricarica-pagina-text a:hover {
+    color: var(--rosa)
+}
+
+
+@media screen and (max-width: 320px) {
+    :root { font-size: 18px; }
+}
+@media screen and (min-width: 321px) and (max-width: 999px) {
+    :root { font-size: 22px; }
+}
+@media screen and (min-width: 2000px) and (max-width: 2500px) {
+    :root { font-size: 20px; }
+}
+@media screen and (min-width: 2501px) and (max-width: 3000px) {
+    :root { font-size: 25px; }
+}
+@media screen and (min-width: 3001px) and (max-width: 3500px) {
+    :root { font-size: 30px; }
+}
+@media screen and (min-width: 3501px) and (max-width: 4000px) {
+    :root { font-size: 35px; }
+}
+@media screen and (min-width: 4001px) and (max-width: 4500px){
+    :root { font-size: 40px; }
+}
+@media screen and (min-width: 4501px) and (max-width: 5000px){
+    :root { font-size: 45px; }
+}
+@media screen and (min-width: 5001px){
+    :root { font-size: 50px; }
+}
