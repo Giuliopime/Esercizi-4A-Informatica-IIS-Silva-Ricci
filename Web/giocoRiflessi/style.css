@@ -1,0 +1,66 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#counter {
+    display: flex;
+    float: right;
+    border-radius: 0 0 0 7px;
+    border: 3px solid black;
+    border-width: 0 0 3px 3px;
+}
+
+#counter > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+#bottone {
+    font-size: 16px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    height: 5em;
+    width: 5em;
+    border: 2px solid black;
+    background-color: #99FFAE;
+}
+
+#bottone:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 320px) {
+    #bottone { font-size: 18px; }
+}
+@media screen and (min-width: 321px) and (max-width: 999px) {
+    #bottone { font-size: 22px; }
+}
+@media screen and (min-width: 2000px) and (max-width: 2500px) {
+    #bottone { font-size: 20px; }
+}
+@media screen and (min-width: 2501px) and (max-width: 3000px) {
+    #bottone { font-size: 25px; }
+}
+@media screen and (min-width: 3001px) and (max-width: 3500px) {
+    #bottone { font-size: 30px; }
+}
+@media screen and (min-width: 3501px) and (max-width: 4000px) {
+    #bottone { font-size: 35px; }
+}
+@media screen and (min-width: 4001px) and (max-width: 4500px){
+    #bottone { font-size: 40px; }
+}
+@media screen and (min-width: 4501px) and (max-width: 5000px){
+    #bottone { font-size: 45px; }
+}
+@media screen and (min-width: 5001px){
+    #bottone { font-size: 50px; }
+}
