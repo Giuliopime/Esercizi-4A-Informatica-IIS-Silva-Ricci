@@ -6,24 +6,23 @@ import java.util.concurrent.TimeUnit;
 
 public class Automobile extends Thread {
     private final Benzinaio benzinaio;
-    private int name;
-    private ScheduledExecutorService schedulatoreRiempimento = Executors.newSingleThreadScheduledExecutor();
+    private final ScheduledExecutorService schedulatoreRiempimento = Executors.newSingleThreadScheduledExecutor();
 
     public Automobile(Benzinaio benzinaio) {
         this.benzinaio = benzinaio;
-        name = 0;
-        // Litri della macchina
     }
 
     @Override
-    public void run() {
-        Runnable task = new Runnable() {
-            @Override
-            public void run() {
-                benzinaio.preleva(50, name++);
+    public void run()  {
+        // La macchina preleva una quantità random di litri (minimo 10) ogni x secondi (x numero random tra 3 e 10)
+        // Con un delay iniziale randomico tra 100 e 2000 millisecondi
+        Runnable task = () -> {
+            try {
+                benzinaio.preleva(Benzinaio.numRandom(10, 150), getName());
+            } catch (InterruptedException e) {
+                System.out.println("L'auto " + getName() + " è esplosa :/");
             }
         };
-        schedulatoreRiempimento.scheduleAtFixedRate(task, 0, 30, TimeUnit.MILLISECONDS);
-
+        schedulatoreRiempimento.scheduleAtFixedRate(task, Benzinaio.numRandom(100, 2000), Benzinaio.numRandom(3000, 10000), TimeUnit.MILLISECONDS);
     }
 }
