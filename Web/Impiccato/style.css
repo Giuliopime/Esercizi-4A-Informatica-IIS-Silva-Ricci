@@ -1,0 +1,93 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif !important;
+    height: 100vh;
+}
+
+.centrato {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    height: 15vh;
+}
+
+#tentativi {
+    flex-direction: column;
+    margin-bottom: 3rem;
+    height: 40vh;
+}
+
+#tentativi-disponibili {
+    font-size: 2rem;
+}
+
+#parole {
+    max-width: 90vw;
+    margin-bottom: 2rem;
+    height: 20vh;
+}
+
+#input-container {
+    height: 25vh;
+}
+
+#container {
+    display: flex;
+    background-color: black;
+    border-radius: 12px;
+}
+
+#input {
+    height: 2rem;
+    text-align: center;
+    margin: 1.5rem 2rem;
+}
+
+#bottone {
+    background-color: black;
+    border: solid white;
+    border-width: 0 0 0 1px;
+    border-radius: 0 12px 12px 0;
+}
+
+#freccia {
+    fill: white;
+    width: 3rem;
+    height: 3rem;
+    margin: 0.5rem;
+}
+
+#immagine {
+    height: 35vh;
+}
+
+#freccia:hover {
+    cursor: pointer;
+    fill: #23CE6B;
+}
+
+
+.lettera-container {
+    height: 2rem;
+    width: 1rem;
+    font-size: 4rem;
+    margin: 2rem;
+}

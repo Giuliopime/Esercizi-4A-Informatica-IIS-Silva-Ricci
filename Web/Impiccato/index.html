@@ -1,0 +1,128 @@
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Impiccato</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript">
+        const poolParole = ["cane", "gatto", "pesce", "tastiera", "scatola", "aeroplano", "ferrovia", "bicchiere", "scuola", "informatica"]
+        const parola = poolParole[Math.floor(Math.random() * poolParole.length)]
+
+        let avvio = Date.now()
+
+        let tentativi = 0
+        let lettereIndovinate = []
+
+        window.onload = () => {
+           const parole = document.getElementById("parole")
+
+           for(let i=0; i<parola.length; i++) {
+              const divParola = document.createElement("div")
+              divParola.classList.add("lettera-container")
+              divParola.id = `lettera-${i+1}`
+              divParola.innerText = "_"
+              parole.appendChild(divParola)
+           }
+
+           document.addEventListener("keyup", e => {
+              if (e.keyCode === 13) {
+                 indovina()
+              }
+           });
+        }
+
+        function indovina() {
+           const lettera = document.getElementById("input").value
+
+           if(!lettera || lettera.length > 1 || lettera === "" || !lettera.match(/[a-z]/i))
+              return alert("Inserisci un carattere valido dalla a alla z")
+
+           if (!lettereIndovinate.includes(lettera) && parola.includes(lettera)) {
+              tentativoCorretto(lettera)
+           } else aggiornaTentativi()
+        }
+
+        function tentativoCorretto(lettera) {
+           lettereIndovinate.push(lettera)
+           renderizzaParoleIndovinate()
+        }
+
+        function aggiornaTentativi() {
+           tentativi++
+           document.getElementById("tentativi-disponibili").innerText = `Tentativi disponibili: ${11 - tentativi}`
+           document.getElementById("immagine").src = `img/${tentativi}.png`
+           if (tentativi === 11)
+              sconfitta()
+        }
+
+        function renderizzaParoleIndovinate() {
+           let caratteriTotIndovinati = 0
+
+           for(let i=0; i<lettereIndovinate.length; i++) {
+              const lettera = lettereIndovinate[i]
+
+              let posizioniLettera = []
+              let posLetteraParola = -1
+              do {
+                 posLetteraParola = parola.indexOf(lettera, posLetteraParola+1)
+                 if (posLetteraParola !== -1)
+                    posizioniLettera.push(posLetteraParola)
+              } while (posLetteraParola !== -1)
+
+             for(let y=0; y<posizioniLettera.length; y++) {
+                const parolaDiv = document.getElementById(`lettera-${posizioniLettera[y] + 1}`)
+                parolaDiv.innerText = lettera
+             }
+
+              caratteriTotIndovinati += posizioniLettera.length
+           }
+
+           if (caratteriTotIndovinati === parola.length) {
+              vittoria()
+           }
+        }
+
+        function vittoria() {
+           alert(`Hai indovinato la parola: ${parola}!\n\nTentativi errati: ${tentativi}\nTempo impiegato: ${formattaTempo(Date.now() - avvio)}`)
+           location.reload()
+        }
+
+        function sconfitta() {
+           alert(`Tentativi terminati.\nLa parola era: ${parola}!\n\nTempo di gioco: ${formattaTempo(Date.now() - avvio)}`)
+           location.reload()
+        }
+
+        function formattaTempo(millisecondi) {
+           const secondi = parseInt(millisecondi / 1000)
+           let h = Math.floor(secondi / 3600),
+              m = Math.floor((secondi - h * 3600) / 60) % 60,
+              s = (secondi - h * 3600 - m * 60) % 60
+           return h + " ore, " + m + " minuti, " + s + " secondi"
+        }
+    </script>
+</head>
+<body>
+    <div id="title" class="centrato">
+        L'impiccato - Indovina la parola
+    </div>
+    <div id="tentativi" class="centrato">
+        <div id="tentativi-disponibili" class="centrato">
+            Tentativi disponibili: 11
+        </div>
+        <div id="disegno" class="centrato">
+            <img src="img/1.png" alt="immagine non trovata" id="immagine">
+        </div>
+    </div>
+    <div id="parole" class="centrato">
+
+    </div>
+    <div id="input-container" class="centrato">
+        <div id="container">
+            <input type="text" id="input">
+            <button onclick="indovina()" id="bottone">
+                <svg id="freccia" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
